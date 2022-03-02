@@ -25,6 +25,16 @@ Object {
             >
               Select a person
             </option>
+            <option
+              value="1"
+            >
+              tim
+            </option>
+            <option
+              value="2"
+            >
+              sally
+            </option>
           </select>
         </div>
         <div
@@ -53,6 +63,16 @@ Object {
             value="0"
           >
             Select a person
+          </option>
+          <option
+            value="1"
+          >
+            tim
+          </option>
+          <option
+            value="2"
+          >
+            sally
           </option>
         </select>
       </div>
@@ -140,6 +160,16 @@ Object {
             >
               Select a person
             </option>
+            <option
+              value="1"
+            >
+              tim
+            </option>
+            <option
+              value="2"
+            >
+              sally
+            </option>
           </select>
         </div>
         <div
@@ -168,6 +198,16 @@ Object {
             value="0"
           >
             Select a person
+          </option>
+          <option
+            value="1"
+          >
+            tim
+          </option>
+          <option
+            value="2"
+          >
+            sally
           </option>
         </select>
       </div>
@@ -255,6 +295,16 @@ Object {
             >
               Select a person
             </option>
+            <option
+              value="1"
+            >
+              tim
+            </option>
+            <option
+              value="2"
+            >
+              sally
+            </option>
           </select>
         </div>
         <div
@@ -285,6 +335,16 @@ Object {
             value="0"
           >
             Select a person
+          </option>
+          <option
+            value="1"
+          >
+            tim
+          </option>
+          <option
+            value="2"
+          >
+            sally
           </option>
         </select>
       </div>

@@ -32,15 +32,15 @@ function SelectField<T>(props: SelectFieldProps<T>) {
           <option value="0">{props.emptyMsg}</option>
           {props.data && props.data.length === 0
             ? null
-            : props.data.map((item: T, index: number) => {
+            : props.data.map((item: T, index: number) => (
                 <option
                   key={`${props.id}-${index}`}
                   // @ts-ignore
                   value={item[props.valueField]}
                 >
                   {item[props.displayField]}
-                </option>;
-              })}
+                </option>
+              ))}
         </select>
       </div>
       {props.error && props.error.length === 0 ? null : (
