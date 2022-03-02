@@ -46,3 +46,50 @@ formatMoney('1.1')
 // returns '$1.10
 
 ```
+
+TextInput example usage:
+
+```js
+import {TextInput} from 'c5cl';
+
+return (
+  <TextInput 
+    id="someid"
+    name="somename"
+    label="somelabel"
+    placeholder="some placeholder"
+    onChange={(e) => console.log(e.target.value) }
+    type="text"
+    value="someValue"
+    error="This field is required"
+  />
+)
+```
+
+SelectField example usage:
+
+```js
+import {SelectField} from 'c5cl';
+
+const states = [
+  {abbr: 'AL', name:'Alabama'},
+  {abbr: 'TN', name: 'Tennessee'}
+]
+
+return (
+  <SelectField 
+    id="someid"
+    name="somename"
+    label="somelabel"
+    displayField="name"
+    valueField="abbr"
+    onChange={(e) => console.log(e.target.value)}
+    emptyMsg="Please select a state"
+    data={states}
+    error="This field is required"
+  />
+)
+
+```
+
+note: The error field in both components is used for when the form validation fails, you can send in a unique error message to each element of your form.
