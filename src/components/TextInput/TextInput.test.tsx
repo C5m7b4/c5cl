@@ -20,4 +20,21 @@ describe('TextInput', () => {
 
     expect(frag).toMatchSnapshot();
   });
+  test('should render with an error', () => {
+    const testFn = jest.fn();
+    const frag = render(
+      <TextInput
+        id="testId"
+        name="testId"
+        value="test"
+        placeholder="test"
+        label="test"
+        type="text"
+        onChange={testFn}
+        error="You got an error"
+      />
+    );
+
+    expect(frag).toMatchSnapshot();
+  });
 });

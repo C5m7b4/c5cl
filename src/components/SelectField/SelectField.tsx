@@ -43,6 +43,9 @@ function SelectField<T>(props: SelectFieldProps<T>) {
               })}
         </select>
       </div>
+      {props.error && props.error.length === 0 ? null : (
+        <div className="alert alert-danger">{props.error}</div>
+      )}
     </div>
   );
 }
