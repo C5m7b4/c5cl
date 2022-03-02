@@ -1,0 +1,12 @@
+.c5cl-select select {
+  padding: 4px 8px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.c5cl-select,
+.alert-danger {
+  background-color: red;
+  color: white;
+  border-radius: 8px;
+}

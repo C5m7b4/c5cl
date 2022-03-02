@@ -1,0 +1,11 @@
+.textInput select {
+  padding: 4px 5px;
+  border-radius: 8px;
+  outline: none;
+}
+.textInput,
+.alert-danger {
+  background-color: red;
+  color: white;
+  border-radius: 8px;
+}

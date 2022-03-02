@@ -1,4 +1,5 @@
 import React from 'react';
+import './SelectField.css';
 
 export type ValueOf<T> = T[keyof T];
 
@@ -15,7 +16,7 @@ export interface SelectFieldProps<T> {
 }
 
 function SelectField<T>(props: SelectFieldProps<T>) {
-  let wrapperClass = 'form-group';
+  let wrapperClass = 'c5cl-select';
   if (props.error && props.error.length > 0) {
     wrapperClass += ' has-error';
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './TextInput.css';
 
 export type TextInputType = 'text' | 'number';
 
@@ -15,7 +16,7 @@ export interface TextInputProps {
 }
 
 function TextInput(props: TextInputProps) {
-  let wrapperClass = 'form-group';
+  let wrapperClass = 'c5cl-textInput';
   if (props.error && props.error.length > 0) {
     wrapperClass += ' has-error';
   }
