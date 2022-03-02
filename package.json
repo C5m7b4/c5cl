@@ -9,9 +9,10 @@
     "dist"
   ],
   "scripts": {
-    "rollup": "rollup -c",
+    "build": "rollup -c",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "author": "C5m7b4",
   "license": "MIT",
@@ -42,7 +43,7 @@
     "tslib": "^2.3.1",
     "typescript": "^4.6.2"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
