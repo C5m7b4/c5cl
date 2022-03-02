@@ -93,3 +93,7 @@ return (
 ```
 
 note: The error field in both components is used for when the form validation fails, you can send in a unique error message to each element of your form.
+
+If for some reason you are using CRA and are getting an error about not being able to find source maps, this is a known issue with Webpack5 and is being address. The workaround is to add this to your .env file:
+
+GENERATE_SOURCEMAP=false
