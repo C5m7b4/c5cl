@@ -102,6 +102,8 @@ DataGrid Todos:
 [] work on row colors based on the color that might be passed in
 [] figure out how to center the column text
 [✔] make each column sortable
-[] make columns hidden
+[✔] make columns hidden
 [] make column filterable by the unique values that are displayed for that column
 [] make columns draggable 🚀
+[] enable light and dark mode
+[✔] change column hiding to be enabled by right clicking
