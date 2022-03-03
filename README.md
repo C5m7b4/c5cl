@@ -97,3 +97,11 @@ note: The error field in both components is used for when the form validation fa
 If for some reason you are using CRA and are getting an error about not being able to find source maps, this is a known issue with Webpack5 and is being address. The workaround is to add this to your .env file:
 
 GENERATE_SOURCEMAP=false
+
+DataGrid Todos:
+[] work on row colors based on the color that might be passed in
+[] figure out how to center the column text
+[✔] make each column sortable
+[] make columns hidden
+[] make column filterable by the unique values that are displayed for that column
+[] make columns draggable 🚀
