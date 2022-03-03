@@ -50,7 +50,9 @@ function DataGrid<T>(props: TableProps<T>) {
   const table = useRef<HTMLTableElement>(null);
   let draggedId = '';
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setFilteredData(props.data);
+  }, []);
 
   function renderHeader(header: TableHeader<T>, id: number) {
     const { title, visible = true } = header;
