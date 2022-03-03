@@ -5,9 +5,12 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
+      <div
+        style="width: 100%;"
+      >
         <table
           id="grid1"
+          style="width: 100%;"
         >
           <thead>
             <tr>
@@ -18,12 +21,12 @@ Object {
                 style="text-align: center;"
               >
                 <span
-                  style="width: 80%;"
+                  style="width: 80%; cursor: pointer;"
                 >
                   ID
                 </span>
                 <span
-                  class="mikto-grid-chevron-down"
+                  class="mikto-grid-chevron down"
                   style="width: 20%; float: right; text-align: center;"
                 />
               </th>
@@ -34,12 +37,12 @@ Object {
                 style="text-align: left;"
               >
                 <span
-                  style="width: 80%;"
+                  style="width: 80%; cursor: pointer;"
                 >
                   Name
                 </span>
                 <span
-                  class="mikto-grid-chevron-down"
+                  class="mikto-grid-chevron down"
                   style="width: 20%; float: right; text-align: center;"
                 />
               </th>
@@ -50,12 +53,12 @@ Object {
                 style="text-align: center;"
               >
                 <span
-                  style="width: 80%;"
+                  style="width: 80%; cursor: pointer;"
                 >
                   #
                 </span>
                 <span
-                  class="mikto-grid-chevron-down"
+                  class="mikto-grid-chevron down"
                   style="width: 20%; float: right; text-align: center;"
                 />
               </th>
@@ -122,15 +125,18 @@ Object {
           </tbody>
         </table>
         <div
-          id="mikto-column-grid1"
+          id="mikto-columns-grid1"
         />
       </div>
     </div>
   </body>,
   "container": <div>
-    <div>
+    <div
+      style="width: 100%;"
+    >
       <table
         id="grid1"
+        style="width: 100%;"
       >
         <thead>
           <tr>
@@ -141,12 +147,12 @@ Object {
               style="text-align: center;"
             >
               <span
-                style="width: 80%;"
+                style="width: 80%; cursor: pointer;"
               >
                 ID
               </span>
               <span
-                class="mikto-grid-chevron-down"
+                class="mikto-grid-chevron down"
                 style="width: 20%; float: right; text-align: center;"
               />
             </th>
@@ -157,12 +163,12 @@ Object {
               style="text-align: left;"
             >
               <span
-                style="width: 80%;"
+                style="width: 80%; cursor: pointer;"
               >
                 Name
               </span>
               <span
-                class="mikto-grid-chevron-down"
+                class="mikto-grid-chevron down"
                 style="width: 20%; float: right; text-align: center;"
               />
             </th>
@@ -173,12 +179,12 @@ Object {
               style="text-align: center;"
             >
               <span
-                style="width: 80%;"
+                style="width: 80%; cursor: pointer;"
               >
                 #
               </span>
               <span
-                class="mikto-grid-chevron-down"
+                class="mikto-grid-chevron down"
                 style="width: 20%; float: right; text-align: center;"
               />
             </th>
@@ -245,7 +251,7 @@ Object {
         </tbody>
       </table>
       <div
-        id="mikto-column-grid1"
+        id="mikto-columns-grid1"
       />
     </div>
   </div>,

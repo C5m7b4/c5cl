@@ -27,6 +27,8 @@ export type TableHeader<T> = {
   filterable?: boolean;
 };
 
+export type Mode = 'light' | 'dark';
+
 export interface TableProps<T> {
   data: T[];
   identifier: string;
@@ -36,6 +38,7 @@ export interface TableProps<T> {
   style?: React.CSSProperties;
   className?: string;
   tableClassName?: string;
+  mode: Mode;
 }
 
 export function objectKeys<T extends {}>(obj: T) {
@@ -59,14 +62,18 @@ function DataGrid<T>(props: TableProps<T>) {
     setFilteredData(props.data);
 
     const stylesheet = document.styleSheets[0];
-    let rule = '.mikto-table-row:nth-child(odd) {background-color: #aaa;}';
-    stylesheet.insertRule(rule, 1);
-    rule = '.mikto-table-row:nth-child(even) {background-color: #fff;}';
-    stylesheet.insertRule(rule, 2);
+    try {
+      let rule = '.mikto-table-row:nth-child(odd) {background-color: #aaa;}';
+      stylesheet.insertRule(rule, 1);
+      rule = '.mikto-table-row:nth-child(even) {background-color: #fff;}';
+      stylesheet.insertRule(rule, 2);
+    } catch {}
 
     return () => {
-      stylesheet.removeRule(1);
-      stylesheet.removeRule(2);
+      try {
+        stylesheet.removeRule(1);
+        stylesheet.removeRule(2);
+      } catch {}
     };
   }, []);
 
@@ -80,7 +87,11 @@ function DataGrid<T>(props: TableProps<T>) {
     }
   };
 
-  const handleSortClick = (columnName: keyof T) => {
+  const handleSortClick = (
+    e: React.MouseEvent<HTMLSpanElement>,
+    columnName: keyof T
+  ) => {
+    e.preventDefault();
     console.log('i am sorting');
     const header = props.headers.find((h) => h.columnName === columnName);
     if (header) {
@@ -100,7 +111,12 @@ function DataGrid<T>(props: TableProps<T>) {
     }
   };
 
-  const handleModal = (divid: string, header: TableHeader<T>) => {
+  const handleModal = (
+    e: React.MouseEvent<HTMLSpanElement>,
+    divid: string,
+    header: TableHeader<T>
+  ) => {
+    e.preventDefault();
     const div = document.getElementById(divid);
     setSelectedHeader(header);
 
@@ -108,7 +124,7 @@ function DataGrid<T>(props: TableProps<T>) {
       const rect = div.getBoundingClientRect();
       const tableRect = table.current.getBoundingClientRect();
       if (rect && tableRect) {
-        const left = (rect.left + rect.width - 75).toFixed(0).toString() + 'px';
+        const left = e.clientX.toFixed(0).toString() + 'px';
         const top =
           (rect.top - tableRect.top + 50).toFixed(0).toString() + 'px';
         const style = {
@@ -144,19 +160,19 @@ function DataGrid<T>(props: TableProps<T>) {
           id={`table-header-${props.identifier}-${id}`}
           style={header.style}
           className="mikto-header-sort"
+          onContextMenu={(e) =>
+            handleModal(e, `table-header-${props.identifier}-${id}`, header)
+          }
         >
           <span
             style={{ width: '80%', cursor: 'pointer' }}
-            onClick={() => handleSortClick(header.columnName)}
+            onClick={(e) => handleSortClick(e, header.columnName)}
           >
             {title}
           </span>
           <span
             style={{ width: '20%', float: 'right', textAlign: 'center' }}
             className={`mikto-grid-chevron down`}
-            onClick={() =>
-              handleModal(`table-header-${props.identifier}-${id}`, header)
-            }
           ></span>
         </th>
       );

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import { render } from '@testing-library/react';
 
-import DataGrid, { TableProps } from './DataGrid';
+import { Columns } from './Columns';
 
 const testData = [
   {
@@ -57,22 +57,33 @@ const headers = [
   },
 ];
 
-export default {
-  title: 'Grid',
-  component: DataGrid,
-} as Meta;
-
-const Template =
-  <T extends {}>(): Story<TableProps<T>> =>
-  (args) =>
-    <DataGrid<T> {...args} />;
-
-export const GridExample = Template<object>().bind({});
-// @ts-ignore
-GridExample.args = {
-  data: testData,
-  identifier: 'grid1',
-  // @ts-ignore
-  headers: headers,
-  style: { color: 'slateblue' },
+const header = {
+  columnName: 'id',
+  title: 'ID',
+  visible: true,
+  style: {
+    textAlign: 'center',
+  },
 };
+
+describe('Columns', () => {
+  test('should render correctly', () => {
+    const testFn = jest.fn;
+    document.body.innerHTML = '<div id="col-1"></div>';
+    const frag = render(
+      <Columns
+        open={true}
+        divId="col-1"
+        headers={[]}
+        checkedColumns={[]}
+        handleCheckClick={testFn}
+        // @ts-ignore
+        header={header}
+        identifier={'testid'}
+        data={testData}
+      />
+    );
+
+    expect(frag).toMatchSnapshot();
+  });
+});
