@@ -129,6 +129,7 @@ Object {
         </div>
         <div
           class="alert alert-danger"
+          data-testid="alert"
         >
           You got an error
         </div>
@@ -157,6 +158,7 @@ Object {
       </div>
       <div
         class="alert alert-danger"
+        data-testid="alert"
       >
         You got an error
       </div>

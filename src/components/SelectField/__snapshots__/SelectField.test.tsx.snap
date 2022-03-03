@@ -39,6 +39,7 @@ Object {
         </div>
         <div
           class="alert alert-danger"
+          data-testid="alert"
         />
       </div>
     </div>
@@ -78,6 +79,7 @@ Object {
       </div>
       <div
         class="alert alert-danger"
+        data-testid="alert"
       />
     </div>
   </div>,
@@ -174,6 +176,7 @@ Object {
         </div>
         <div
           class="alert alert-danger"
+          data-testid="alert"
         />
       </div>
     </div>
@@ -213,6 +216,7 @@ Object {
       </div>
       <div
         class="alert alert-danger"
+        data-testid="alert"
       />
     </div>
   </div>,
@@ -309,6 +313,7 @@ Object {
         </div>
         <div
           class="alert alert-danger"
+          data-testid="alert"
         >
           you got an error
         </div>
@@ -350,6 +355,7 @@ Object {
       </div>
       <div
         class="alert alert-danger"
+        data-testid="alert"
       >
         you got an error
       </div>
