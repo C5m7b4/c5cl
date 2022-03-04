@@ -207,6 +207,6 @@ GENERATE_SOURCEMAP=false
 - [✔] make columns draggable 🚀
 - [✔] enable light and dark mode
 - [✔] change column hiding to be enabled by right clicking
-- [ ] fix column widget vertical placement
-- [ ] fix filter widget vertical placement
+- [✔] fix column widget vertical placement
+- [✔] fix filter widget vertical placement
 - [ ] fix custom renderers
