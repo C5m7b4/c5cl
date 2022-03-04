@@ -127,6 +127,7 @@ describe('Columns', () => {
       />
     );
   });
+
   test('should test if a column is already checked but does not have visible as an attribute', () => {
     const testFn = jest.fn;
     document.body.innerHTML = '<div id="col-1"></div>';

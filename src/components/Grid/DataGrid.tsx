@@ -43,9 +43,9 @@ export interface TableProps<T> {
   mode?: Mode;
 }
 
-export function objectKeys<T extends {}>(obj: T) {
-  return Object.keys(obj).map((objKey) => objKey as keyof T);
-}
+// export function objectKeys<T extends {}>(obj: T) {
+//   return Object.keys(obj).map((objKey) => objKey as keyof T);
+// }
 
 function DataGrid<T>(props: TableProps<T>) {
   const [render, setRender] = useState(false);
@@ -69,38 +69,20 @@ function DataGrid<T>(props: TableProps<T>) {
   let draggedId = '';
 
   useEffect(() => {
-    console.log('rendering');
     setFilteredData(props.data);
 
     const stylesheet = document.styleSheets[0];
     try {
-      let oddBackgroundColor = '#aaa';
-
       if (mode === 'dark') {
         if (table.current) {
           table.current.style.backgroundColor = '#000';
         }
-        stylesheet.deleteRule(1);
-        stylesheet.deleteRule(2);
-        let rule = '.mikto-table-row:nth-child(odd) {background-color: #aaa;}';
-        stylesheet.insertRule(rule, 1);
       } else {
         if (table.current) {
           table.current.style.backgroundColor = '#fff';
         }
-        let rule = '.mikto-table-row:nth-child(odd) {background-color: #aaa;}';
-        stylesheet.insertRule(rule, 1);
-        rule = '.mikto-table-row:nth-child(even) {background-color: #fff;}';
-        stylesheet.insertRule(rule, 2);
       }
     } catch {}
-
-    return () => {
-      try {
-        stylesheet.deleteRule(1);
-        stylesheet.deleteRule(2);
-      } catch {}
-    };
   }, [mode]);
 
   const sortByProperty = (prop: keyof T, asc = 0) => {
@@ -118,7 +100,6 @@ function DataGrid<T>(props: TableProps<T>) {
     columnName: keyof T
   ) => {
     e.preventDefault();
-    console.log('i am sorting');
     const header = props.headers.find((h) => h.columnName === columnName);
     if (header) {
       if (!header.sortable) {
@@ -151,8 +132,7 @@ function DataGrid<T>(props: TableProps<T>) {
       const tableRect = table.current.getBoundingClientRect();
       if (rect && tableRect) {
         const left = e.clientX.toFixed(0).toString() + 'px';
-        const top =
-          (rect.top - tableRect.top + 50).toFixed(0).toString() + 'px';
+        const top = (rect.top + rect.height).toFixed(0).toString() + 'px';
         const style = {
           position: 'absolute',
           top: top,
@@ -189,8 +169,7 @@ function DataGrid<T>(props: TableProps<T>) {
       const tableRect = table.current.getBoundingClientRect();
       if (rect && tableRect) {
         const left = (rect.left + rect.width - 75).toFixed(0).toString() + 'px';
-        const top =
-          (rect.top - tableRect.top + 50).toFixed(0).toString() + 'px';
+        const top = (rect.top + rect.height).toFixed(0).toString() + 'px';
         const style = {
           position: 'absolute',
           top: top,
@@ -341,9 +320,12 @@ function DataGrid<T>(props: TableProps<T>) {
   }
 
   function renderRow(item: T, id: number) {
-    console.log('rendering row');
+    let rowStyle = 'mikto-table-row-light';
+    if (mode === 'dark') {
+      rowStyle = 'mikto-table-row-dark';
+    }
     return (
-      <tr key={`table-row-${id}`} className="mikto-table-row">
+      <tr key={`table-row-${id}`} className={`${rowStyle}`}>
         {props.headers.map((header, i) => {
           const { visible = true } = header;
           if (visible) {
