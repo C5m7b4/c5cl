@@ -243,8 +243,15 @@ function DataGrid<T>(props: TableProps<T>) {
     const header = props.headers[+originalPosition];
     props.headers.splice(+originalPosition, 1);
 
+    const dropId = (ev.target as HTMLElement).id.slice(
+      (ev.target as HTMLElement).id.length - 1
+    );
+    if (dropId == originalPosition) {
+      return;
+    }
+
     // get the X position of the dropped element
-    const dropElementX = ev.clientY;
+    const dropElementX = ev.clientX;
     const draggable = document.getElementById(id);
     if (draggable) {
       draggable.classList.remove('mikto-hide-dragged-column');
@@ -264,12 +271,9 @@ function DataGrid<T>(props: TableProps<T>) {
             }
 
             if (el) {
-              const x1 =
-                (el as HTMLElement).getBoundingClientRect().x +
-                (el as HTMLElement).getBoundingClientRect().width / 2;
-              const x2 =
-                (el as HTMLElement).getBoundingClientRect().x +
-                (el as HTMLElement).getBoundingClientRect().width;
+              const rect = (el as HTMLElement).getBoundingClientRect();
+              const x1 = rect.width - (rect.x + rect.width / 4);
+              const x2 = rect.x + rect.width;
 
               if (dropElementX <= x1) {
                 const newPosition = (el as HTMLElement).id.slice(
@@ -340,27 +344,23 @@ function DataGrid<T>(props: TableProps<T>) {
     console.log('rendering row');
     return (
       <tr key={`table-row-${id}`} className="mikto-table-row">
-        {objectKeys(item).map((itemProperty, i) => {
-          if (props.headers[i]) {
-            const { visible = true } = props.headers[i];
-            if (!visible === false) {
-              const customRenderer = props.customRenderers?.[itemProperty];
-              const style = props.headers[i].style;
-
-              if (customRenderer) {
-                return (
-                  <td style={style} key={`table-td-${i}`}>
-                    {customRenderer(item)}
-                  </td>
-                );
-              }
-
+        {props.headers.map((header, i) => {
+          const { visible = true } = header;
+          if (visible) {
+            const data = item[header.columnName];
+            const customRenderer = props.customRenderers?.[header.columnName];
+            if (customRenderer) {
               return (
                 <td style={style} key={`table-td-${i}`}>
-                  {isPrimitive(item[itemProperty]) ? item[itemProperty] : ''}
+                  {customRenderer(item)}
                 </td>
               );
             }
+            return (
+              <td style={header.style} key={`table-td-${i}`}>
+                {data}
+              </td>
+            );
           }
         })}
       </tr>

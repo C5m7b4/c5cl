@@ -59,5 +59,6 @@
 }
 
 .mikto-table-drag-over {
-  border-right: 2px solid limegreen;
+  border-right: 5spx solid limegreen;
+  background-color: limegreen;
 }
