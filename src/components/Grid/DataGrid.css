@@ -11,6 +11,15 @@
   top: 0;
 }
 
+.mikto-header-sort-dark {
+  background-color: #000;
+  color: slateblue;
+}
+
+.mikto-header-sort-light {
+  color: slateblue;
+}
+
 .mikto-table thead th {
   position: sticky;
   top: 0;
@@ -34,10 +43,12 @@
 
 .mikto-table-row-light:nth-child(odd) {
   background-color: #aaa;
+  color: slateblue;
 }
 
 .mikto-table-row-light:nth-child(even) {
   background-color: #fff;
+  color: slateblue;
 }
 
 .mikto-table-row-dark:nth-child(odd) {

@@ -15,7 +15,7 @@ Object {
           <thead>
             <tr>
               <th
-                class="mikto-header-sort"
+                class="mikto-header-sort-dark"
                 draggable="true"
                 id="table-header-grid1-0"
                 style="text-align: center;"
@@ -31,7 +31,7 @@ Object {
                 />
               </th>
               <th
-                class="mikto-header-sort"
+                class="mikto-header-sort-dark"
                 draggable="true"
                 id="table-header-grid1-1"
                 style="text-align: left;"
@@ -47,7 +47,7 @@ Object {
                 />
               </th>
               <th
-                class="mikto-header-sort"
+                class="mikto-header-sort-dark"
                 draggable="true"
                 id="table-header-grid1-2"
                 style="text-align: center;"
@@ -144,7 +144,7 @@ Object {
         <thead>
           <tr>
             <th
-              class="mikto-header-sort"
+              class="mikto-header-sort-dark"
               draggable="true"
               id="table-header-grid1-0"
               style="text-align: center;"
@@ -160,7 +160,7 @@ Object {
               />
             </th>
             <th
-              class="mikto-header-sort"
+              class="mikto-header-sort-dark"
               draggable="true"
               id="table-header-grid1-1"
               style="text-align: left;"
@@ -176,7 +176,7 @@ Object {
               />
             </th>
             <th
-              class="mikto-header-sort"
+              class="mikto-header-sort-dark"
               draggable="true"
               id="table-header-grid1-2"
               style="text-align: center;"
