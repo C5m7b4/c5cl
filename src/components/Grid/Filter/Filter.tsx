@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import './Filter.css';
 
 export interface FilterProps<T> {
-  header: TableHeader<T>;
+  header: string;
   open: boolean;
   divId: string;
   data: T[];
@@ -40,8 +40,8 @@ export function Filter<T>(props: FilterProps<T>) {
       return newArray;
     };
     // @ts-ignore
-    setUniques(data.unique(header.columnName));
-  }, []);
+    setUniques(data.unique(header));
+  }, [open]);
 
   const amIChecked = (v: string) => {
     return availableFilters.includes(v);
@@ -50,7 +50,7 @@ export function Filter<T>(props: FilterProps<T>) {
   if (open && div) {
     return createPortal(
       <div style={style}>
-        <h2>Filters</h2>
+        <div className="mikto-table-filter-header">Filters</div>
         {uniques &&
           uniques.map((r: string, i: number) => (
             <div
@@ -58,18 +58,13 @@ export function Filter<T>(props: FilterProps<T>) {
               className="mikto-table-filter-item"
             >
               <input
+                data-testid={`mikto-table-filter-${i}`}
                 className="mikto-table-filter-checkbox"
                 type="checkbox"
                 checked={amIChecked(r)}
-                onChange={(e) =>
-                  filterItemClicked(
-                    e.target.checked,
-                    r,
-                    header.columnName as string
-                  )
-                }
+                onChange={(e) => filterItemClicked(e.target.checked, r, header)}
               />
-              <div className="mikto-table-filter-title">{r}</div>
+              <span className="mikto-table-filter-title">{r}</span>
             </div>
           ))}
       </div>,
