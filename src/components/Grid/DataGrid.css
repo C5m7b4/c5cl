@@ -32,13 +32,23 @@
   padding: 4px;
 }
 
-/* .mikto-table-row:nth-child(odd) {
+.mikto-table-row-light:nth-child(odd) {
   background-color: #aaa;
 }
 
-.mikto-table-row:nth-child(even) {
+.mikto-table-row-light:nth-child(even) {
   background-color: #fff;
-} */
+}
+
+.mikto-table-row-dark:nth-child(odd) {
+  background-color: rgb(68, 66, 66);
+  color: #fff;
+}
+
+.mikto-table-row-dark:nth-child(even) {
+  background-color: rgb(22, 21, 21);
+  color: #fff;
+}
 
 .mikto-grid-chevron {
   cursor: pointer;
