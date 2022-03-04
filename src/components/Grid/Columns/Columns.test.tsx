@@ -1,5 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { Columns } from './Columns';
 
@@ -74,7 +75,7 @@ describe('Columns', () => {
       <Columns
         open={true}
         divId="col-1"
-        headers={[]}
+        headers={headers as unknown as string[]}
         checkedColumns={[]}
         handleCheckClick={testFn}
         // @ts-ignore
@@ -85,5 +86,62 @@ describe('Columns', () => {
     );
 
     expect(frag).toMatchSnapshot();
+  });
+  test('should allow a header to be clicked', () => {
+    const testFn = jest.fn;
+    document.body.innerHTML = '<div id="col-1"></div>';
+    const frag = render(
+      <Columns
+        open={true}
+        divId="col-1"
+        headers={headers as unknown as string[]}
+        checkedColumns={[]}
+        handleCheckClick={testFn}
+        // @ts-ignore
+        header={header}
+        identifier={'testid'}
+        data={testData}
+      />
+    );
+
+    const check: HTMLInputElement = screen.getByTestId(
+      'mikto-table-check-testid-1'
+    );
+    userEvent.click(check);
+    expect(check.checked).toBeTruthy();
+  });
+  test('should test if a column is already checked', () => {
+    const testFn = jest.fn;
+    document.body.innerHTML = '<div id="col-1"></div>';
+    const frag = render(
+      <Columns
+        open={true}
+        divId="col-1"
+        headers={headers as unknown as string[]}
+        checkedColumns={['ID']}
+        handleCheckClick={testFn}
+        // @ts-ignore
+        header={header}
+        identifier={'testid'}
+        data={testData}
+      />
+    );
+  });
+  test('should test if a column is already checked but does not have visible as an attribute', () => {
+    const testFn = jest.fn;
+    document.body.innerHTML = '<div id="col-1"></div>';
+    const frag = render(
+      <Columns
+        open={true}
+        divId="col-1"
+        headers={headers as unknown as string[]}
+        checkedColumns={['Name']}
+        handleCheckClick={testFn}
+        // @ts-ignore
+        header={header}
+        identifier={'testid'}
+        data={testData}
+      />
+    );
   });
 });

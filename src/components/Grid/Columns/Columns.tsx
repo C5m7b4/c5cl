@@ -11,21 +11,13 @@ export interface ColumnProps<T> {
   headers: string[];
   checkedColumns: string[];
   handleCheckClick: (e: string, checked: boolean) => void;
-  header: TableHeader<T>;
   identifier: string;
   data: T[];
 }
 
 export function Columns<T>(props: ColumnProps<T>) {
-  const {
-    open,
-    divId,
-    style,
-    headers,
-    checkedColumns,
-    handleCheckClick,
-    header,
-  } = props;
+  const { open, divId, style, headers, checkedColumns, handleCheckClick } =
+    props;
 
   const div = document.getElementById(divId);
 
@@ -53,6 +45,7 @@ export function Columns<T>(props: ColumnProps<T>) {
               <div className="mikto-table-modal-line" key={`mc-c-${idx}`}>
                 <input
                   className="mikto-table-modal-check"
+                  data-testid={`mikto-table-check-${props.identifier}-${idx}`}
                   type="checkbox"
                   checked={amIChecked(item.title)}
                   onChange={(e) =>

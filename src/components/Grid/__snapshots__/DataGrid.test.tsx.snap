@@ -127,6 +127,9 @@ Object {
         <div
           id="mikto-columns-grid1"
         />
+        <div
+          id="mikto-filter-grid1"
+        />
       </div>
     </div>
   </body>,
@@ -252,6 +255,9 @@ Object {
       </table>
       <div
         id="mikto-columns-grid1"
+      />
+      <div
+        id="mikto-filter-grid1"
       />
     </div>
   </div>,
