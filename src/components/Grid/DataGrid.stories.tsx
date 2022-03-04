@@ -9,20 +9,50 @@ const testData = [
     storeName: 'IGA 001',
     storeNumber: '001',
     termCount: 3,
+    image: {
+      url: 'https://www.datacashreg.com/DMS/_images/pinpadlogos/l5300.png',
+      name: 'l5300',
+      height: '20',
+      width: '30',
+    },
   },
   {
     id: 2,
     storeName: 'IGA 002',
     storeNumber: '002',
     termCount: 4,
+    image: {
+      url: 'https://www.datacashreg.com/DMS/_images/pinpadlogos/l5300.png',
+      name: 'l5300',
+      height: '20',
+      width: '30',
+    },
   },
   {
     id: 3,
     storeName: 'IGA 003',
     storeNumber: '003',
     termCount: 6,
+    image: {
+      url: 'https://www.datacashreg.com/DMS/_images/pinpadlogos/l5300.png',
+      name: 'l5300',
+      height: '20',
+      width: '30',
+    },
   },
 ];
+
+const image = (img: any) => {
+  console.log('custom renderer');
+  return (
+    <img
+      alt={`${img.storeNumber}`}
+      src={`${img.src}`}
+      width={`${img.width}`}
+      height={`${img.height}`}
+    />
+  );
+};
 
 const headers = [
   {
@@ -54,6 +84,11 @@ const headers = [
       textAlign: 'center',
     },
     visible: false,
+  },
+  {
+    columnName: 'image',
+    title: 'Img',
+    customRenderer: image,
   },
 ];
 

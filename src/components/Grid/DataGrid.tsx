@@ -358,7 +358,9 @@ function DataGrid<T>(props: TableProps<T>) {
             }
             return (
               <td style={header.style} key={`table-td-${i}`}>
-                {data}
+                {isPrimitive(item[header.columnName])
+                  ? item[header.columnName]
+                  : ''}
               </td>
             );
           }
