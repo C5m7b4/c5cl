@@ -349,6 +349,7 @@ function DataGrid<T>(props: TableProps<T>) {
           if (visible) {
             const data = item[header.columnName];
             const customRenderer = props.customRenderers?.[header.columnName];
+
             if (customRenderer) {
               return (
                 <td style={style} key={`table-td-${i}`}>
