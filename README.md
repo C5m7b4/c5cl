@@ -92,18 +92,120 @@ return (
 
 ```
 
+RippleButton usage:
+Color, HoverColor, and TextColor are optional.
+
+```js
+  import {RippleButton} from 'c5cl';
+
+  return (
+    <RippleButton 
+      text="Click Me" 
+      onClick={() => console.log('I have been clicked')}
+      color={'#de34eb'}
+      hoverColor={'#bb5bc2'}
+      textColor={'#fff'}
+    />
+  )
+```
+
+DataGrid usage:
+
+```js
+  import {DataGrid} from 'c5cl';
+
+  const testData = [
+  {
+    id: 1,
+    storeName: 'IGA 001',
+    storeNumber: '001',
+    termCount: 3,
+  },
+  {
+    id: 2,
+    storeName: 'IGA 002',
+    storeNumber: '002',
+    termCount: 4,
+  },
+  {
+    id: 3,
+    storeName: 'IGA 003',
+    storeNumber: '003',
+    termCount: 6,
+  },
+];
+
+  return (
+    <DataGrid 
+      data={testData}
+      identifier={'grid1'}
+      headers={[
+          {
+            columnName: 'id',
+            title: 'ID',
+            visible: true,
+            style: {
+              textAlign: 'center',
+            },
+          },
+          {
+            columnName: 'storeName',
+            title: 'Name',
+            style: {
+              textAlign: 'left',
+            },
+          },
+          {
+            columnName: 'storeNumber',
+            title: '#',
+            style: {
+              textAlign: 'center',
+            },
+          },
+        ]}
+    />
+  )
+```
+
+## DataGrid Props:
+|    Prop name | optional | type | description |
+| :----------: | :------: | :--: | :---------: |
+| data         | [required] | array | array of data |
+| identifier   | [required] | string | used for the id of the main div |
+| customRenderers | [✔] | function | function used to render images and such |
+| headers | [✔] | array of object | object to defined the shape of the header |
+| fill | [✔] | boolean | whether or not to fill the parent div |
+| style | [✔] | CSSProperties | style for the main div |
+| className | [✔] | string | className for the main div |
+| tableClassName | [✔] | string | className for the actual table |
+| mode | [✔] | 'light' or 'dark' | changes the styles of the entire component |
+
+## DataGrid Header Props
+|   Prop name | optional | type | description |
+| :-------: | :-----: | :-----: | :----: |
+| columnName | [required] | string | represents the name of the column in your data |
+| title | [required] | string | What to display in the column header |
+| sortable | [✔] | boolean | can make this column not sortable. default is true |
+|visible | [✔] | boolean | can make this column invisible. default is true |
+| style | [✔] |CSSProperties | the style for this column. ex: textAlign: 'center'
+|width | [✔] | number | predetermined width for the column |
+filterable | [✔] | boolean | can make this column not filterable. default is true |
+
+
+
 note: The error field in both components is used for when the form validation fails, you can send in a unique error message to each element of your form.
 
 If for some reason you are using CRA and are getting an error about not being able to find source maps, this is a known issue with Webpack5 and is being address. The workaround is to add this to your .env file:
 
 GENERATE_SOURCEMAP=false
 
-DataGrid Todos:
-- [] work on row colors based on the color that might be passed in
-- [] figure out how to center the column text
+## DataGrid Todos:
+
+- [✔] work on row colors based on the color that might be passed in
+- [✔] figure out how to center the column text
 - [✔] make each column sortable
 - [✔] make columns hidden
-- [] make column filterable by the unique values that are displayed for that column
-- [] make columns draggable 🚀
-- [] enable light and dark mode
+- [✔] make column filterable by the unique values that are displayed for that column
+- [✔] make columns draggable 🚀
+- [✔] enable light and dark mode
 - [✔] change column hiding to be enabled by right clicking
