@@ -1,4 +1,3 @@
-import { react } from '@babel/types';
 import React, { useState, useEffect, useRef } from 'react';
 import { Columns } from './Columns/Columns';
 import { Filter } from './Filter/Filter';
