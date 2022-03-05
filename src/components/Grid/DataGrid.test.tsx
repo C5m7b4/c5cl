@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import DataGrid from './DataGrid';
 
@@ -24,42 +24,60 @@ const testData = [
   },
 ];
 
+const { container, getByTestId } = render(
+  <DataGrid
+    data={testData}
+    identifier={'grid1'}
+    headers={[
+      {
+        columnName: 'id',
+        title: 'ID',
+        visible: true,
+        style: {
+          textAlign: 'center',
+        },
+      },
+      {
+        columnName: 'storeName',
+        title: 'Name',
+        style: {
+          textAlign: 'left',
+        },
+      },
+      {
+        columnName: 'storeNumber',
+        title: '#',
+        style: {
+          textAlign: 'center',
+        },
+      },
+    ]}
+  />
+);
+
+const NODE_TYPE = Object.freeze({
+  ELEMENT_NODE: 1,
+});
+
+window.Element.prototype.closest =
+  window.Element.prototype.closest ||
+  function (selectors: any) {
+    // @ts-ignore
+    let el = this;
+    while (el && el.nodeType === NODE_TYPE.ELEMENT_NODE) {
+      if (el.matches(selectors)) {
+        return el;
+      }
+      el = el.parentNode;
+    }
+    return null;
+  };
+
 describe('DataGrid', () => {
   test('should render correctly', () => {
-    const frag = render(
-      <DataGrid
-        data={testData}
-        identifier={'grid1'}
-        headers={[
-          {
-            columnName: 'id',
-            title: 'ID',
-            visible: true,
-            style: {
-              textAlign: 'center',
-            },
-          },
-          {
-            columnName: 'storeName',
-            title: 'Name',
-            style: {
-              textAlign: 'left',
-            },
-          },
-          {
-            columnName: 'storeNumber',
-            title: '#',
-            style: {
-              textAlign: 'center',
-            },
-          },
-        ]}
-      />
-    );
-
-    expect(frag).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
-  test('should sort data', () => {
+  test('should sort data asc', () => {
     const { container } = render(
       <DataGrid
         data={testData}
@@ -90,5 +108,291 @@ describe('DataGrid', () => {
         ]}
       />
     );
+
+    expect(container).toBeVisible();
+    const div = container.querySelector(
+      '#table-header-grid1-0 > span:nth-child(1)'
+    );
+    if (div) {
+      fireEvent.click(div);
+    }
+  });
+  test('should sort data desc', () => {
+    const { container } = render(
+      <DataGrid
+        data={testData}
+        identifier={'grid1'}
+        headers={[
+          {
+            columnName: 'id',
+            title: 'ID',
+            visible: true,
+            style: {
+              textAlign: 'center',
+            },
+            sortable: 'desc',
+          },
+          {
+            columnName: 'storeName',
+            title: 'Name',
+            style: {
+              textAlign: 'left',
+            },
+            sortable: 'desc',
+          },
+          {
+            columnName: 'storeNumber',
+            title: '#',
+            style: {
+              textAlign: 'center',
+            },
+            sortable: 'desc',
+          },
+        ]}
+      />
+    );
+
+    expect(container).toBeVisible();
+    const div = container.querySelector(
+      '#table-header-grid1-0 > span:nth-child(1)'
+    );
+    if (div) {
+      fireEvent.click(div);
+      fireEvent.click(div);
+    }
+  });
+  test('should render light mode', () => {
+    const { container } = render(
+      <DataGrid
+        mode="light"
+        data={testData}
+        identifier={'grid1'}
+        headers={[
+          {
+            columnName: 'id',
+            title: 'ID',
+            visible: true,
+            style: {
+              textAlign: 'center',
+            },
+          },
+          {
+            columnName: 'storeName',
+            title: 'Name',
+            style: {
+              textAlign: 'left',
+            },
+          },
+          {
+            columnName: 'storeNumber',
+            title: '#',
+            style: {
+              textAlign: 'center',
+            },
+          },
+        ]}
+      />
+    );
+    expect(container).toBeVisible();
+  });
+  test('should display context menu', () => {
+    const { container } = render(
+      <DataGrid
+        mode="light"
+        data={testData}
+        identifier={'grid1'}
+        headers={[
+          {
+            columnName: 'id',
+            title: 'ID',
+            visible: true,
+            style: {
+              textAlign: 'center',
+            },
+          },
+          {
+            columnName: 'storeName',
+            title: 'Name',
+            style: {
+              textAlign: 'left',
+            },
+          },
+          {
+            columnName: 'storeNumber',
+            title: '#',
+            style: {
+              textAlign: 'center',
+            },
+          },
+        ]}
+      />
+    );
+    const div = container.querySelector(
+      '#table-header-grid1-0 > span:nth-child(1)'
+    );
+
+    if (div) {
+      fireEvent.contextMenu(div);
+      setTimeout(() => {
+        const cn = container.querySelector(
+          '#mikto-columns-grid1 > div > div:nth-child(2) > div:nth-child(1)'
+        );
+        expect(cn).toBeVisible();
+      }, 200);
+    }
+  });
+  test('should handle checking a column', () => {
+    const { container, getByTestId } = render(
+      <DataGrid
+        mode="light"
+        data={testData}
+        identifier={'grid1'}
+        headers={[
+          {
+            columnName: 'id',
+            title: 'ID',
+            visible: true,
+            style: {
+              textAlign: 'center',
+            },
+          },
+          {
+            columnName: 'storeName',
+            title: 'Name',
+            style: {
+              textAlign: 'left',
+            },
+          },
+          {
+            columnName: 'storeNumber',
+            title: '#',
+            style: {
+              textAlign: 'center',
+            },
+          },
+        ]}
+      />
+    );
+    const div = container.querySelector(
+      '#table-header-grid1-0 > span:nth-child(1)'
+    );
+
+    if (div) {
+      fireEvent.contextMenu(div);
+
+      const cn = getByTestId(`mikto-table-check-grid1-1`);
+      if (cn) {
+        fireEvent.click(cn);
+        fireEvent.click(cn);
+      }
+    }
+  });
+  test('shoudl show filter', () => {
+    const { container, getByTestId } = render(
+      <DataGrid
+        mode="light"
+        data={testData}
+        identifier={'grid1'}
+        headers={[
+          {
+            columnName: 'id',
+            title: 'ID',
+            visible: true,
+            style: {
+              textAlign: 'center',
+            },
+          },
+          {
+            columnName: 'storeName',
+            title: 'Name',
+            style: {
+              textAlign: 'left',
+            },
+          },
+          {
+            columnName: 'storeNumber',
+            title: '#',
+            style: {
+              textAlign: 'center',
+            },
+          },
+        ]}
+      />
+    );
+    const caret = container.querySelector(
+      '#table-header-grid1-0 > span:nth-child(2)'
+    );
+    if (caret) {
+      fireEvent.click(caret);
+      const check = getByTestId('mikto-table-filter-0') as HTMLInputElement;
+      if (check) {
+        expect(check.checked).toBeFalsy();
+        fireEvent.click(check);
+        expect(check.checked).toBeTruthy();
+        fireEvent.click(check);
+        expect(check.checked).toBeFalsy();
+      }
+    }
+  });
+  test.skip('should run dragStart', () => {
+    const component = (
+      <DataGrid
+        mode="light"
+        data={testData}
+        identifier={'grid1'}
+        headers={[
+          {
+            columnName: 'id',
+            title: 'ID',
+            visible: true,
+            style: {
+              textAlign: 'center',
+            },
+          },
+          {
+            columnName: 'storeName',
+            title: 'Name',
+            style: {
+              textAlign: 'left',
+            },
+          },
+          {
+            columnName: 'storeNumber',
+            title: '#',
+            style: {
+              textAlign: 'center',
+            },
+          },
+        ]}
+      />
+    );
+    const mountNode = document.createElement('div');
+    document.body.appendChild(mountNode);
+
+    const getTableCells = () => {
+      Array.from(mountNode.querySelectorAll('tr td:nth-of-type(1'));
+    };
+
+    const createBubbledEvent = (type: string, props = {}) => {
+      const event = new Event(type, { bubbles: true });
+      Object.assign(event, props);
+      return event;
+    };
+
+    render(component);
+    const tableCells0 = getTableCells();
+    // @ts-ignore
+    if (tableCells0) {
+      const startingNode0 = tableCells0[0];
+      const endingNode0 = tableCells0[0];
+      // @ts-ignore
+      startingNode0.dispatchEvent(
+        createBubbledEvent('dragstart', { clientX: 0, clientY: 0 })
+      );
+      // @ts-ignore
+      endingNode0.dispatchEvent(
+        createBubbledEvent('drop', { clientX: 225, clientY: 0 })
+      );
+    }
   });
 });

@@ -319,6 +319,7 @@ function DataGrid<T>(props: TableProps<T>) {
   }
 
   function renderRow(item: T, id: number) {
+    console.log(props.customRenderers);
     let rowStyle = 'mikto-table-row-light';
     if (mode === 'dark') {
       rowStyle = 'mikto-table-row-dark';
@@ -329,11 +330,12 @@ function DataGrid<T>(props: TableProps<T>) {
           const { visible = true } = header;
           if (visible) {
             const data = item[header.columnName];
+
             const customRenderer = props.customRenderers?.[header.columnName];
 
             if (customRenderer) {
               return (
-                <td style={style} key={`table-td-${i}`}>
+                <td style={header.style} key={`table-td-${i}`}>
                   {customRenderer(item)}
                 </td>
               );
