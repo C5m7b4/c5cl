@@ -181,6 +181,7 @@ DataGrid usage:
 | mode | [✔] | 'light' or 'dark' | changes the styles of the entire component |
 
 ## DataGrid Header Props
+
 |   Prop name | optional | type | description |
 | :-------: | :-----: | :-----: | :----: |
 | columnName | [required] | string | represents the name of the column in your data |
@@ -190,6 +191,77 @@ DataGrid usage:
 | style | [✔] |CSSProperties | the style for this column. ex: textAlign: 'center'
 |width | [✔] | number | predetermined width for the column |
 filterable | [✔] | boolean | can make this column not filterable. default is true |
+
+## Custom Renderers
+
+You can for example add custom Renderers to your grid with an example like so: 
+
+```js
+const renderers = {
+  active: (i: T) => (
+    <input type="checkbox" checked={i.active} />;
+  ),
+  image: (i: T) => {
+    return (
+      <img
+        alt={i.image.name}
+        src={i.image.url}
+        height={i.image.height}
+        width={i.image.width}
+      />
+    );
+  },
+};
+
+<DataGrid customRenderers={renderers} />
+
+```
+
+and then your headers would look like this:
+
+```js
+
+const headers = [
+  {
+    columnName: 'active',
+    title: 'active',
+    style: {
+      textAlign: 'center',
+    },
+  },
+  {
+    columnName: 'image',
+    title: 'PinPad',
+    style: {
+      textAlign: 'center',
+    },
+  }
+]
+
+```
+
+and your data would look like this:
+
+```js
+const testData = [
+  {
+    id: 1,
+    storeName: 'IGA 001',
+    storeNumber: '001',
+    termCount: 3,
+    active: true,
+    image: {
+      url: 'https://www.someurl.com/_images/pinpadlogos/l5300.png',
+      name: 'l5300',
+      height: '20',
+      width: '30',
+    },
+  },
+]
+
+```
+
+so your columnName needs to match the name of the renderer
 
 note: The error field in both components is used for when the form validation fails, you can send in a unique error message to each element of your form.
 
