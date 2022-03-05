@@ -59,4 +59,36 @@ describe('DataGrid', () => {
 
     expect(frag).toMatchSnapshot();
   });
+  test('should sort data', () => {
+    const { container } = render(
+      <DataGrid
+        data={testData}
+        identifier={'grid1'}
+        headers={[
+          {
+            columnName: 'id',
+            title: 'ID',
+            visible: true,
+            style: {
+              textAlign: 'center',
+            },
+          },
+          {
+            columnName: 'storeName',
+            title: 'Name',
+            style: {
+              textAlign: 'left',
+            },
+          },
+          {
+            columnName: 'storeNumber',
+            title: '#',
+            style: {
+              textAlign: 'center',
+            },
+          },
+        ]}
+      />
+    );
+  });
 });
