@@ -1,0 +1,52 @@
+.#{$rt-namespace}__toast {
+  position: relative;
+  min-height: $rt-toast-min-height;
+  min-width: $rt-toast-min-width;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  max-height: $rt-toast-max-height;
+  font-family: $rt-font-family;
+  cursor: pointer;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  &--dark {
+    background: $rt-color-dark;
+    color: $rt-text-color-dark;
+  }
+  &--info {
+    background: $rt-color-info;
+    color: $rt-text-color-dark;
+  }
+  &--success {
+    background: $rt-color-success;
+    color: $rt-text-color-dark;
+  }
+  &--warning {
+    background: $rt-color-warning;
+  }
+  &--error {
+    background: $rt-color-error;
+    color: $rt-text-color-dark;
+  }
+  &-message {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.#{$rt-namespace}__toast-icon {
+  height: 34px;
+  width: 34px;
+  color: #fff;
+  fill: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+}
