@@ -369,7 +369,6 @@ describe('DataGrid', () => {
     );
     const mountNode = document.createElement('div');
     document.body.appendChild(mountNode);
-    console.log('body', document.body);
 
     const getTableCells = () => {
       Array.from(mountNode.querySelectorAll('tr td:nth-of-type(1'));
