@@ -292,4 +292,5 @@ GENERATE_SOURCEMAP=false
 - Toasts
 - Data Picker
 - Tooltips
+- [✔] Slider
 - any other thoughts
