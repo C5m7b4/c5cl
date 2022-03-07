@@ -23,7 +23,7 @@ jobs:
             npm install && npm run test
       - codecov/upload:
           file: "./coverage/clover.xml"
-          token: cc81c7a8-1736-47ed-9256-6f9586e9f79d
+          token: 3494ac91-cb31-4ec7-9b38-01831069b044
 workflows:
   version: 2
   Example-Workflow:
