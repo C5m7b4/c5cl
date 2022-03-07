@@ -15,7 +15,8 @@
     "test:coverage": "jest --coverage",
     "test:coverage:watch": "jest --coverage --watch",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "codecov": "npm test && codecov"
   },
   "author": "C5m7b4",
   "license": "MIT",
