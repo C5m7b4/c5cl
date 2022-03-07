@@ -4,7 +4,7 @@ import { Meta, Story } from '@storybook/react';
 import ToggleSwitch, { ToggleSwitchProps } from './ToggleSwitch';
 
 export default {
-  title: 'ToggleSwitch',
+  title: 'Forms/ToggleSwitch',
   component: ToggleSwitch,
 };
 

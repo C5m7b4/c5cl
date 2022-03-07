@@ -1,5 +1,7 @@
 # c5cl
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Installation:
 
 ```js
@@ -282,3 +284,9 @@ GENERATE_SOURCEMAP=false
 - [✔] fix column widget vertical placement
 - [✔] fix filter widget vertical placement
 - [ ] fix custom renderers
+
+## Some ideas for extra components
+
+- Toasts
+- Data Picker
+- Tooltips

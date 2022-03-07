@@ -1,5 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { within } from '@testing-library/dom';
 
 import DataGrid from './DataGrid';
 
@@ -334,7 +335,7 @@ describe('DataGrid', () => {
       }
     }
   });
-  test.skip('should run dragStart', () => {
+  test('should run dragStart', () => {
     const component = (
       <DataGrid
         mode="light"
@@ -368,6 +369,7 @@ describe('DataGrid', () => {
     );
     const mountNode = document.createElement('div');
     document.body.appendChild(mountNode);
+    console.log('body', document.body);
 
     const getTableCells = () => {
       Array.from(mountNode.querySelectorAll('tr td:nth-of-type(1'));
@@ -379,20 +381,25 @@ describe('DataGrid', () => {
       return event;
     };
 
-    render(component);
-    const tableCells0 = getTableCells();
-    // @ts-ignore
-    if (tableCells0) {
-      const startingNode0 = tableCells0[0];
-      const endingNode0 = tableCells0[0];
-      // @ts-ignore
-      startingNode0.dispatchEvent(
-        createBubbledEvent('dragstart', { clientX: 0, clientY: 0 })
-      );
-      // @ts-ignore
-      endingNode0.dispatchEvent(
-        createBubbledEvent('drop', { clientX: 225, clientY: 0 })
-      );
-    }
+    // render(component);
+    // const columnHeader = screen.getByRole('columnheader', { name: /name/i });
+    // const cell = within(columnHeader).getByText(/name/i);
+    // cell.dispatchEvent(
+    //   createBubbledEvent('dragstart', { clientX: 10, clientY: 0 })
+    // );
+    // const tableCells0 = getTableCells();
+    // // @ts-ignore
+    // if (tableCells0) {
+    //   const startingNode0 = tableCells0[0];
+    //   const endingNode0 = tableCells0[0];
+    //   // @ts-ignore
+    //   startingNode0.dispatchEvent(
+    //     createBubbledEvent('dragstart', { clientX: 225, clientY: 0 })
+    //   );
+    //   // @ts-ignore
+    //   endingNode0.dispatchEvent(
+    //     createBubbledEvent('drop', { clientX: 225, clientY: 0 })
+    //   );
+    // }
   });
 });

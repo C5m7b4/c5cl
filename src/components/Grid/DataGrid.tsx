@@ -319,7 +319,6 @@ function DataGrid<T>(props: TableProps<T>) {
   }
 
   function renderRow(item: T, id: number) {
-    console.log(props.customRenderers);
     let rowStyle = 'mikto-table-row-light';
     if (mode === 'dark') {
       rowStyle = 'mikto-table-row-dark';
