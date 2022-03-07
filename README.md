@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CircleCI](https://circleci.com/gh/C5m7b4/c5cl/tree/master.svg?style=svg)](https://circleci.com/gh/C5m7b4/c5cl/tree/master)
+[![codecov](https://codecov.io/gh/C5m7b4/c5cl/branch/master/graph/badge.svg?token=4CPGf4PdJ9)](https://codecov.io/gh/C5m7b4/c5cl)
 
 Installation:
 
