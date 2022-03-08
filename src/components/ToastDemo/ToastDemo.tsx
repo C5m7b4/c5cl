@@ -4,8 +4,13 @@ import RippleButton from '../RippleButton/RippleButton';
 
 import '../../../dist/css/c5-toastify.css';
 import { toast } from '../../core';
+import { ToastPosition } from '../../types';
 
-const ToastDemo = () => {
+export interface ToastDemoProps {
+  position: ToastPosition;
+}
+
+const ToastDemo = (props: ToastDemoProps) => {
   const [message, setMessage] = useState('');
 
   const handleSuccess = () => {
@@ -30,7 +35,7 @@ const ToastDemo = () => {
 
   return (
     <div>
-      <ToastContainer />
+      <ToastContainer position={props.position} autoClose={false} />
       <div>
         <input type="text" value={message} onChange={handleTextChange} />
       </div>
