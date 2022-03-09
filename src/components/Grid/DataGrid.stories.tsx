@@ -24,7 +24,7 @@ const testData = [
     termCount: 4,
     active: true,
     image: {
-      url: 'https://www.datacashreg.com/DMS/_images/pinpadlogos/l5300.png',
+      url: 'https://www.datacashreg.com/DMS/_images/pinpadlogos/l5300_3.png',
       name: 'l5300',
       height: '20',
       width: '30',
@@ -37,7 +37,7 @@ const testData = [
     termCount: 6,
     active: false,
     image: {
-      url: 'https://www.datacashreg.com/DMS/_images/pinpadlogos/l5300.png',
+      url: 'https://www.datacashreg.com/DMS/_images/pinpadlogos/MX850.png',
       name: 'l5300',
       height: '20',
       width: '30',
@@ -47,8 +47,7 @@ const testData = [
 
 const renderers = {
   active: (i: any) => {
-    console.log('i', i);
-    return <input type="checkbox" checked={i.active} />;
+    return <input type="checkbox" checked={i.active} readOnly={true} />;
   },
   image: (i: any) => {
     return (

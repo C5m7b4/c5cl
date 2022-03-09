@@ -380,10 +380,25 @@ describe('DataGrid', () => {
       return event;
     };
 
-    // render(component);
+    const { getByText } = render(component);
+    const div = document.getElementById('table-header-grid1-0');
+
+    const dragStartEvt = new CustomEvent('dragstart');
+
+    // @ts-ignore
+    const setData = jest.fn();
+    // @ts-ignore
+    dragStartEvt.pageX = '150';
+
+    Object.assign(dragStartEvt, {
+      dataTransfer: { setData: setData, effectAllowed: 'move' },
+    });
+    if (div) {
+      div.dispatchEvent(dragStartEvt);
+    }
     // const columnHeader = screen.getByRole('columnheader', { name: /name/i });
     // const cell = within(columnHeader).getByText(/name/i);
-    // cell.dispatchEvent(
+    // div.dispatchEvent(
     //   createBubbledEvent('dragstart', { clientX: 10, clientY: 0 })
     // );
     // const tableCells0 = getTableCells();
