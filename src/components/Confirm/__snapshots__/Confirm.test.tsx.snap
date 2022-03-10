@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirm should render correctly 1`] = `<div />`;
+
+exports[`Confirm should render with more info 1`] = `<div />`;
+
+exports[`Confirm should render without a title 1`] = `<div />`;
