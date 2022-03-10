@@ -10,4 +10,6 @@ export { default as ToastContainer } from './ToastContainer';
 export { default as Toast } from './Toast';
 export { default as Tabs } from './Tabs';
 export { default as MultiSelect } from './MultiSelect';
+export { default as Collapse } from './Collapse';
+export { default as Collapsible } from './Collapsible';
 export * from './Icons';
