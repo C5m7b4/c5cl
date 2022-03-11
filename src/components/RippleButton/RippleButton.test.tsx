@@ -24,4 +24,11 @@ describe('RippleButton', () => {
     fireEvent.hover(screen.getByText('Click Me'));
     fireEvent.unhover(screen.getByText('Click Me'));
   });
+  test('should unmount', () => {
+    const testFn = jest.fn();
+    const { container, unmount } = render(
+      <RippleButton text="Click Me" onClick={testFn} />
+    );
+    unmount();
+  });
 });

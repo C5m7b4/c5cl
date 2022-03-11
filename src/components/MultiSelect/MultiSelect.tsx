@@ -40,7 +40,6 @@ function MultiSelect<T>(props: MultiSelectProps<T>) {
   useEffect(() => {
     setFilteredData(props.data);
     setLocallyCheckedItems(checkedItems);
-    console.log('checkedItems', checkedItems);
   }, [props.data]);
 
   const amIChecked = (i: T) => {
