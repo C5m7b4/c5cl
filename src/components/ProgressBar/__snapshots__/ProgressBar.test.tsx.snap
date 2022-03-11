@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar should render correctly 1`] = `
+<div>
+  <div
+    class="mcl-progress-bar"
+  >
+    <div
+      class="mcl-progress-done"
+      style="opacity: 1; width: 50%;"
+    />
+    <div
+      class="mcl-progress-msg"
+      style="transform: translateX(100px) translateY(-25px);"
+    >
+      progress 50
+    </div>
+  </div>
+</div>
+`;

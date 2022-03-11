@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip should handle some style 1`] = `
+<div>
+  <span
+    class="mcl-tooltip-wrapper"
+  >
+    <span
+      class="mcl-tooltip-trigger"
+    >
+      <h2>
+        Hello
+      </h2>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Tooltip should render correctly 1`] = `
+<div>
+  <span
+    class="mcl-tooltip-wrapper"
+  >
+    <span
+      class="mcl-tooltip-trigger"
+    >
+      <h2>
+        Hello
+      </h2>
+    </span>
+  </span>
+</div>
+`;
