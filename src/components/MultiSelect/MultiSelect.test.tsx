@@ -49,7 +49,7 @@ describe('MultiSelect', () => {
     fireEvent.click(option);
     fireEvent.click(option);
   });
-  test.only('should handle click outside', () => {
+  test('should handle click outside', () => {
     const div = document.createElement('div');
     div.id = 'outside';
     document.body.appendChild(div);
@@ -98,6 +98,7 @@ describe('MultiSelect', () => {
     fireEvent.click(option);
 
     const dept = getByRole('checkbox', { name: /Grocery/ });
+    fireEvent.click(dept);
     fireEvent.click(dept);
     fireEvent.click(dept);
   });
