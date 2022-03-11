@@ -29,4 +29,46 @@ describe('Icons', () => {
     const { container } = render(<Warning theme="colored" type="warning" />);
     expect(container).toMatchSnapshot();
   });
+  test('should render backward', () => {
+    const { backward: Backward } = Icons;
+    const { container } = render(<Backward theme="dark" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render forward', () => {
+    const { forward: Forward } = Icons;
+    const { container } = render(<Forward theme="dark" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render previous', () => {
+    const { previous: Previous } = Icons;
+    const { container } = render(<Previous theme="dark" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render next', () => {
+    const { next: Next } = Icons;
+    const { container } = render(<Next theme="dark" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render circleLeft', () => {
+    const { circleLeft: CircleLeft } = Icons;
+    const { container } = render(<CircleLeft theme="light" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render circleRight', () => {
+    const { circleRight: CircleRight } = Icons;
+    const { container } = render(<CircleRight theme="dark" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render circleNext', () => {
+    const { circleNext: CircleNext } = Icons;
+    const { container } = render(<CircleNext theme="dark" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render circlePrevious', () => {
+    const { circlePrevious: CirclePrevious } = Icons;
+    const { container } = render(
+      <CirclePrevious theme="colored" type="dark" />
+    );
+    expect(container).toMatchSnapshot();
+  });
 });
