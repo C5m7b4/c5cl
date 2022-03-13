@@ -19,6 +19,11 @@ const IconDemo = () => {
     circleRight: CircleRight,
     circleNext: CircleNext,
     circlePrevious: CirclePrevious,
+    folder: Folder,
+    folderOpen: FolderOpen,
+    file: File,
+    minusBox: MinusBox,
+    plusBox: PlusBox,
   } = Icons;
   return (
     <div>
@@ -74,6 +79,26 @@ const IconDemo = () => {
           <div className="icon-div">
             <label>Circle Previous</label>
             <CirclePrevious theme="dark" type="dark" style={style} />
+          </div>
+          <div className="icon-div">
+            <label>Folder</label>
+            <Folder theme="dark" type="dark" style={style} />
+          </div>
+          <div className="icon-div">
+            <label>Folder Open</label>
+            <FolderOpen theme="dark" type="dark" style={style} />
+          </div>
+          <div className="icon-div">
+            <label>File</label>
+            <File theme="dark" type="dark" style={style} />
+          </div>
+          <div className="icon-div">
+            <label>Minus Box</label>
+            <MinusBox theme="dark" type="dark" style={style} />
+          </div>
+          <div className="icon-div">
+            <label>Plus Box</label>
+            <PlusBox theme="dark" type="dark" style={style} />
           </div>
         </div>
       </div>

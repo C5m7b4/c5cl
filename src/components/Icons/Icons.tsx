@@ -139,6 +139,98 @@ function CirclePrevious(props: BuildInIconProps) {
   );
 }
 
+function Folder(props: BuildInIconProps) {
+  return (
+    <Svg32 {...props}>
+      <path
+        d="M10.51,6C10.78,6,11,6.22,11,6.49v1.01C11,8.88,12.12,10,13.49,10h13.01c0.27,0,0.49,0.22,0.49,0.49v15.01
+        c0,0.27-0.22,0.49-0.49,0.49H2.49C2.22,26,2,25.78,2,25.51V10V9V6.49C2,6.22,2.22,6,2.49,6H10.51 M10.51,5H2.49
+        C1.67,5,1,5.67,1,6.49V9v1v15.51C1,26.33,1.67,27,2.49,27h24.01c0.82,0,1.49-0.67,1.49-1.49V10.49C28,9.67,27.33,9,26.51,9H13.49
+        C12.67,9,12,8.33,12,7.51V6.49C12,5.67,11.33,5,10.51,5L10.51,5z"
+      />
+    </Svg32>
+  );
+}
+
+function FolderOpen(props: BuildInIconProps) {
+  return (
+    <Svg32 {...props}>
+      <path
+        d="M10.51,6C10.78,6,11,6.22,11,6.49v1.01C11,8.88,12.12,10,13.49,10h13.01c0.27,0,0.49,0.22,0.49,0.49v15.01
+        c0,0.27-0.22,0.49-0.49,0.49H2.49C2.22,26,2,25.78,2,25.51V10V9V6.49C2,6.22,2.22,6,2.49,6H10.51 M10.51,5H2.49
+        C1.67,5,1,5.67,1,6.49V9v1v15.51C1,26.33,1.67,27,2.49,27h24.01c0.82,0,1.49-0.67,1.49-1.49V10.49C28,9.67,27.33,9,26.51,9H13.49
+        C12.67,9,12,8.33,12,7.51V6.49C12,5.67,11.33,5,10.51,5L10.51,5z"
+      />
+      <path
+        style={{ fill: 'none', stroke: '#000' }}
+        d="M29.69,14.5H4.99c-0.29,0-0.54,0.2-0.61,0.48L1.74,25.52c-0.12,0.5,0.25,0.98,0.76,0.98h24.38
+        c0.36,0,0.67-0.25,0.76-0.59l2.66-10.62C30.4,14.89,30.1,14.5,29.69,14.5z"
+      />
+    </Svg32>
+  );
+}
+
+function File(props: BuildInIconProps) {
+  return (
+    <Svg32 {...props}>
+      <path
+        style={{ fill: 'none', stroke: '#000' }}
+        d="M20.5,6.5V1.52c0-0.01-0.01-0.02-0.02-0.02H3.5v28h17h7V6.69c0-0.1-0.09-0.19-0.19-0.19H20.5z"
+      />
+      <line
+        style={{ fill: 'none', stroke: '#000' }}
+        x1="20.5"
+        y1="1.5"
+        x2="27.5"
+        y2="6.5"
+      />
+    </Svg32>
+  );
+}
+
+function MinusBox(props: BuildInIconProps) {
+  return (
+    <Svg32 {...props}>
+      <path d="M27,4v24H4V4H27 M28,3H3v26h25V3L28,3z" />
+      <line
+        style={{ fill: 'none', stroke: '#000' }}
+        x1="9.5"
+        y1="16.5"
+        x2="22.5"
+        y2="16.5"
+      />
+    </Svg32>
+  );
+}
+
+function PlusBox(props: BuildInIconProps) {
+  return (
+    <Svg32 {...props}>
+      <g>
+        <path d="M27,4v24H4V4H27 M28,3H3v26h25V3L28,3z" />
+      </g>
+
+      <g>
+        <line
+          style={{ fill: 'none', stroke: '#000' }}
+          x1="9.5"
+          y1="16.5"
+          x2="22.5"
+          y2="16.5"
+        />
+      </g>
+
+      <line
+        style={{ fill: 'none', stroke: '#000', transform: 'rotate(90deg)' }}
+        x1="9.5"
+        y1="16.5"
+        x2="22.5"
+        y2="16.5"
+      />
+    </Svg32>
+  );
+}
+
 export const Icons = {
   info: Info,
   warning: Warning,
@@ -152,4 +244,9 @@ export const Icons = {
   circleRight: CircleRight,
   circleNext: CircleNext,
   circlePrevious: CirclePrevious,
+  folder: Folder,
+  folderOpen: FolderOpen,
+  file: File,
+  minusBox: MinusBox,
+  plusBox: PlusBox,
 };
