@@ -81,31 +81,58 @@ const Tree1 = (props: TreeProps) => {
   };
 
   const buildArray = (object: object, key: string, arrIdx: number) => {
-    return (
-      <div key={`a-${arrIdx}`}>
-        <span style={{ paddingLeft: '40px' }}>{`"${key}"`}</span>
-        <MinusBox
-          theme="dark"
-          type="dark"
-          style={{
-            height: '18px',
-            width: '18px',
-            userSelect: 'none',
-            cursor: 'pointer',
-            marginRight: '20px',
-            transform: 'translateY(5px) translateX(10px)',
-          }}
-          onMouseOver={(e) => hoverEnter(e)}
-          onMouseLeave={(e) => hoverLeave(e)}
-          onClick={(e) => toggle(e)}
-        />
-        <span>[</span>
-        <div>
-          {isObject(object[key]) ? processArrayObject(object[key], key) : null}
+    nodeId++;
+    if (collapsedNodes.includes(nodeId.toString())) {
+      return (
+        <div id={nodeId} key={`a-${arrIdx}`} className="tree-active">
+          <span style={{ paddingLeft: '40px' }}>{`"${key}"`}</span>
+          <MinusBox
+            theme="dark"
+            type="dark"
+            style={{
+              height: '18px',
+              width: '18px',
+              userSelect: 'none',
+              cursor: 'pointer',
+              marginRight: '20px',
+              transform: 'translateY(5px) translateX(10px)',
+            }}
+            onMouseOver={(e) => hoverEnter(e)}
+            onMouseLeave={(e) => hoverLeave(e)}
+            onClick={(e) => toggleNode(e)}
+          />
+          <span>[{object[key].length}]</span>
         </div>
-        <div style={{ paddingLeft: '30px' }}>]</div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div id={nodeId} key={`a-${arrIdx}`} className="tree-active">
+          <span style={{ paddingLeft: '40px' }}>{`"${key}"`}</span>
+          <MinusBox
+            theme="dark"
+            type="dark"
+            style={{
+              height: '18px',
+              width: '18px',
+              userSelect: 'none',
+              cursor: 'pointer',
+              marginRight: '20px',
+              transform: 'translateY(5px) translateX(10px)',
+            }}
+            onMouseOver={(e) => hoverEnter(e)}
+            onMouseLeave={(e) => hoverLeave(e)}
+            onClick={(e) => toggleNode(e)}
+          />
+          <span>[</span>
+          <div>
+            {isObject(object[key])
+              ? processArrayObject(object[key], key)
+              : null}
+          </div>
+          <div style={{ paddingLeft: '30px' }}>]</div>
+        </div>
+      );
+    }
   };
 
   const processArrayObject = (object: object, key: string) => {
@@ -113,29 +140,56 @@ const Tree1 = (props: TreeProps) => {
     return (
       <div id={`aodiv-${key}`} style={{ transform: 'translateX(20px)' }}>
         {object.map((record, idx) => {
-          return (
-            <div className="tree-active" key={`ao-${idx}-${key}`}>
-              <MinusBox
-                theme="dark"
-                type="dark"
-                style={{
-                  height: '18px',
-                  width: '18px',
-                  useSelect: 'none',
-                  cursor: 'pointer',
-                  transform: 'translateY(5px) translateX(40px)',
-                }}
-                onMouseOver={(e) => hoverEnter(e)}
-                onMouseLeave={(e) => hoverLeave(e)}
-                onClick={(e) => toggle(e)}
-              />
-              <span style={{ paddingLeft: '45px' }}>&#123;</span>
-              {Object.keys(record).map((r, i) => {
-                return buildLeaf(record, r, idx, 60);
-              })}
-              <div style={{ paddingLeft: '40px' }}>&#125;</div>
-            </div>
+          nodeId++;
+          console.log('collapsedNodes', collapsedNodes);
+          console.log(
+            `checking to see if nodeId: ${nodeId} exisists in collapsedNodes`
           );
+          if (collapsedNodes.includes(nodeId.toString())) {
+            return (
+              <div id={nodeId} className="tree-active" key={`ao-${idx}-${key}`}>
+                <MinusBox
+                  theme="dark"
+                  type="dark"
+                  style={{
+                    height: '18px',
+                    width: '18px',
+                    useSelect: 'none',
+                    cursor: 'pointer',
+                    transform: 'translateY(5px) translateX(40px)',
+                  }}
+                  onMouseOver={(e) => hoverEnter(e)}
+                  onMouseLeave={(e) => hoverLeave(e)}
+                  onClick={(e) => toggleNode(e)}
+                />
+                <span style={{ paddingLeft: '45px' }}>&#123;...&#125;</span>
+              </div>
+            );
+          } else {
+            return (
+              <div id={nodeId} className="tree-active" key={`ao-${idx}-${key}`}>
+                <MinusBox
+                  theme="dark"
+                  type="dark"
+                  style={{
+                    height: '18px',
+                    width: '18px',
+                    useSelect: 'none',
+                    cursor: 'pointer',
+                    transform: 'translateY(5px) translateX(40px)',
+                  }}
+                  onMouseOver={(e) => hoverEnter(e)}
+                  onMouseLeave={(e) => hoverLeave(e)}
+                  onClick={(e) => toggleNode(e)}
+                />
+                <span style={{ paddingLeft: '45px' }}>&#123;</span>
+                {Object.keys(record).map((r, i) => {
+                  return buildLeaf(record, r, idx, 60);
+                })}
+                <div style={{ paddingLeft: '40px' }}>&#125;</div>
+              </div>
+            );
+          }
         })}
       </div>
     );
@@ -143,18 +197,30 @@ const Tree1 = (props: TreeProps) => {
 
   const hoverEnter = (e: React.MouseEvent) => {
     e.target.parentElement.style.opacity = '0.6';
-    e.target.parentElement.style.color = 'red';
+    //e.target.parentElement.style.color = 'red';
   };
 
   const hoverLeave = (e: React.MouseEvent) => {
     e.target.parentElement.style.opacity = '1';
-    e.target.parentElement.style.color = 'white';
+    //e.target.parentElement.style.color = 'white';
   };
 
   const toggle = (e: React.MouseEvent) => {
     try {
       const child = e.target.parentElement.querySelector('.tree-active');
       // child.classList.toggle('tree-nested');
+      if (collapsedNodes.includes(child.id)) {
+        const newArray = collapsedNodes.filter((n) => n !== child.id);
+        setCollapsedNodes(newArray);
+      } else {
+        setCollapsedNodes([...collapsedNodes, child.id]);
+      }
+    } catch (error) {}
+  };
+
+  const toggleNode = (e: React.MouseEvent) => {
+    try {
+      const child = e.target.parentElement;
       if (collapsedNodes.includes(child.id)) {
         const newArray = collapsedNodes.filter((n) => n !== child.id);
         setCollapsedNodes(newArray);

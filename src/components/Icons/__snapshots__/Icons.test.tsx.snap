@@ -153,6 +153,28 @@ exports[`Icons should render forward 1`] = `
 </div>
 `;
 
+exports[`Icons should render minusBox 1`] = `
+<div>
+  <svg
+    fill-opacity="currentColor"
+    height="100%"
+    viewBox="0 0 32 32"
+    width="100%"
+  >
+    <path
+      d="M27,4v24H4V4H27 M28,3H3v26h25V3L28,3z"
+    />
+    <line
+      style="fill: none; stroke: #000;"
+      x1="9.5"
+      x2="22.5"
+      y1="16.5"
+      y2="16.5"
+    />
+  </svg>
+</div>
+`;
+
 exports[`Icons should render next 1`] = `
 <div>
   <svg
@@ -163,6 +185,39 @@ exports[`Icons should render next 1`] = `
   >
     <path
       d="M24 4v24h-4v-11l-10 10v-22l10 10v-11z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Icons should render plusBox 1`] = `
+<div>
+  <svg
+    fill-opacity="var(--toastify__toast-icon-color-dark)"
+    height="100%"
+    viewBox="0 0 32 32"
+    width="100%"
+  >
+    <g>
+      <path
+        d="M27,4v24H4V4H27 M28,3H3v26h25V3L28,3z"
+      />
+    </g>
+    <g>
+      <line
+        style="fill: none; stroke: #000;"
+        x1="9.5"
+        x2="22.5"
+        y1="16.5"
+        y2="16.5"
+      />
+    </g>
+    <line
+      style="fill: none; stroke: #000; transform: rotate(90deg);"
+      x1="9.5"
+      x2="22.5"
+      y1="16.5"
+      y2="16.5"
     />
   </svg>
 </div>
