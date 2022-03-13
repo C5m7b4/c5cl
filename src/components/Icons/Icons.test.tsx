@@ -71,4 +71,14 @@ describe('Icons', () => {
     );
     expect(container).toMatchSnapshot();
   });
+  test('should render minusBox', () => {
+    const { minusBox: MinusBox } = Icons;
+    const { container } = render(<MinusBox theme="colored" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render plusBox', () => {
+    const { plusBox: PlusBox } = Icons;
+    const { container } = render(<PlusBox theme="dark" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
 });

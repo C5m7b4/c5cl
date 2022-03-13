@@ -294,3 +294,5 @@ GENERATE_SOURCEMAP=false
 - Tooltips
 - [✔] Slider
 - any other thoughts
+- TreeViewer
+- Carousel
