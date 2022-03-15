@@ -22,7 +22,7 @@ export interface TreeProps {
 const Tree1 = (props: TreeProps) => {
   const [collapsedNodes, setCollapsedNodes] = useState<string>([]);
   let nodeId = 0;
-  const { minusBox: MinusBox } = Icons;
+  const { minusBox: MinusBox, plusBox: PlusBox } = Icons;
 
   const isPrimitive = (value: any) => {
     return (
@@ -141,10 +141,6 @@ const Tree1 = (props: TreeProps) => {
       <div id={`aodiv-${key}`} style={{ transform: 'translateX(20px)' }}>
         {object.map((record, idx) => {
           nodeId++;
-          console.log('collapsedNodes', collapsedNodes);
-          console.log(
-            `checking to see if nodeId: ${nodeId} exisists in collapsedNodes`
-          );
           if (collapsedNodes.includes(nodeId.toString())) {
             return (
               <div id={nodeId} className="tree-active" key={`ao-${idx}-${key}`}>
@@ -208,6 +204,10 @@ const Tree1 = (props: TreeProps) => {
   const toggle = (e: React.MouseEvent) => {
     try {
       const child = e.target.parentElement.querySelector('.tree-active');
+      if (child === null) {
+        child = e.target.parentElement;
+      }
+      console.log(`child: ${child.id} has been clicked`);
       // child.classList.toggle('tree-nested');
       if (collapsedNodes.includes(child.id)) {
         const newArray = collapsedNodes.filter((n) => n !== child.id);
@@ -233,64 +233,71 @@ const Tree1 = (props: TreeProps) => {
   return (
     <div className="mcl-treeview" style={props.style}>
       <ul id="c5UL">
-        <div style={{ display: 'block' }} id="c5UL-master">
-          <MinusBox
-            theme="dark"
-            type="dark"
-            style={style}
-            onMouseOver={(e) => hoverEnter(e)}
-            onMouseLeave={(e) => hoverLeave(e)}
-            onClick={(e) => toggle(e)}
-          />
-          [
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1px 1fr',
-              marginTop: '5px',
-            }}
-          >
-            <MinusBox
-              theme="dark"
-              type="dark"
-              style={{
-                height: '18px',
-                width: '18px',
-                paddingLeft: '10px',
-                transform: 'translateY(5px)',
-                marginRight: '5px',
-                cursor: 'pointer',
-                userSelect: 'none',
-                zIndex: '999',
-              }}
-              onMouseOver={(e) => hoverEnter(e)}
-              onMouseLeave={(e) => hoverLeave(e)}
-              onClick={(e) => toggle(e)}
-            />
-            {collapsedNodes.includes(nodeId.toString()) ? (
+        <div style={{ display: 'block' }} id="c5UL-master-min">
+          {collapsedNodes.includes('tree-root') ? (
+            <div id="tree-root">
+              <PlusBox
+                theme="dark"
+                type="dark"
+                style={style}
+                onMouseOver={(e) => hoverEnter(e)}
+                onMouseLeave={(e) => hoverLeave(e)}
+                onClick={(e) => toggle(e)}
+              />
+              [1]
+            </div>
+          ) : (
+            <div style={{ display: 'block' }} id="c5UL-master-max">
+              <MinusBox
+                theme="dark"
+                type="dark"
+                style={style}
+                onMouseOver={(e) => hoverEnter(e)}
+                onMouseLeave={(e) => hoverLeave(e)}
+                onClick={(e) => toggle(e)}
+              />
+              [
               <div
-                className="tree-active"
-                id="0"
-                style={{ paddingLeft: '30px', transform: 'translateY(5px)' }}
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1px 1fr',
+                  marginTop: '5px',
+                }}
               >
-                <div>&#123;...&#125;</div>
-              </div>
-            ) : (
-              <div className="tree-active" id="0">
-                <div
+                <MinusBox
+                  theme="dark"
+                  type="dark"
                   style={{
-                    paddingLeft: '30px',
-                    transform: 'translateY(3px)',
+                    height: '18px',
+                    width: '18px',
+                    paddingLeft: '10px',
+                    transform: 'translateY(5px)',
+                    marginRight: '5px',
+                    cursor: 'pointer',
+                    userSelect: 'none',
+                    zIndex: '999',
                   }}
-                >
-                  &#123;
+                  onMouseOver={(e) => hoverEnter(e)}
+                  onMouseLeave={(e) => hoverLeave(e)}
+                  onClick={(e) => toggle(e)}
+                />
+
+                <div className="tree-active" id="0">
+                  <div
+                    style={{
+                      paddingLeft: '30px',
+                      transform: 'translateY(3px)',
+                    }}
+                  >
+                    &#123;
+                  </div>
+                  {processObject(props.json)}
+                  <div style={{ paddingLeft: '10px' }}>&#125;</div>
                 </div>
-                {processObject(props.json)}
-                <div style={{ paddingLeft: '10px' }}>&#125;</div>
               </div>
-            )}
-          </div>
-          <div>]</div>
+              <div>]</div>
+            </div>
+          )}
         </div>
       </ul>
     </div>
