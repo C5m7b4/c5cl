@@ -21,6 +21,12 @@ const data = {
       storeName: 'Crossroads 774',
     },
   ],
+  id: 1,
+};
+
+const data1 = {
+  error: 0,
+  success: true,
 };
 
 const Template: Story<TreeProps> = (args) => <Tree1 {...args} />;
