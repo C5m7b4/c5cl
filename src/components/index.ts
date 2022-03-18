@@ -15,6 +15,5 @@ export { default as Collapsible } from './Collapsible';
 export { default as PSM } from './PSM';
 export { default as Confirm } from './Confirm';
 export { default as Tooltip } from './Tooltip';
-export { default as ProgressBar } from './ProgressBar';
-export { default as CircularProgressBar } from './CircularProgressBar';
+export { default as OutlineButton } from './OutlineButton';
 export * from './Icons';

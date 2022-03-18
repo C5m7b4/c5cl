@@ -2,17 +2,19 @@ import React from 'react';
 import './TextInput.css';
 
 export type TextInputType = 'text' | 'number';
+export type TextInputAutoComplete = 'on' | 'off' | string;
 
 export interface TextInputProps {
   id: string;
   name: string;
   label: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type: TextInputType;
   placeholder?: string;
   value: string | number;
   error?: string;
   readOnly?: boolean;
+  autoComplete?: TextInputAutoComplete;
 }
 
 function TextInput(props: TextInputProps) {
@@ -33,6 +35,8 @@ function TextInput(props: TextInputProps) {
           value={props.value}
           placeholder={props.placeholder}
           readOnly={props.readOnly}
+          name={props.name}
+          autoComplete={props.autoComplete}
         />
       </div>
       {props.error && (

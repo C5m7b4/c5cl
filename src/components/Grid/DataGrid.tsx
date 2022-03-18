@@ -40,6 +40,7 @@ export interface TableProps<T> {
   className?: string;
   tableClassName?: string;
   mode?: Mode;
+  handleRowClick?: (record: T) => void;
 }
 
 // export function objectKeys<T extends {}>(obj: T) {
@@ -82,7 +83,7 @@ function DataGrid<T>(props: TableProps<T>) {
         }
       }
     } catch {}
-  }, [mode]);
+  }, [mode, props.data]);
 
   const sortByProperty = (prop: keyof T, asc = 0) => {
     if (!asc) {
@@ -323,8 +324,18 @@ function DataGrid<T>(props: TableProps<T>) {
     if (mode === 'dark') {
       rowStyle = 'mikto-table-row-dark';
     }
+
+    let record: T;
+    if (item) {
+      record = item;
+    }
     return (
-      <tr key={`table-row-${id}`} className={`${rowStyle}`}>
+      <tr
+        // @ts-ignore
+        onClick={() => props.handleRowClick(record)}
+        key={`table-row-${id}`}
+        className={`${rowStyle}`}
+      >
         {props.headers.map((header, i) => {
           const { visible = true } = header;
           if (visible) {

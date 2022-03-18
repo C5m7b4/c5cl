@@ -22,7 +22,7 @@ describe('Toast', () => {
     );
     expect(container).toMatchSnapshot();
   });
-  test.skip('should handle slide animation', () => {
+  test('should handle slide animation', () => {
     const { container, getByRole } = render(
       <Toast
         content="Here is a toast"
@@ -32,11 +32,8 @@ describe('Toast', () => {
         position="top-right"
       />
     );
-    console.log('string implementation', container.toString());
-    const success = container
-      .toString()
-      .includes('Toastify__slide-enter--top-right');
-    expect(success).toBeTruthy();
+    const div = container.querySelector('.Toastify__slide-enter--top-right');
+    expect(div).toBeInTheDocument();
   });
   test('should show success icon', () => {
     const { container } = render(

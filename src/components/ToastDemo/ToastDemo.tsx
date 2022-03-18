@@ -36,11 +36,7 @@ const ToastDemo = (props: ToastDemoProps) => {
 
   return (
     <div>
-      <ToastContainer
-        position={props.position}
-        animation={props.animation}
-        autoClose={false}
-      />
+      <ToastContainer position={props.position} animation={props.animation} />
       <div>
         <input type="text" value={message} onChange={handleTextChange} />
       </div>

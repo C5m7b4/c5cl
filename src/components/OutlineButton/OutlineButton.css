@@ -1,0 +1,126 @@
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
+
+/* green */
+.success {
+  border-color: #04aa6d;
+  color: green;
+}
+
+.success:hover {
+  background-color: #04aa6d;
+  color: white;
+}
+
+.success:disabled {
+  background-color: gray;
+  color: green;
+}
+
+.success:active {
+  transform: scale(0.96);
+}
+
+/* blue */
+.info {
+  border-color: #2196f3;
+  color: dodgerblue;
+}
+
+.info:hover {
+  background: #2196f3;
+  color: white;
+}
+
+.info:disabled {
+  background-color: gray;
+  color: dodgerblue;
+}
+
+.info:active {
+  transform: scale(0.96);
+}
+
+/* Orange */
+.warning {
+  border-color: #ff9800;
+  color: orange;
+}
+
+.warning:hover {
+  background: #ff9800;
+  color: white;
+}
+
+.warning:disabled {
+  background-color: gray;
+  color: orange;
+}
+
+.warning:active {
+  transform: scale(0.96);
+}
+
+/* red */
+.danger {
+  border-color: #f44336;
+  color: red;
+}
+
+.danger:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.danger:disabled {
+  background-color: gray;
+  color: red;
+}
+
+.danger:active {
+  transform: scale(0.96);
+}
+
+.default {
+  border-color: #e7e7e7;
+  color: black;
+}
+
+.default:hover {
+  background-color: #e7e7e7;
+}
+
+.default:disabled {
+  background-color: gray;
+  color: white;
+}
+
+.default:active {
+  transform: scale(0.96);
+}
+
+.dark {
+  border-color: #000;
+  color: black;
+}
+
+.dark:hover {
+  background-color: #000;
+  color: white;
+}
+
+.dark:disabled {
+  background-color: gray;
+  color: rgb(192, 181, 181);
+}
+
+.dark:active {
+  transform: scale(0.96);
+}

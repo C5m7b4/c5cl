@@ -26,7 +26,7 @@ const ToastContainer: React.FC<ToastContainerProps> = (props) => {
   const domElement = document.getElementById(portalId);
   const [toasts, setToasts] = useState<ToastProps[]>([]);
 
-  let { autoClose } = props;
+  let { autoClose = true } = props;
 
   useEffect(() => {}, [toasts]);
 

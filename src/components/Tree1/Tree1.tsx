@@ -203,7 +203,7 @@ const Tree1 = (props: TreeProps) => {
 
   const toggle = (e: React.MouseEvent) => {
     try {
-      const child = e.target.parentElement.querySelector('.tree-active');
+      let child = e.target.parentElement.querySelector('.tree-active');
       if (child === null) {
         child = e.target.parentElement;
       }
@@ -215,7 +215,9 @@ const Tree1 = (props: TreeProps) => {
       } else {
         setCollapsedNodes([...collapsedNodes, child.id]);
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const toggleNode = (e: React.MouseEvent) => {
@@ -227,7 +229,9 @@ const Tree1 = (props: TreeProps) => {
       } else {
         setCollapsedNodes([...collapsedNodes, child.id]);
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -247,7 +251,7 @@ const Tree1 = (props: TreeProps) => {
               [1]
             </div>
           ) : (
-            <div style={{ display: 'block' }} id="c5UL-master-max">
+            <div style={{ display: 'block' }} id="tree-root">
               <MinusBox
                 theme="dark"
                 type="dark"
@@ -258,6 +262,7 @@ const Tree1 = (props: TreeProps) => {
               />
               [
               <div
+                id="tree-main"
                 style={{
                   display: 'grid',
                   gridTemplateColumns: '1px 1fr',
@@ -282,7 +287,7 @@ const Tree1 = (props: TreeProps) => {
                   onClick={(e) => toggle(e)}
                 />
 
-                <div className="tree-active" id="0">
+                <div className="tree-active1" id="tree-root">
                   <div
                     style={{
                       paddingLeft: '30px',

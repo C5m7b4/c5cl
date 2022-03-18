@@ -4,24 +4,32 @@ import { within } from '@testing-library/dom';
 
 import DataGrid from './DataGrid';
 
+let sym1 = Symbol('foo');
+
 const testData = [
   {
     id: 1,
     storeName: 'IGA 001',
     storeNumber: '001',
     termCount: 3,
+    active: true,
+    sym1: sym1,
   },
   {
     id: 2,
     storeName: 'IGA 002',
     storeNumber: '002',
-    termCount: 4,
+    termCount: 3,
+    active: false,
+    sym1: sym1,
   },
   {
     id: 3,
     storeName: 'IGA 003',
     storeNumber: '003',
-    termCount: 6,
+    termCount: 3,
+    active: true,
+    sym1: sym1,
   },
 ];
 
@@ -51,6 +59,17 @@ const { container, getByTestId } = render(
         style: {
           textAlign: 'center',
         },
+      },
+      {
+        columnName: 'active',
+        title: 'Active',
+        style: {
+          textAlign: 'center',
+        },
+      },
+      {
+        columnName: 'sym1',
+        title: 'Sum1',
       },
     ]}
   />
@@ -415,5 +434,57 @@ describe('DataGrid', () => {
     //     createBubbledEvent('drop', { clientX: 225, clientY: 0 })
     //   );
     // }
+  });
+  test('should sort by column with equal data', () => {
+    const renderers = {
+      active: (i: any) => {
+        return <input type="checkbox" checked={i.active} />;
+      },
+    };
+    const { container, getByRole } = render(
+      <DataGrid
+        data={testData}
+        identifier={'grid1'}
+        customRenderers={renderers}
+        headers={[
+          {
+            columnName: 'id',
+            title: 'ID',
+            visible: true,
+            style: {
+              textAlign: 'center',
+            },
+            sortable: 'desc',
+          },
+          {
+            columnName: 'storeName',
+            title: 'Name',
+            style: {
+              textAlign: 'left',
+            },
+            sortable: 'desc',
+          },
+          {
+            columnName: 'storeNumber',
+            title: '#',
+            style: {
+              textAlign: 'center',
+            },
+            sortable: 'desc',
+          },
+          {
+            columnName: 'termCount',
+            title: 'Terms',
+          },
+        ]}
+      />
+    );
+
+    expect(container).toBeVisible();
+    const div = getByRole('columnheader', { name: 'Terms' });
+    if (div) {
+      fireEvent.click(div);
+      fireEvent.click(div);
+    }
   });
 });
