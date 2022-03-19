@@ -4,8 +4,6 @@
 
 .mcl-tooltip-wrapper {
   position: relative;
-  min-width: 120px;
-  min-height: 120px;
 }
 
 .mcl-tooltip-trigger {
@@ -31,7 +29,23 @@
   transform: translateX(-50%);
 }
 
+.mcl-tooltip-top .dark {
+  bottom: 100%;
+  left: 50%;
+  padding-bottom: 9px;
+  transform: translateX(-50%);
+}
+
 .mcl-tooltip-top::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #fff;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mcl-tooltip-top.dark::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
   border-top: 9px solid #fff;
@@ -47,6 +61,13 @@
   transform: translateX(-50%);
 }
 
+.mcl-tooltip-bottom .dark {
+  top: 100%;
+  left: 50%;
+  padding-top: 9px;
+  transform: translateX(-50%);
+}
+
 .mcl-tooltip-bottom::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
@@ -56,7 +77,23 @@
   transform: translateX(-50%);
 }
 
+.mcl-tooltip-bottom.dark::after {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid rgb(3, 3, 3);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .mcl-tooltip-left {
+  top: 50%;
+  right: 100%;
+  padding-right: 9px;
+  transform: translateY(-50%);
+}
+
+.mcl-tooltip-left .dark {
   top: 50%;
   right: 100%;
   padding-right: 9px;
@@ -72,6 +109,15 @@
   transform: translateY(-50%);
 }
 
+.mcl-tooltip-left.dark::after {
+  border-left: 9px solid #fff;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
 .mcl-tooltip-right {
   top: 50%;
   left: 100%;
@@ -79,7 +125,23 @@
   transform: translateY(-50%);
 }
 
+.mcl-tooltip-right .dark {
+  top: 50%;
+  left: 100%;
+  padding-left: 9px;
+  transform: translateY(-50%);
+}
+
 .mcl-tooltip-right::after {
+  border-right: 9px solid #fff;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.mcl-tooltip-right.dark::after {
   border-right: 9px solid #fff;
   border-top: 9px solid transparent;
   border-bottom: 9px solid transparent;

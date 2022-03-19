@@ -1,3 +1,18 @@
+export const convertToDateFormat = (input: string) => {
+  const d = new Date(input);
+  console.log('convertToDateFormat', d);
+  let month = (d.getMonth() + 1).toString();
+  let day = d.getDate().toString();
+  const year = d.getFullYear().toString();
+  if (month.length == 1) {
+    month = '0' + month.toString();
+  }
+  if (day.length === 1) {
+    day = '0' + day;
+  }
+  return year.toString() + '-' + month + '-' + day;
+};
+
 const daysMap = [
   'Sunday',
   'Monday',
@@ -8,7 +23,34 @@ const daysMap = [
   'Saturday',
 ];
 
-const getDayDetails = (args: any) => {
+export const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
+export const getNumberOfDays = (year: number, month: number) => {
+  return 40 - new Date(year, month, 40).getDate();
+};
+
+type getDayDetailsProps = {
+  index: number;
+  numberOfDays: number;
+  firstDay: number;
+  year: number;
+  month: number;
+};
+
+const getDayDetails = (args: getDayDetailsProps) => {
   let date = args.index - args.firstDay;
   let day = args.index % 7;
   let prevMonth = args.month - 1;
@@ -55,8 +97,4 @@ export const getMonthDetails = (year: number, month: number) => {
     }
   }
   return monthArray;
-};
-
-export const getNumberOfDays = (year: number, month: number) => {
-  return 40 - new Date(year, month, 40).getDate();
 };
