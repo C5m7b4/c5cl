@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorBoundary should render correctly 1`] = `
+<div>
+  <div>
+    <h2>
+      I am a component
+    </h2>
+  </div>
+</div>
+`;
