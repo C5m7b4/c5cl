@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DatePicker should render correctly 1`] = `
+<div>
+  <div
+    class="c5-date-picker"
+    id="c5-date-picker"
+  >
+    <div
+      class="c5-dp-input"
+      id="c5-dp-1"
+    >
+      <input
+        type="date"
+      />
+    </div>
+  </div>
+</div>
+`;
