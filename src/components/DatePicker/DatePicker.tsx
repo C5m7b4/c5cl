@@ -1,182 +1,129 @@
-// @ts-nocheck
 import React, { useState, useEffect, useRef } from 'react';
-import { getMonthDetails } from './core';
+import ReactDOM from 'react-dom';
+import { convertToDateFormat, months, getMonthDetails } from './core';
+import Tooltip from '../Tooltip';
+
 import './DatePicker.css';
 
 export interface DatePickerProps {
-  onChange: (n: number) => void;
-  startDate: Date;
+  date: Date;
+  onChange: (d: Date) => void;
 }
 
-export type DatePickerMonthDetails = {
-  year: number;
-  month: number;
-  monthDetails: string[];
-};
-
 const DatePicker = (props: DatePickerProps) => {
+  const [defaultDate, setDefaultDate] = useState(props.date);
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [selectedDay, setSelectedDay] = useState<any>(props.startDate);
-  const [dateVars, setDateVars] = useState<DatePickerMonthDetails>({
-    year: 0,
-    month: 0,
-    monthDetails: [],
-  });
+  const [monthDetails, setMonthDetails] = useState<any>();
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const dateRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    console.log('showDatePicker', showDatePicker);
-    window.addEventListener('click', addBackdrop);
-
-    // debugger;
-    // const month = props.startDate.getMonth();
-    // const year = props.startDate.getFullYear();
-    // setDateVars({
-    //   year: year,
-    //   month: month,
-    //   montDetails: getMonthDetails(year, month),
-    // });
-
-    return () => {
-      window.removeEventListener('click', addBackdrop);
-    };
-  }, []);
-
-  let date = new Date();
-  let year = date.getFullYear();
-  let month = date.getMonth();
-
-  const monthMap = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'Auguest',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-
-  const isSelectedDay = (day: any) => {
-    return day.timestamp === selectedDay;
-  };
-
-  const isCurrentDay = (day: any) => {
-    return day.timeStamp === selectedDay;
-  };
-
-  const getDateFromDateString = (dateValue: string) => {
-    let dateData = dateValue.split('-').map((d) => parseInt(d, 10));
-    if (dateData.length < 3) {
-      return null;
-    }
-
-    let year = dateData[0];
-    let month = dateData[1];
-    let date = dateData[2];
-
-    return { year, month, date };
-  };
-
-  const getMonthStr = (month: number) =>
-    monthMap[Math.max(Math.min(11, month), 0)] || 'Month';
-
-  const getDateStringFromTimestamp = (timestamp: any) => {
-    let dateObject = new Date(timestamp);
-    let month = dateObject.getMonth() - 1;
-    let date = dateObject.getDate();
-    return (
-      dateObject.getFullYear() +
-      '-' +
-      (month < 10 ? '0' + month : month) +
-      '-' +
-      (date < 10 ? '0' + date : date)
+    setInput();
+    setMonthDetails(
+      getMonthDetails(defaultDate.getFullYear(), defaultDate.getMonth())
     );
-  };
+  }, [defaultDate]);
 
-  const setDate = (dateData: any) => {
-    let selectedDay = new Date(
-      dateData.year,
-      dateData.month - 1,
-      dateData.date
-    ).getTime();
-    setSelectedDay(selectedDay);
-    if (props.onChange) {
-      props.onChange(selectedDay);
+  const setInput = () => {
+    if (dateRef.current) {
+      const dateString = convertToDateFormat(new Date(defaultDate).toString());
+      console.log('dateString', dateString);
+      dateRef.current.value = dateString;
     }
   };
 
-  const updateDateFromInput = () => {
-    if (inputRef.current) {
-      let dateValue = inputRef.current.value;
-      let dateData = getDateFromDateString(dateValue);
-      if (dateData !== null) {
-        setDate(dateData);
-        setDateVars({
-          year: dateData.year,
-          month: dateData.month - 1,
-          monthDetails: getMonthDetails(dateData.year, dateData.month - 1),
-        });
-      }
+  const handleDateClick = () => {
+    setShowDatePicker(true);
+    // @ts-ignore
+    window.addEventListener('click', addBackdrop);
+  };
+
+  const addBackdrop = (e: React.MouseEvent) => {
+    const div = document.getElementById('c5-date-picker');
+    const node = ReactDOM.findDOMNode(div);
+    // @ts-ignore
+    if (showDatePicker && !node?.contains(e.target)) {
+      setShowDatePicker(false);
     }
   };
 
-  const setDateToInput = (timestamp: any) => {
-    let dateString = getDateStringFromTimestamp(timestamp);
-    if (inputRef.current) {
-      inputRef.current.value = dateString;
+  const handleMonthChange = (increment: number) => {
+    let month = defaultDate.getMonth() + 1 + increment;
+    let year = defaultDate.getFullYear();
+    console.log('month', month);
+    console.log('year', year);
+    const day = defaultDate.getDate();
+    if (month === 0) {
+      month = 12;
+      year--;
+    } else if (month > 12) {
+      year++;
+      month = 1;
     }
+
+    const newDate = convertToDateFormat(
+      `${year.toString()}-${
+        month.toString().length === 1
+          ? '0' + month.toString()
+          : month.toString()
+      }-${day.toString().length === 1 ? '0' + day.toString() : day.toString()}`
+    );
+    setDefaultDate(new Date(newDate));
+  };
+
+  const handleYearChange = (increment: number) => {
+    const month = defaultDate.getMonth() + 1;
+    const year = defaultDate.getFullYear() + increment;
+    const day = defaultDate.getDate();
+    const newDate = convertToDateFormat(
+      `${year.toString()}-${
+        month.toString().length === 1
+          ? '0' + month.toString()
+          : month.toString()
+      }-${day.toString().length === 1 ? '0' + day.toString() : day.toString()}`
+    );
+    setDefaultDate(new Date(newDate));
+  };
+
+  type CalendarDay = {
+    date: number;
+    day: number;
+    dayString: string;
+    month: number;
+    timestamp: number;
+  };
+
+  const isCurrentDay = (day: CalendarDay) => {
+    if (day.month === 0 && day.date === defaultDate.getDate()) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const isSelectedDay = (day: CalendarDay) => {
+    return day.timestamp === defaultDate.getTime();
   };
 
   const onDateClick = (day: any) => {
-    setSelectedDay(day.timestamp);
-    //  setDateToInput goes here
-    setDateToInput(day.timestamp);
+    const newDate = new Date(day.timestamp);
+    setDefaultDate(newDate);
     if (props.onChange) {
-      props.onChange(day.timestamp);
+      props.onChange(newDate);
     }
-  };
-
-  const setYear = (offset: number) => {
-    let year = dateVars.year + offset;
-    let month = dateVars.month;
-    setDateVars({
-      ...dateVars,
-      year,
-      monthDetails: getMonthDetails(year, month),
-    });
-  };
-
-  const setMonth = (offset: number) => {
-    let year = dateVars.year;
-    let month = dateVars.month + offset;
-    if (month === -1) {
-      month = 11;
-      year--;
-    } else if (month === 12) {
-      month = 0;
-      year++;
-    }
-    setDateVars({
-      ...dateVars,
-      year,
-      month,
-      monthDetails: getMonthDetails(year, month),
-    });
+    setShowDatePicker(false);
   };
 
   const renderCalendar = () => {
-    let days = dateVars.monthDetails.map((day: any, index: number) => {
+    if (monthDetails.length === 0) {
+      return <div>There are no results</div>;
+    }
+    let days = monthDetails.map((day: any, index: number) => {
       return (
         <div
-          className={`c-day-container ${day.month !== 0 ? ' disabled' : ''} ${
+          className={`c-day-container ${day.month !== 0 ? 'disabled' : ''} ${
             isCurrentDay(day) ? ' highlight' : ''
-          } ${isSelectedDay(day) ? ' highlight-green' : ''}`}
+          } ${isSelectedDay(day) ? ' hightlight-green' : ''}`}
           key={index}
         >
           <div className="cdc-day">
@@ -189,7 +136,7 @@ const DatePicker = (props: DatePickerProps) => {
     return (
       <div className="c-container">
         <div className="cc-head">
-          {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SATT'].map((d, i) => (
+          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((d, i) => (
             <div key={i} className="cch-name">
               {d}
             </div>
@@ -200,50 +147,73 @@ const DatePicker = (props: DatePickerProps) => {
     );
   };
 
-  const addBackdrop = (e: any) => {
-    console.log('e', e.target);
-    console.log('showDatePicker', showDatePicker);
-  };
-
-  const handleClick = (show: boolean) => {
-    console.log('click', show);
-    setShowDatePicker(show);
-  };
-
   return (
-    <div className="mcl-date-picker">
-      <div className="mcl-dp-input" onClick={() => handleClick(true)}>
-        <input type="date" onChange={updateDateFromInput} ref={inputRef} />
+    <div id="c5-date-picker" className="c5-date-picker">
+      <div className="c5-dp-input" onClick={handleDateClick}>
+        <input type="date" ref={dateRef} />
       </div>
       {showDatePicker ? (
-        <div className="mcl-dp-container">
-          <div className="mdpc-head">
-            <div className="mdpch-button">
-              <div className="mdpchb-inner" onClick={() => setYear(-1)}>
-                <span className="mdpchbi-left-arrows"></span>
+        <div className="mdp-container">
+          <div className="mdp-content-container">
+            <div className="mdp-head">
+              <div className="mdp-button">
+                <div
+                  className="mdp-head-button-inner"
+                  onClick={() => handleYearChange(-1)}
+                >
+                  <Tooltip
+                    position="bottom"
+                    message="Subtract Year"
+                    theme="dark"
+                  >
+                    <span className="mdp-head-button-left-arrows"></span>
+                  </Tooltip>
+                </div>
               </div>
-            </div>
-            <div className="mdpch-button">
-              <div className="mdpchb-inner" onClick={() => setMonth(-1)}>
-                <span className="mdpchbi-left-arrow"></span>
+              <div className="mdp-button">
+                <div
+                  className="mdp-head-button-inner"
+                  onClick={() => handleMonthChange(-1)}
+                >
+                  <Tooltip
+                    position="bottom"
+                    message="Subtract month"
+                    theme="dark"
+                  >
+                    <span className="mdp-head-button-left-arrow"></span>
+                  </Tooltip>
+                </div>
               </div>
-            </div>
-            <div className="mdpch-container">
-              <div className="mdpchc-year">{dateVars.year}</div>
-              <div className="mdpchc-month">{getMonthStr(dateVars.month)}</div>
-            </div>
-            <div className="mdpch-button">
-              <div className="mdpchb-inner" onClick={() => setMonth(1)}>
-                <span className="mdpchbi-right-arrow"></span>
+              <div className="mdp-head-date">
+                <div className="mdp-head-year">{defaultDate.getFullYear()}</div>
+                <div className="mdp-head-month">
+                  {months[defaultDate.getMonth()]}
+                </div>
               </div>
-            </div>
-            <div className="mdpch-button" onClick={() => setYear(1)}>
-              <div className="mdpchb-inner">
-                <span className="mdpchbi-right-arrows"></span>
+              <div className="mdp-button">
+                <div
+                  className="mdp-head-button-inner"
+                  onClick={() => handleMonthChange(1)}
+                >
+                  <Tooltip position="bottom" message="Add month" theme="dark">
+                    <span className="mdp-head-button-right-arrow"></span>
+                  </Tooltip>
+                </div>
+              </div>
+              <div className="mdp-button">
+                <div
+                  className="mdp-head-button-inner"
+                  onClick={() => handleYearChange(1)}
+                >
+                  <Tooltip position="bottom" message="Add year" theme="dark">
+                    <span className="mdp-head-button-right-arrows"></span>
+                  </Tooltip>
+                </div>
               </div>
             </div>
           </div>
-          <div className="mdpc-body">{renderCalendar()}</div>
+
+          <div className="mdp-body">{renderCalendar()}</div>
         </div>
       ) : null}
     </div>

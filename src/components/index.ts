@@ -16,4 +16,7 @@ export { default as PSM } from './PSM';
 export { default as Confirm } from './Confirm';
 export { default as Tooltip } from './Tooltip';
 export { default as OutlineButton } from './OutlineButton';
+export { default as DatePicker } from './DatePicker';
+export { default as Tree } from './Tree';
+export { default as Tree1 } from './Tree1';
 export * from './Icons';

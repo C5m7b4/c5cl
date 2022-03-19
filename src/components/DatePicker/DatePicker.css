@@ -1,9 +1,8 @@
-.mcl-date-picker {
-  float: left;
+.c5-date-picker {
   position: relative;
 }
 
-.mcl-date-picker * {
+.c5-date-picker * {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -12,57 +11,51 @@
   user-select: none;
 }
 
-.mcl-dp-input {
-  float: left;
+.c5-dp-input {
   width: 150px;
   height: 35px;
   overflow: hidden;
   border-radius: 20px;
 }
 
-.mcl-dp-input:focus {
+.c5-dp-input:focus {
   outline: none;
 }
 
-.mcl-dp-input input {
+.c5-dp-input input {
   width: 125%;
   background: #f5f5f5;
-  border: none;
+  border: 0;
+  outline: none;
   height: 35px;
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 11px;
   cursor: pointer;
+  user-select: none;
 }
 
-.mcl-dp-container {
-  float: left;
+.mdp-container {
   position: absolute;
   left: 0;
   top: 40px;
   width: 300px;
-  min-height: 350px;
+  min-height: 150px;
   background: #fff;
-  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   overflow: hidden;
   padding: 25px 30px;
 }
 
-.mdpc-head {
-  float: left;
-  width: 100%;
-  height: 53px;
+.mdp-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.mdpc-body {
-  float: left;
-  width: 100%;
-  margin-top: 20px;
+.mdp-head-date {
+  text-align: center;
 }
 
-.mdpch-button {
+.mdp-button {
   float: left;
   width: 45px;
   height: 100%;
@@ -70,16 +63,16 @@
   position: relative;
 }
 
-.mdpchb-inner:hover > span {
-  border-color: #555 !important;
+.mdp-head-button-inner:hover span {
+  border-color: #555;
 }
 
-.mdpchb-inner:hover {
+.mdp-head-button-inner:hover {
   cursor: pointer;
   background: #eee;
 }
 
-.mdpchb-inner {
+.mdp-head-button-inner {
   float: left;
   height: 35px;
   width: 35px;
@@ -94,12 +87,12 @@
   margin-top: -17px;
 }
 
-.mdpchbi-right-arrows:after,
-.mdpchbi-left-arrows:after,
-.mdpchbi-right-arrow,
-.mdpchbi-right-arrows,
-.mdpchbi-left-arrow,
-.mdpchbi-left-arrows {
+.mdp-head-button-left-arrows:after,
+.mdp-head-button-right-arrows:after,
+.mdp-head-button-right-arrow,
+.mdp-head-button-left-arrow,
+.mdp-head-button-left-arrows,
+.mdp-head-button-right-arrows {
   display: block;
   float: left;
   width: 6px;
@@ -109,10 +102,10 @@
   position: absolute;
 }
 
-.mdpchbi-right-arrow,
-.mdpchbi-right-arrows,
-.mdpchbi-left-arrow,
-.mdpchbi-left-arrows {
+.mdp-head-button-right-arrow,
+.mdp-head-button-right-arrows,
+.mdp-head-button-left-arrow,
+.mdp-head-button-left-arrows {
   transform: rotate(45deg);
   left: 50%;
   top: 50%;
@@ -120,60 +113,33 @@
   margin-top: -4px;
 }
 
-.mdpchbi-right-arrows,
-.mdpchbi-right-arrow {
+.mdp-head-button-right-arrows,
+.mdp-head-button-right-arrow {
   transform: rotate(225deg);
   margin-left: -4px;
 }
 
-.mdpchbi-right-arrows:after,
-.mdpchbi-left-arrows:after {
+.mdp-head-button-right-arrows:after,
+.mdp-head-button-left-arrows:after {
   content: '';
 }
 
-.mdpchbi-left-arrows {
+.mdp-head-button-left-arrows {
   margin-left: -5px;
 }
 
-.mdpchbi-right-arrows {
+.mdp-head-button-right-arrows {
   margin-left: -2px;
 }
 
-.mdpchbi-right-arrows:after,
-.mdpchbi-left-arrows:after {
+.mdp-head-button-right-arrows:after,
+.mdp-head-button-left-arrows:after {
   left: 3px;
   top: -5px;
 }
 
-.mdpch-container {
-  float: left;
-  width: 120px;
-  height: 100%;
-}
-
-.mdpchc-year {
-  float: left;
-  width: 100%;
-  height: 30px;
-  font-size: 27px;
-  color: #666;
-  font-weight: 200px;
-  text-align: center;
-}
-
-.mdpchc-month {
-  float: left;
-  width: 100%;
-  height: 15px;
-  font-size: 13px;
-  color: #666;
-  font-weight: 200px;
-  text-align: center;
-}
-
-/* calendar */
 .cc-month,
-.cc-hear,
+.cc-year,
 .cch-name,
 .cc-body,
 .ckc-day span,
@@ -188,18 +154,19 @@
   box-sizing: border-box;
 }
 
+.cch-name {
+  width: 14.285%;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
 .c-container {
   width: 100%;
   height: 100%;
-}
-
-.cc-month {
-  height: 30px;
-  width: 100%;
-  font-family: Roboto;
-  font-size: 16px;
-  line-height: 30px;
-  color: #666;
 }
 
 .cc-head {
@@ -247,9 +214,10 @@
 
 .cdc-day span:hover {
   cursor: pointer;
-  background: pink;
+  background: #99db6f;
   height: 35px;
   width: 35px;
+  padding: 10px;
 }
 
 .cdc-day span {
@@ -277,10 +245,12 @@
 }
 
 .c-day-container.highlight .cdc-day span {
-  background: #efdbca;
+  background: #e68b3c;
+  padding: 10px;
 }
 
 .c-day-container.highlight-green .cdc-day span {
   /* background: #d4e2cb; */
   background: #99db6f;
+  padding: 10px;
 }
