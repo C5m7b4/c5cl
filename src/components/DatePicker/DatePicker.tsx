@@ -8,12 +8,15 @@ import './DatePicker.css';
 export interface DatePickerProps {
   date: Date;
   onChange: (d: Date) => void;
+  id?: string;
 }
 
 const DatePicker = (props: DatePickerProps) => {
   const [defaultDate, setDefaultDate] = useState(props.date);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [monthDetails, setMonthDetails] = useState<any>();
+
+  const componentId = props.id ? `c5-dp-${props.id}` : 'c5-dp-1';
 
   const dateRef = useRef<HTMLInputElement>(null);
 
@@ -27,7 +30,6 @@ const DatePicker = (props: DatePickerProps) => {
   const setInput = () => {
     if (dateRef.current) {
       const dateString = convertToDateFormat(new Date(defaultDate).toString());
-      console.log('dateString', dateString);
       dateRef.current.value = dateString;
     }
   };
@@ -50,8 +52,6 @@ const DatePicker = (props: DatePickerProps) => {
   const handleMonthChange = (increment: number) => {
     let month = defaultDate.getMonth() + 1 + increment;
     let year = defaultDate.getFullYear();
-    console.log('month', month);
-    console.log('year', year);
     const day = defaultDate.getDate();
     if (month === 0) {
       month = 12;
@@ -149,7 +149,7 @@ const DatePicker = (props: DatePickerProps) => {
 
   return (
     <div id="c5-date-picker" className="c5-date-picker">
-      <div className="c5-dp-input" onClick={handleDateClick}>
+      <div className="c5-dp-input" onClick={handleDateClick} id={componentId}>
         <input type="date" ref={dateRef} />
       </div>
       {showDatePicker ? (
@@ -158,6 +158,7 @@ const DatePicker = (props: DatePickerProps) => {
             <div className="mdp-head">
               <div className="mdp-button">
                 <div
+                  id={`${componentId}-ly`}
                   className="mdp-head-button-inner"
                   onClick={() => handleYearChange(-1)}
                 >
@@ -173,6 +174,7 @@ const DatePicker = (props: DatePickerProps) => {
               <div className="mdp-button">
                 <div
                   className="mdp-head-button-inner"
+                  id={`${componentId}-lm`}
                   onClick={() => handleMonthChange(-1)}
                 >
                   <Tooltip
@@ -193,6 +195,7 @@ const DatePicker = (props: DatePickerProps) => {
               <div className="mdp-button">
                 <div
                   className="mdp-head-button-inner"
+                  id={`${componentId}-nm`}
                   onClick={() => handleMonthChange(1)}
                 >
                   <Tooltip position="bottom" message="Add month" theme="dark">
@@ -203,6 +206,7 @@ const DatePicker = (props: DatePickerProps) => {
               <div className="mdp-button">
                 <div
                   className="mdp-head-button-inner"
+                  id={`${componentId}-ny`}
                   onClick={() => handleYearChange(1)}
                 >
                   <Tooltip position="bottom" message="Add year" theme="dark">
