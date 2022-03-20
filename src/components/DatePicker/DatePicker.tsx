@@ -25,6 +25,9 @@ const DatePicker = (props: DatePickerProps) => {
     setMonthDetails(
       getMonthDetails(defaultDate.getFullYear(), defaultDate.getMonth())
     );
+    return () => {
+      window.removeEventListener('click', addBackdrop, true);
+    };
   }, [defaultDate]);
 
   const setInput = () => {
@@ -37,16 +40,33 @@ const DatePicker = (props: DatePickerProps) => {
   const handleDateClick = () => {
     setShowDatePicker(true);
     // @ts-ignore
-    window.addEventListener('click', addBackdrop);
+    window.addEventListener('click', addBackdrop, true);
   };
 
-  const addBackdrop = (e: React.MouseEvent) => {
-    const div = document.getElementById('c5-date-picker');
-    const node = ReactDOM.findDOMNode(div);
-    // @ts-ignore
-    if (showDatePicker && !node?.contains(e.target)) {
+  const addBackdrop = (e: MouseEvent) => {
+    const div = document.querySelector('.mdp-container');
+    if (!div) {
       setShowDatePicker(false);
+      window.removeEventListener('click', addBackdrop, true);
+      return;
     }
+    const rect = div.getBoundingClientRect();
+    if (e.clientX < rect.left || e.clientX > rect.right) {
+      setShowDatePicker(false);
+      window.removeEventListener('click', addBackdrop, true);
+      return;
+    }
+    if (e.clientY < rect.top || e.clientY > rect.bottom) {
+      setShowDatePicker(false);
+      window.removeEventListener('click', addBackdrop, true);
+      return;
+    }
+    // const div = document.getElementById('c5-date-picker');
+    // const node = ReactDOM.findDOMNode(div);
+    // // @ts-ignore
+    // if (showDatePicker && !node?.contains(e.target)) {
+    //   setShowDatePicker(false);
+    // }
   };
 
   const handleMonthChange = (increment: number) => {

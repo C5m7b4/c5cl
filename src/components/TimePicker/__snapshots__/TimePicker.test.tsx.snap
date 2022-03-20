@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimePicker should handle pm 1`] = `
+<div>
+  <div
+    class="c5-time-picker"
+    id="c5-time-picker"
+  >
+    <div
+      class="c5-tp-input"
+      id="c5-time-picker-1"
+    >
+      <input
+        type="time"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TimePicker should render correctly 1`] = `
+<div>
+  <div
+    class="c5-time-picker"
+    id="c5-time-picker"
+  >
+    <div
+      class="c5-tp-input"
+      id="c5-time-picker-1"
+    >
+      <input
+        type="time"
+      />
+    </div>
+  </div>
+</div>
+`;
