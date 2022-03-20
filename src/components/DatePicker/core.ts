@@ -1,6 +1,5 @@
 export const convertToDateFormat = (input: string) => {
   const d = new Date(input);
-  console.log('convertToDateFormat', d);
   let month = (d.getMonth() + 1).toString();
   let day = d.getDate().toString();
   const year = d.getFullYear().toString();
