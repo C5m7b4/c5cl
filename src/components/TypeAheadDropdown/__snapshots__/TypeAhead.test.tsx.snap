@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TypeAheadDropdown should handle no data 1`] = `
+<div>
+  <div
+    class="TypeAheadDropDown"
+  >
+    <div
+      style="display: flex; flex-direction: row;"
+    >
+      <label
+        for="typeahead"
+        style="color: rgb(255, 255, 255); margin-top: 10px; text-align: right;"
+      >
+        Stores
+      </label>
+      <input
+        autocomplete="off"
+        class="form-control"
+        name="typeahead"
+        placeholder="Select Store"
+        style="background-color: rgb(255, 255, 255);"
+        type="text"
+        value=""
+      />
+    </div>
+    <ul
+      style="position: absolute; left: 7px; top: 0px; width: -10px;"
+    />
+  </div>
+</div>
+`;
+
+exports[`TypeAheadDropdown should render correctly 1`] = `
+<div>
+  <div
+    class="TypeAheadDropDown"
+  >
+    <div
+      style="display: flex; flex-direction: row;"
+    >
+      <label
+        for="typeahead"
+        style="color: rgb(100, 109, 142); margin-top: 10px; text-align: right;"
+      >
+        Stores
+      </label>
+      <input
+        autocomplete="off"
+        class="form-control"
+        name="typeahead"
+        placeholder="Select Store"
+        style="background-color: rgb(31, 30, 46);"
+        type="text"
+        value="Mikes Grocery"
+      />
+    </div>
+    <ul
+      style="position: absolute; left: 7px; top: 0px; width: -10px;"
+    >
+      <li>
+        <span
+          class="tadd-text"
+          style="color: white;"
+        >
+          Mikes Grocery
+        </span>
+      </li>
+      <li>
+        <span
+          class="tadd-text"
+          style="color: white;"
+        >
+          Tommy Grocery
+        </span>
+      </li>
+      <li>
+        <span
+          class="tadd-text"
+          style="color: white;"
+        >
+          TJs Grocery
+        </span>
+      </li>
+      <li>
+        <span
+          class="tadd-text"
+          style="color: white;"
+        >
+          Marys Grocery
+        </span>
+      </li>
+      <li>
+        <span
+          class="tadd-text"
+          style="color: white;"
+        >
+          Codys Grocery
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`TypeAheadDropdown should render with background color and labelColor 1`] = `
+<div>
+  <div
+    class="TypeAheadDropDown"
+  >
+    <div
+      style="display: flex; flex-direction: row;"
+    >
+      <label
+        for="typeahead"
+        style="color: rgb(255, 255, 255); margin-top: 10px; text-align: right;"
+      >
+        Stores
+      </label>
+      <input
+        autocomplete="off"
+        class="form-control"
+        name="typeahead"
+        placeholder="Select Store"
+        style="background-color: rgb(255, 255, 255);"
+        type="text"
+        value="Mikes Grocery"
+      />
+    </div>
+    <ul
+      style="position: absolute; left: 7px; top: 0px; width: -10px;"
+    >
+      <li>
+        <span
+          class="tadd-text"
+          style="color: white;"
+        >
+          Mikes Grocery
+        </span>
+      </li>
+      <li>
+        <span
+          class="tadd-text"
+          style="color: white;"
+        >
+          Tommy Grocery
+        </span>
+      </li>
+      <li>
+        <span
+          class="tadd-text"
+          style="color: white;"
+        >
+          TJs Grocery
+        </span>
+      </li>
+      <li>
+        <span
+          class="tadd-text"
+          style="color: white;"
+        >
+          Marys Grocery
+        </span>
+      </li>
+      <li>
+        <span
+          class="tadd-text"
+          style="color: white;"
+        >
+          Codys Grocery
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
