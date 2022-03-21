@@ -1,4 +1,15 @@
-.c5cl-textInput input {
+.c5cl-textinput-dark {
+  background-color: #000 !important;
+  color: #fff !important;
+  padding: 4px 5px;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+}
+
+.c5cl-textinput-light {
+  background-color: #fff;
+  color: #000;
   padding: 4px 5px;
   border-radius: 8px;
   outline: none;
@@ -11,4 +22,12 @@
   border-radius: 8px;
   width: 100%;
   padding: 4px 5px;
+}
+
+.c5cl-textinput-label-dark {
+  color: #000;
+}
+
+.c5cl-textinput-label-light {
+  color: #fff;
 }
