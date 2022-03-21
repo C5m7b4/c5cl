@@ -9,6 +9,7 @@ Object {
         class="c5cl-select"
       >
         <label
+          class="c5cl-select-label-light"
           for="test"
         >
           test
@@ -17,7 +18,7 @@ Object {
           class="field"
         >
           <select
-            class="form-control"
+            class="c5cl-select-light"
             id="test"
           >
             <option
@@ -36,11 +37,11 @@ Object {
               sally
             </option>
           </select>
+          <div
+            class="null"
+            data-testid="alert"
+          />
         </div>
-        <div
-          class="alert alert-danger"
-          data-testid="alert"
-        />
       </div>
     </div>
   </body>,
@@ -49,6 +50,7 @@ Object {
       class="c5cl-select"
     >
       <label
+        class="c5cl-select-label-light"
         for="test"
       >
         test
@@ -57,7 +59,7 @@ Object {
         class="field"
       >
         <select
-          class="form-control"
+          class="c5cl-select-light"
           id="test"
         >
           <option
@@ -76,11 +78,11 @@ Object {
             sally
           </option>
         </select>
+        <div
+          class="null"
+          data-testid="alert"
+        />
       </div>
-      <div
-        class="alert alert-danger"
-        data-testid="alert"
-      />
     </div>
   </div>,
   "debug": [Function],
@@ -146,6 +148,7 @@ Object {
         class="c5cl-select"
       >
         <label
+          class="c5cl-select-label-light"
           for="test"
         >
           test
@@ -154,7 +157,7 @@ Object {
           class="field"
         >
           <select
-            class="form-control"
+            class="c5cl-select-light"
             id="test"
           >
             <option
@@ -173,11 +176,11 @@ Object {
               sally
             </option>
           </select>
+          <div
+            class="null"
+            data-testid="alert"
+          />
         </div>
-        <div
-          class="alert alert-danger"
-          data-testid="alert"
-        />
       </div>
     </div>
   </body>,
@@ -186,6 +189,7 @@ Object {
       class="c5cl-select"
     >
       <label
+        class="c5cl-select-label-light"
         for="test"
       >
         test
@@ -194,7 +198,7 @@ Object {
         class="field"
       >
         <select
-          class="form-control"
+          class="c5cl-select-light"
           id="test"
         >
           <option
@@ -213,11 +217,11 @@ Object {
             sally
           </option>
         </select>
+        <div
+          class="null"
+          data-testid="alert"
+        />
       </div>
-      <div
-        class="alert alert-danger"
-        data-testid="alert"
-      />
     </div>
   </div>,
   "debug": [Function],
@@ -283,6 +287,7 @@ Object {
         class="c5cl-select has-error"
       >
         <label
+          class="c5cl-select-label-light"
           for="test"
         >
           test
@@ -291,7 +296,7 @@ Object {
           class="field"
         >
           <select
-            class="form-control"
+            class="c5cl-select-light"
             id="test"
           >
             <option
@@ -310,12 +315,12 @@ Object {
               sally
             </option>
           </select>
-        </div>
-        <div
-          class="alert alert-danger"
-          data-testid="alert"
-        >
-          you got an error
+          <div
+            class="alert-danger"
+            data-testid="alert"
+          >
+            you got an error
+          </div>
         </div>
       </div>
     </div>
@@ -325,6 +330,7 @@ Object {
       class="c5cl-select has-error"
     >
       <label
+        class="c5cl-select-label-light"
         for="test"
       >
         test
@@ -333,7 +339,7 @@ Object {
         class="field"
       >
         <select
-          class="form-control"
+          class="c5cl-select-light"
           id="test"
         >
           <option
@@ -352,12 +358,12 @@ Object {
             sally
           </option>
         </select>
-      </div>
-      <div
-        class="alert alert-danger"
-        data-testid="alert"
-      >
-        you got an error
+        <div
+          class="alert-danger"
+          data-testid="alert"
+        >
+          you got an error
+        </div>
       </div>
     </div>
   </div>,

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Theme } from '../../types';
 import './SelectField.css';
 
 export type ValueOf<T> = T[keyof T];
@@ -13,6 +14,7 @@ export interface SelectFieldProps<T> {
   error?: string;
   emptyMsg: string;
   data: T[];
+  theme?: Theme;
 }
 
 function SelectField<T>(props: SelectFieldProps<T>) {
@@ -21,14 +23,18 @@ function SelectField<T>(props: SelectFieldProps<T>) {
     wrapperClass += ' has-error';
   }
 
+  const { theme = 'light' } = props;
+
   return (
     <div className={wrapperClass}>
-      <label htmlFor={props.id}>{props.label}</label>
+      <label htmlFor={props.id} className={`c5cl-select-label-${theme}`}>
+        {props.label}
+      </label>
       <div className="field">
         <select
           id={props.id}
           onChange={props.onChange}
-          className="form-control"
+          className={`c5cl-select-${theme}`}
         >
           <option value="0">{props.emptyMsg}</option>
           {props.data && props.data.length === 0
@@ -43,12 +49,19 @@ function SelectField<T>(props: SelectFieldProps<T>) {
                 </option>
               ))}
         </select>
+        {props.error && props.error.length == 0 ? (
+          ''
+        ) : (
+          <div
+            className={`${
+              props.error && props.error.length > 0 ? 'alert-danger' : null
+            }`}
+            data-testid="alert"
+          >
+            {props.error}
+          </div>
+        )}
       </div>
-      {props.error && props.error.length === 0 ? null : (
-        <div className="alert alert-danger" data-testid="alert">
-          {props.error}
-        </div>
-      )}
     </div>
   );
 }
