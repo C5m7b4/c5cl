@@ -20,4 +20,5 @@ export { default as DatePicker } from './DatePicker';
 export { default as Tree } from './Tree';
 export { default as Tree1 } from './Tree1';
 export { default as ErrorBoundary } from './ErrorBoundary';
+export { default as TypeAheadDropdown } from './TypeAheadDropdown';
 export * from './Icons';
