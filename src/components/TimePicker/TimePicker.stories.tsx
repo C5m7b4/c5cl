@@ -7,7 +7,7 @@ import TimePicker, {
 } from './TimePicker';
 
 export default {
-  title: 'Time Picker',
+  title: 'Pickers/Time Picker',
   component: TimePicker,
 } as Meta;
 

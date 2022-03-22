@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 import Tree1, { TreeProps } from './Tree1';
 
 export default {
-  title: 'Tree1',
+  title: 'Tree/Tree1',
   component: Tree1,
 } as Meta;
 

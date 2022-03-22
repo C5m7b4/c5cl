@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import TypeAheadDemo from './TypeAheadDemo';
 
 export default {
-  title: 'Type Ahead',
+  title: 'Forms/Type Ahead',
   component: TypeAheadDemo,
 } as Meta;
 

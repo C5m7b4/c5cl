@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import DatePicker, { DatePickerProps } from './DatePicker';
 
 export default {
-  title: 'DatePicker1',
+  title: 'Pickers/DatePicker1',
   component: DatePicker,
 } as Meta;
 

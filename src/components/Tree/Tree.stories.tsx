@@ -5,7 +5,7 @@ import { jsonData1 } from './testJson';
 import Tree, { TreeProps } from './Tree';
 
 export default {
-  title: 'Tree',
+  title: 'Tree/Tree',
   component: Tree,
 } as Meta;
 

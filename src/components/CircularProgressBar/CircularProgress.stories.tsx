@@ -6,7 +6,7 @@ import CircularProgressBar, {
 } from './CircularProgressBar';
 
 export default {
-  title: 'Circular Progress Bar',
+  title: 'Progress/Circular Progress Bar',
   component: CircularProgressBar,
 } as Meta;
 
