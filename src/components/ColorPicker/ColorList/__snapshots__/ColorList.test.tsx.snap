@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorList should render correctly 1`] = `
+<div>
+  <div
+    style="padding: 0.4rem; display: grid; grid-template-columns: repeat(10, 1fr);"
+  >
+    <button
+      style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+      type="button"
+    >
+      <div
+        style="position: absolute; background: rgb(0, 0, 0); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+      />
+      <div
+        style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+      />
+    </button>
+  </div>
+</div>
+`;

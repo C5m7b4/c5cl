@@ -1,0 +1,2371 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorPicker should handle color combinations (analogous) 1`] = `
+<div>
+  <div
+    style="--rpc-background: #fff; --rpc-inputBackground: #f4f4f4; --rpc-color: #262626; --rpc-border-color: #d4d4d4; --rpc-border-radius: 5px; --rpc-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); box-shadow: var(--rpc-box-shadow); border-radius: var(--rpc-border-radius); min-width: 280px; --rpc-hue: 300; --rpc-red: 255; --rpc-green: 0; --rpc-blue: 255; --rpc-hex: #ff00ff; --rpc-alpha: 1; --rpc-rgba: rgba(255, 0, 255, 1); --rpc-hue-pointer: 83.33333333333333%; --rpc-alpha-pointer: 100%; --rpc-saturation-pointer-top: calc(0% - 6px); --rpc-saturation-pointer-left: calc(100% - 6px);"
+  >
+    <div
+      style="width: calc(100% - 0.8rem); height: 200px; margin: 0.4rem; position: relative; border-radius: var(--rpc-border-radius); overflow: hidden;"
+    >
+      <style>
+        
+        .saturation-white{
+          background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+          background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+        }
+        .saturation-black {
+          background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+          background: linear-gradient(to top, #000, rgba(0,0,0,0));
+        }
+      
+      </style>
+      <div
+        class="saturation-white"
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+      >
+        <div
+          class="saturation-black"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+        />
+        <div
+          style="position: absolute; cursor: hand;"
+        >
+          <div
+            style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0.4rem 0.4rem; width: calc(100% - 0.8rem); display: flex; align-items: center; justify-content: center; flex-wrap: wrap;"
+    >
+      <div
+        style="border-radius: var(--rpc-border-radius);"
+      >
+        <div
+          style="position: relative; width: 25px; height: 25px; border-radius: var(--rpc-border-radius); overflow: hidden; box-shadow: inset 0 0 2px 0px rgba(0,0, 0, .2); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center;"
+        >
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; border-radius: var(--rpc-border-radius);"
+          />
+        </div>
+      </div>
+      <div
+        style="flex-grow: 2; margin-left: 0.4rem;"
+      >
+        <div
+          style="width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, .2); position: relative; border-radius: 4px;"
+        >
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+        <div
+          style="margin: 5px 0px 0px; width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); position: relative; z-index: 1; border-radius: 4px;"
+        >
+          <div
+            style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; border-radius: 4px;"
+          />
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: -1; border-radius: calc(var(--rpc-border-radius) / 2);"
+          />
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, .9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0px 0.3rem 0.3rem; display: flex; align-items: center; justify-content: space-between;"
+    >
+      <label
+        style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+      >
+        <div
+          style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+        >
+          <span
+            style="padding-left: 5px; font-size: 10px;"
+          >
+            #
+          </span>
+          <input
+            autocomplete="off"
+            maxlength="6"
+            name="hex"
+            spellcheck="false"
+            style="width: 45px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+            type="text"
+            value="ff00ff"
+          />
+        </div>
+        <span>
+          Hex
+        </span>
+      </label>
+      <div
+        style="display: flex;"
+      >
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="red"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            R
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="green"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            G
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="blue"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            B
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="100"
+              min="0"
+              name="alpha"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="100"
+            />
+          </div>
+          <span>
+            Alpha
+          </span>
+        </label>
+      </div>
+    </div>
+    <div
+      style="padding: 0.4rem; display: grid; grid-template-columns: repeat(10, 1fr);"
+    >
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 0, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(153, 0, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(204, 0, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 0, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 0, 204); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 0, 153); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ColorPicker should handle color combinations (complement) 1`] = `
+<div>
+  <div
+    style="--rpc-background: #fff; --rpc-inputBackground: #f4f4f4; --rpc-color: #262626; --rpc-border-color: #d4d4d4; --rpc-border-radius: 5px; --rpc-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); box-shadow: var(--rpc-box-shadow); border-radius: var(--rpc-border-radius); min-width: 280px; --rpc-hue: 0; --rpc-red: 255; --rpc-green: 255; --rpc-blue: 255; --rpc-hex: #ffffff; --rpc-alpha: 1; --rpc-rgba: rgba(255, 255, 255, 1); --rpc-hue-pointer: 0%; --rpc-alpha-pointer: 100%; --rpc-saturation-pointer-top: calc(0% - 6px); --rpc-saturation-pointer-left: calc(0% - 6px);"
+  >
+    <div
+      style="width: calc(100% - 0.8rem); height: 200px; margin: 0.4rem; position: relative; border-radius: var(--rpc-border-radius); overflow: hidden;"
+    >
+      <style>
+        
+        .saturation-white{
+          background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+          background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+        }
+        .saturation-black {
+          background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+          background: linear-gradient(to top, #000, rgba(0,0,0,0));
+        }
+      
+      </style>
+      <div
+        class="saturation-white"
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+      >
+        <div
+          class="saturation-black"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+        />
+        <div
+          style="position: absolute; cursor: hand;"
+        >
+          <div
+            style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0.4rem 0.4rem; width: calc(100% - 0.8rem); display: flex; align-items: center; justify-content: center; flex-wrap: wrap;"
+    >
+      <div
+        style="border-radius: var(--rpc-border-radius);"
+      >
+        <div
+          style="position: relative; width: 25px; height: 25px; border-radius: var(--rpc-border-radius); overflow: hidden; box-shadow: inset 0 0 2px 0px rgba(0,0, 0, .2); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center;"
+        >
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; border-radius: var(--rpc-border-radius);"
+          />
+        </div>
+      </div>
+      <div
+        style="flex-grow: 2; margin-left: 0.4rem;"
+      >
+        <div
+          style="width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, .2); position: relative; border-radius: 4px;"
+        >
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+        <div
+          style="margin: 5px 0px 0px; width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); position: relative; z-index: 1; border-radius: 4px;"
+        >
+          <div
+            style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; border-radius: 4px;"
+          />
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: -1; border-radius: calc(var(--rpc-border-radius) / 2);"
+          />
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, .9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0px 0.3rem 0.3rem; display: flex; align-items: center; justify-content: space-between;"
+    >
+      <label
+        style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+      >
+        <div
+          style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+        >
+          <span
+            style="padding-left: 5px; font-size: 10px;"
+          >
+            #
+          </span>
+          <input
+            autocomplete="off"
+            maxlength="6"
+            name="hex"
+            spellcheck="false"
+            style="width: 45px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+            type="text"
+            value="ffffff"
+          />
+        </div>
+        <span>
+          Hex
+        </span>
+      </label>
+      <div
+        style="display: flex;"
+      >
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="red"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            R
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="green"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            G
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="blue"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            B
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="100"
+              min="0"
+              name="alpha"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="100"
+            />
+          </div>
+          <span>
+            Alpha
+          </span>
+        </label>
+      </div>
+    </div>
+    <div
+      style="padding: 0.4rem; display: grid; grid-template-columns: repeat(10, 1fr);"
+    >
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ColorPicker should handle color combinations (monochromatic) 1`] = `
+<div>
+  <div
+    style="--rpc-background: #fff; --rpc-inputBackground: #f4f4f4; --rpc-color: #262626; --rpc-border-color: #d4d4d4; --rpc-border-radius: 5px; --rpc-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); box-shadow: var(--rpc-box-shadow); border-radius: var(--rpc-border-radius); min-width: 280px; --rpc-hue: 0; --rpc-red: 255; --rpc-green: 255; --rpc-blue: 255; --rpc-hex: #ffffff; --rpc-alpha: 1; --rpc-rgba: rgba(255, 255, 255, 1); --rpc-hue-pointer: 0%; --rpc-alpha-pointer: 100%; --rpc-saturation-pointer-top: calc(0% - 6px); --rpc-saturation-pointer-left: calc(0% - 6px);"
+  >
+    <div
+      style="width: calc(100% - 0.8rem); height: 200px; margin: 0.4rem; position: relative; border-radius: var(--rpc-border-radius); overflow: hidden;"
+    >
+      <style>
+        
+        .saturation-white{
+          background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+          background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+        }
+        .saturation-black {
+          background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+          background: linear-gradient(to top, #000, rgba(0,0,0,0));
+        }
+      
+      </style>
+      <div
+        class="saturation-white"
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+      >
+        <div
+          class="saturation-black"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+        />
+        <div
+          style="position: absolute; cursor: hand;"
+        >
+          <div
+            style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0.4rem 0.4rem; width: calc(100% - 0.8rem); display: flex; align-items: center; justify-content: center; flex-wrap: wrap;"
+    >
+      <div
+        style="border-radius: var(--rpc-border-radius);"
+      >
+        <div
+          style="position: relative; width: 25px; height: 25px; border-radius: var(--rpc-border-radius); overflow: hidden; box-shadow: inset 0 0 2px 0px rgba(0,0, 0, .2); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center;"
+        >
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; border-radius: var(--rpc-border-radius);"
+          />
+        </div>
+      </div>
+      <div
+        style="flex-grow: 2; margin-left: 0.4rem;"
+      >
+        <div
+          style="width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, .2); position: relative; border-radius: 4px;"
+        >
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+        <div
+          style="margin: 5px 0px 0px; width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); position: relative; z-index: 1; border-radius: 4px;"
+        >
+          <div
+            style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; border-radius: 4px;"
+          />
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: -1; border-radius: calc(var(--rpc-border-radius) / 2);"
+          />
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, .9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0px 0.3rem 0.3rem; display: flex; align-items: center; justify-content: space-between;"
+    >
+      <label
+        style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+      >
+        <div
+          style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+        >
+          <span
+            style="padding-left: 5px; font-size: 10px;"
+          >
+            #
+          </span>
+          <input
+            autocomplete="off"
+            maxlength="6"
+            name="hex"
+            spellcheck="false"
+            style="width: 45px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+            type="text"
+            value="ffffff"
+          />
+        </div>
+        <span>
+          Hex
+        </span>
+      </label>
+      <div
+        style="display: flex;"
+      >
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="red"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            R
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="green"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            G
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="blue"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            B
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="100"
+              min="0"
+              name="alpha"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="100"
+            />
+          </div>
+          <span>
+            Alpha
+          </span>
+        </label>
+      </div>
+    </div>
+    <div
+      style="padding: 0.4rem; display: grid; grid-template-columns: repeat(10, 1fr);"
+    >
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(42, 42, 42); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(85, 85, 85); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(128, 128, 128); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(170, 170, 170); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(212, 212, 212); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ColorPicker should handle color combinations (splitcomplement) 1`] = `
+<div>
+  <div
+    style="--rpc-background: #fff; --rpc-inputBackground: #f4f4f4; --rpc-color: #262626; --rpc-border-color: #d4d4d4; --rpc-border-radius: 5px; --rpc-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); box-shadow: var(--rpc-box-shadow); border-radius: var(--rpc-border-radius); min-width: 280px; --rpc-hue: 0; --rpc-red: 255; --rpc-green: 255; --rpc-blue: 255; --rpc-hex: #ffffff; --rpc-alpha: 1; --rpc-rgba: rgba(255, 255, 255, 1); --rpc-hue-pointer: 0%; --rpc-alpha-pointer: 100%; --rpc-saturation-pointer-top: calc(0% - 6px); --rpc-saturation-pointer-left: calc(0% - 6px);"
+  >
+    <div
+      style="width: calc(100% - 0.8rem); height: 200px; margin: 0.4rem; position: relative; border-radius: var(--rpc-border-radius); overflow: hidden;"
+    >
+      <style>
+        
+        .saturation-white{
+          background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+          background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+        }
+        .saturation-black {
+          background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+          background: linear-gradient(to top, #000, rgba(0,0,0,0));
+        }
+      
+      </style>
+      <div
+        class="saturation-white"
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+      >
+        <div
+          class="saturation-black"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+        />
+        <div
+          style="position: absolute; cursor: hand;"
+        >
+          <div
+            style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0.4rem 0.4rem; width: calc(100% - 0.8rem); display: flex; align-items: center; justify-content: center; flex-wrap: wrap;"
+    >
+      <div
+        style="border-radius: var(--rpc-border-radius);"
+      >
+        <div
+          style="position: relative; width: 25px; height: 25px; border-radius: var(--rpc-border-radius); overflow: hidden; box-shadow: inset 0 0 2px 0px rgba(0,0, 0, .2); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center;"
+        >
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; border-radius: var(--rpc-border-radius);"
+          />
+        </div>
+      </div>
+      <div
+        style="flex-grow: 2; margin-left: 0.4rem;"
+      >
+        <div
+          style="width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, .2); position: relative; border-radius: 4px;"
+        >
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+        <div
+          style="margin: 5px 0px 0px; width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); position: relative; z-index: 1; border-radius: 4px;"
+        >
+          <div
+            style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; border-radius: 4px;"
+          />
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: -1; border-radius: calc(var(--rpc-border-radius) / 2);"
+          />
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, .9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0px 0.3rem 0.3rem; display: flex; align-items: center; justify-content: space-between;"
+    >
+      <label
+        style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+      >
+        <div
+          style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+        >
+          <span
+            style="padding-left: 5px; font-size: 10px;"
+          >
+            #
+          </span>
+          <input
+            autocomplete="off"
+            maxlength="6"
+            name="hex"
+            spellcheck="false"
+            style="width: 45px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+            type="text"
+            value="ffffff"
+          />
+        </div>
+        <span>
+          Hex
+        </span>
+      </label>
+      <div
+        style="display: flex;"
+      >
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="red"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            R
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="green"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            G
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="blue"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            B
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="100"
+              min="0"
+              name="alpha"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="100"
+            />
+          </div>
+          <span>
+            Alpha
+          </span>
+        </label>
+      </div>
+    </div>
+    <div
+      style="padding: 0.4rem; display: grid; grid-template-columns: repeat(10, 1fr);"
+    >
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ColorPicker should handle color combinations (tetrad) 1`] = `
+<div>
+  <div
+    style="--rpc-background: #fff; --rpc-inputBackground: #f4f4f4; --rpc-color: #262626; --rpc-border-color: #d4d4d4; --rpc-border-radius: 5px; --rpc-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); box-shadow: var(--rpc-box-shadow); border-radius: var(--rpc-border-radius); min-width: 280px; --rpc-hue: 0; --rpc-red: 255; --rpc-green: 255; --rpc-blue: 255; --rpc-hex: #ffffff; --rpc-alpha: 1; --rpc-rgba: rgba(255, 255, 255, 1); --rpc-hue-pointer: 0%; --rpc-alpha-pointer: 100%; --rpc-saturation-pointer-top: calc(0% - 6px); --rpc-saturation-pointer-left: calc(0% - 6px);"
+  >
+    <div
+      style="width: calc(100% - 0.8rem); height: 200px; margin: 0.4rem; position: relative; border-radius: var(--rpc-border-radius); overflow: hidden;"
+    >
+      <style>
+        
+        .saturation-white{
+          background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+          background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+        }
+        .saturation-black {
+          background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+          background: linear-gradient(to top, #000, rgba(0,0,0,0));
+        }
+      
+      </style>
+      <div
+        class="saturation-white"
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+      >
+        <div
+          class="saturation-black"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+        />
+        <div
+          style="position: absolute; cursor: hand;"
+        >
+          <div
+            style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0.4rem 0.4rem; width: calc(100% - 0.8rem); display: flex; align-items: center; justify-content: center; flex-wrap: wrap;"
+    >
+      <div
+        style="border-radius: var(--rpc-border-radius);"
+      >
+        <div
+          style="position: relative; width: 25px; height: 25px; border-radius: var(--rpc-border-radius); overflow: hidden; box-shadow: inset 0 0 2px 0px rgba(0,0, 0, .2); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center;"
+        >
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; border-radius: var(--rpc-border-radius);"
+          />
+        </div>
+      </div>
+      <div
+        style="flex-grow: 2; margin-left: 0.4rem;"
+      >
+        <div
+          style="width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, .2); position: relative; border-radius: 4px;"
+        >
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+        <div
+          style="margin: 5px 0px 0px; width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); position: relative; z-index: 1; border-radius: 4px;"
+        >
+          <div
+            style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; border-radius: 4px;"
+          />
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: -1; border-radius: calc(var(--rpc-border-radius) / 2);"
+          />
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, .9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0px 0.3rem 0.3rem; display: flex; align-items: center; justify-content: space-between;"
+    >
+      <label
+        style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+      >
+        <div
+          style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+        >
+          <span
+            style="padding-left: 5px; font-size: 10px;"
+          >
+            #
+          </span>
+          <input
+            autocomplete="off"
+            maxlength="6"
+            name="hex"
+            spellcheck="false"
+            style="width: 45px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+            type="text"
+            value="ffffff"
+          />
+        </div>
+        <span>
+          Hex
+        </span>
+      </label>
+      <div
+        style="display: flex;"
+      >
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="red"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            R
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="green"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            G
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="blue"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            B
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="100"
+              min="0"
+              name="alpha"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="100"
+            />
+          </div>
+          <span>
+            Alpha
+          </span>
+        </label>
+      </div>
+    </div>
+    <div
+      style="padding: 0.4rem; display: grid; grid-template-columns: repeat(10, 1fr);"
+    >
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ColorPicker should handle color combinations (triad) 1`] = `
+<div>
+  <div
+    style="--rpc-background: #fff; --rpc-inputBackground: #f4f4f4; --rpc-color: #262626; --rpc-border-color: #d4d4d4; --rpc-border-radius: 5px; --rpc-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); box-shadow: var(--rpc-box-shadow); border-radius: var(--rpc-border-radius); min-width: 280px; --rpc-hue: 0; --rpc-red: 255; --rpc-green: 255; --rpc-blue: 255; --rpc-hex: #ffffff; --rpc-alpha: 1; --rpc-rgba: rgba(255, 255, 255, 1); --rpc-hue-pointer: 0%; --rpc-alpha-pointer: 100%; --rpc-saturation-pointer-top: calc(0% - 6px); --rpc-saturation-pointer-left: calc(0% - 6px);"
+  >
+    <div
+      style="width: calc(100% - 0.8rem); height: 200px; margin: 0.4rem; position: relative; border-radius: var(--rpc-border-radius); overflow: hidden;"
+    >
+      <style>
+        
+        .saturation-white{
+          background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+          background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+        }
+        .saturation-black {
+          background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+          background: linear-gradient(to top, #000, rgba(0,0,0,0));
+        }
+      
+      </style>
+      <div
+        class="saturation-white"
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+      >
+        <div
+          class="saturation-black"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+        />
+        <div
+          style="position: absolute; cursor: hand;"
+        >
+          <div
+            style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0.4rem 0.4rem; width: calc(100% - 0.8rem); display: flex; align-items: center; justify-content: center; flex-wrap: wrap;"
+    >
+      <div
+        style="border-radius: var(--rpc-border-radius);"
+      >
+        <div
+          style="position: relative; width: 25px; height: 25px; border-radius: var(--rpc-border-radius); overflow: hidden; box-shadow: inset 0 0 2px 0px rgba(0,0, 0, .2); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center;"
+        >
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; border-radius: var(--rpc-border-radius);"
+          />
+        </div>
+      </div>
+      <div
+        style="flex-grow: 2; margin-left: 0.4rem;"
+      >
+        <div
+          style="width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, .2); position: relative; border-radius: 4px;"
+        >
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+        <div
+          style="margin: 5px 0px 0px; width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); position: relative; z-index: 1; border-radius: 4px;"
+        >
+          <div
+            style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; border-radius: 4px;"
+          />
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: -1; border-radius: calc(var(--rpc-border-radius) / 2);"
+          />
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, .9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0px 0.3rem 0.3rem; display: flex; align-items: center; justify-content: space-between;"
+    >
+      <label
+        style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+      >
+        <div
+          style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+        >
+          <span
+            style="padding-left: 5px; font-size: 10px;"
+          >
+            #
+          </span>
+          <input
+            autocomplete="off"
+            maxlength="6"
+            name="hex"
+            spellcheck="false"
+            style="width: 45px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+            type="text"
+            value="ffffff"
+          />
+        </div>
+        <span>
+          Hex
+        </span>
+      </label>
+      <div
+        style="display: flex;"
+      >
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="red"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            R
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="green"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            G
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="blue"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            B
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="100"
+              min="0"
+              name="alpha"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="100"
+            />
+          </div>
+          <span>
+            Alpha
+          </span>
+        </label>
+      </div>
+    </div>
+    <div
+      style="padding: 0.4rem; display: grid; grid-template-columns: repeat(10, 1fr);"
+    >
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ColorPicker should handle invalid color 1`] = `
+<div>
+  <div
+    style="--rpc-background: #fff; --rpc-inputBackground: #f4f4f4; --rpc-color: #262626; --rpc-border-color: #d4d4d4; --rpc-border-radius: 5px; --rpc-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); box-shadow: var(--rpc-box-shadow); border-radius: var(--rpc-border-radius); min-width: 280px; --rpc-hue: 0; --rpc-red: 0; --rpc-green: 0; --rpc-blue: 0; --rpc-hex: #000000; --rpc-alpha: 1; --rpc-rgba: rgba(0, 0, 0, 1); --rpc-hue-pointer: 0%; --rpc-alpha-pointer: 100%; --rpc-saturation-pointer-top: calc(100% - 6px); --rpc-saturation-pointer-left: calc(0% - 6px);"
+  >
+    <div
+      style="width: calc(100% - 0.8rem); height: 200px; margin: 0.4rem; position: relative; border-radius: var(--rpc-border-radius); overflow: hidden;"
+    >
+      <style>
+        
+        .saturation-white{
+          background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+          background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+        }
+        .saturation-black {
+          background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+          background: linear-gradient(to top, #000, rgba(0,0,0,0));
+        }
+      
+      </style>
+      <div
+        class="saturation-white"
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+      >
+        <div
+          class="saturation-black"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+        />
+        <div
+          style="position: absolute; cursor: hand;"
+        >
+          <div
+            style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0.4rem 0.4rem; width: calc(100% - 0.8rem); display: flex; align-items: center; justify-content: center; flex-wrap: wrap;"
+    >
+      <div
+        style="border-radius: var(--rpc-border-radius);"
+      >
+        <div
+          style="position: relative; width: 25px; height: 25px; border-radius: var(--rpc-border-radius); overflow: hidden; box-shadow: inset 0 0 2px 0px rgba(0,0, 0, .2); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center;"
+        >
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; border-radius: var(--rpc-border-radius);"
+          />
+        </div>
+      </div>
+      <div
+        style="flex-grow: 2; margin-left: 0.4rem;"
+      >
+        <div
+          style="width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, .2); position: relative; border-radius: 4px;"
+        >
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+        <div
+          style="margin: 5px 0px 0px; width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); position: relative; z-index: 1; border-radius: 4px;"
+        >
+          <div
+            style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; border-radius: 4px;"
+          />
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: -1; border-radius: calc(var(--rpc-border-radius) / 2);"
+          />
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, .9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0px 0.3rem 0.3rem; display: flex; align-items: center; justify-content: space-between;"
+    >
+      <label
+        style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+      >
+        <div
+          style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+        >
+          <span
+            style="padding-left: 5px; font-size: 10px;"
+          >
+            #
+          </span>
+          <input
+            autocomplete="off"
+            maxlength="6"
+            name="hex"
+            spellcheck="false"
+            style="width: 45px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+            type="text"
+            value="000000"
+          />
+        </div>
+        <span>
+          Hex
+        </span>
+      </label>
+      <div
+        style="display: flex;"
+      >
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="red"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            R
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="green"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            G
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="blue"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            B
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="100"
+              min="0"
+              name="alpha"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="100"
+            />
+          </div>
+          <span>
+            Alpha
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ColorPicker should have colorlist 1`] = `
+<div>
+  <div
+    style="--rpc-background: #fff; --rpc-inputBackground: #f4f4f4; --rpc-color: #262626; --rpc-border-color: #d4d4d4; --rpc-border-radius: 5px; --rpc-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); box-shadow: var(--rpc-box-shadow); border-radius: var(--rpc-border-radius); min-width: 280px; --rpc-hue: 120; --rpc-red: 0; --rpc-green: 255; --rpc-blue: 0; --rpc-hex: #00ff00; --rpc-alpha: 1; --rpc-rgba: rgba(0, 255, 0, 1); --rpc-hue-pointer: 33.333333333333336%; --rpc-alpha-pointer: 100%; --rpc-saturation-pointer-top: calc(0% - 6px); --rpc-saturation-pointer-left: calc(100% - 6px);"
+  >
+    <div
+      style="width: calc(100% - 0.8rem); height: 200px; margin: 0.4rem; position: relative; border-radius: var(--rpc-border-radius); overflow: hidden;"
+    >
+      <style>
+        
+        .saturation-white{
+          background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+          background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+        }
+        .saturation-black {
+          background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+          background: linear-gradient(to top, #000, rgba(0,0,0,0));
+        }
+      
+      </style>
+      <div
+        class="saturation-white"
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+      >
+        <div
+          class="saturation-black"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+        />
+        <div
+          style="position: absolute; cursor: hand;"
+        >
+          <div
+            style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0.4rem 0.4rem; width: calc(100% - 0.8rem); display: flex; align-items: center; justify-content: center; flex-wrap: wrap;"
+    >
+      <div
+        style="border-radius: var(--rpc-border-radius);"
+      >
+        <div
+          style="position: relative; width: 25px; height: 25px; border-radius: var(--rpc-border-radius); overflow: hidden; box-shadow: inset 0 0 2px 0px rgba(0,0, 0, .2); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center;"
+        >
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; border-radius: var(--rpc-border-radius);"
+          />
+        </div>
+      </div>
+      <div
+        style="flex-grow: 2; margin-left: 0.4rem;"
+      >
+        <div
+          style="width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, .2); position: relative; border-radius: 4px;"
+        >
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+        <div
+          style="margin: 5px 0px 0px; width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); position: relative; z-index: 1; border-radius: 4px;"
+        >
+          <div
+            style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; border-radius: 4px;"
+          />
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: -1; border-radius: calc(var(--rpc-border-radius) / 2);"
+          />
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, .9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0px 0.3rem 0.3rem; display: flex; align-items: center; justify-content: space-between;"
+    >
+      <label
+        style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+      >
+        <div
+          style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+        >
+          <span
+            style="padding-left: 5px; font-size: 10px;"
+          >
+            #
+          </span>
+          <input
+            autocomplete="off"
+            maxlength="6"
+            name="hex"
+            spellcheck="false"
+            style="width: 45px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+            type="text"
+            value="00ff00"
+          />
+        </div>
+        <span>
+          Hex
+        </span>
+      </label>
+      <div
+        style="display: flex;"
+      >
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="red"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            R
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="green"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="255"
+            />
+          </div>
+          <span>
+            G
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="blue"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            B
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="100"
+              min="0"
+              name="alpha"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="100"
+            />
+          </div>
+          <span>
+            Alpha
+          </span>
+        </label>
+      </div>
+    </div>
+    <div
+      style="padding: 0.4rem; display: grid; grid-template-columns: repeat(10, 1fr);"
+    >
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(0, 0, 0); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; outline: none; appearance: none; cursor: pointer; padding: 0px; border-radius: var(--rpc-border-radius); overflow: hidden; position: relative; background: none; grid-column-end: span 1;"
+        type="button"
+      >
+        <div
+          style="position: absolute; background: rgb(255, 255, 255); top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2;"
+        />
+        <div
+          style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: 1;"
+        />
+      </button>
+      <button
+        style="height: 20px; margin: 0px; padding: 0px; outline: none; background: none; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: var(--rpc-border-radius); grid-column-end: span 1;"
+        type="button"
+      >
+        <svg
+          height="50"
+          style="height: 9px; width: 9px; fill: var(--rpc-color);"
+          viewBox="0 0 50 50"
+          width="50"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M27.5 50h-5V27.5H0v-5h22.5V0h5v22.5H50v5H27.5z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ColorPicker should hide alpha 1`] = `
+<div>
+  <div
+    style="--rpc-background: #fff; --rpc-inputBackground: #f4f4f4; --rpc-color: #262626; --rpc-border-color: #d4d4d4; --rpc-border-radius: 5px; --rpc-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); box-shadow: var(--rpc-box-shadow); border-radius: var(--rpc-border-radius); min-width: 280px; --rpc-hue: 0; --rpc-red: 0; --rpc-green: 0; --rpc-blue: 0; --rpc-hex: #000000; --rpc-alpha: 1; --rpc-rgba: rgba(0, 0, 0, 1); --rpc-hue-pointer: 0%; --rpc-alpha-pointer: 100%; --rpc-saturation-pointer-top: calc(100% - 6px); --rpc-saturation-pointer-left: calc(0% - 6px);"
+  >
+    <div
+      style="width: calc(100% - 0.8rem); height: 200px; margin: 0.4rem; position: relative; border-radius: var(--rpc-border-radius); overflow: hidden;"
+    >
+      <style>
+        
+        .saturation-white{
+          background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+          background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+        }
+        .saturation-black {
+          background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+          background: linear-gradient(to top, #000, rgba(0,0,0,0));
+        }
+      
+      </style>
+      <div
+        class="saturation-white"
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+      >
+        <div
+          class="saturation-black"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+        />
+        <div
+          style="position: absolute; cursor: hand;"
+        >
+          <div
+            style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0.4rem 0.4rem; width: calc(100% - 0.8rem); display: flex; align-items: center; justify-content: center; flex-wrap: wrap;"
+    >
+      <div
+        style="border-radius: var(--rpc-border-radius);"
+      >
+        <div
+          style="position: relative; width: 25px; height: 25px; border-radius: var(--rpc-border-radius); overflow: hidden; box-shadow: inset 0 0 2px 0px rgba(0,0, 0, .2); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center;"
+        >
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; border-radius: var(--rpc-border-radius);"
+          />
+        </div>
+      </div>
+      <div
+        style="flex-grow: 2; margin-left: 0.4rem;"
+      >
+        <div
+          style="width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, .2); position: relative; border-radius: 4px;"
+        >
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0px 0.3rem 0.3rem; display: flex; align-items: center; justify-content: space-between;"
+    >
+      <label
+        style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+      >
+        <div
+          style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+        >
+          <span
+            style="padding-left: 5px; font-size: 10px;"
+          >
+            #
+          </span>
+          <input
+            autocomplete="off"
+            maxlength="6"
+            name="hex"
+            spellcheck="false"
+            style="width: 45px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+            type="text"
+            value="000000"
+          />
+        </div>
+        <span>
+          Hex
+        </span>
+      </label>
+      <div
+        style="display: flex;"
+      >
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="red"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            R
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="green"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            G
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="blue"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            B
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ColorPicker should render correctly 1`] = `
+<div>
+  <div
+    style="--rpc-background: #fff; --rpc-inputBackground: #f4f4f4; --rpc-color: #262626; --rpc-border-color: #d4d4d4; --rpc-border-radius: 5px; --rpc-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); box-shadow: var(--rpc-box-shadow); border-radius: var(--rpc-border-radius); min-width: 280px; --rpc-hue: 0; --rpc-red: 0; --rpc-green: 0; --rpc-blue: 0; --rpc-hex: #000000; --rpc-alpha: 1; --rpc-rgba: rgba(0, 0, 0, 1); --rpc-hue-pointer: 0%; --rpc-alpha-pointer: 100%; --rpc-saturation-pointer-top: calc(100% - 6px); --rpc-saturation-pointer-left: calc(0% - 6px);"
+  >
+    <div
+      style="width: calc(100% - 0.8rem); height: 200px; margin: 0.4rem; position: relative; border-radius: var(--rpc-border-radius); overflow: hidden;"
+    >
+      <style>
+        
+        .saturation-white{
+          background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+          background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+        }
+        .saturation-black {
+          background: -webkit-linear-gradient(to top, #000, rgba(0,0,0,0));
+          background: linear-gradient(to top, #000, rgba(0,0,0,0));
+        }
+      
+      </style>
+      <div
+        class="saturation-white"
+        style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+      >
+        <div
+          class="saturation-black"
+          style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px;"
+        />
+        <div
+          style="position: absolute; cursor: hand;"
+        >
+          <div
+            style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0.4rem 0.4rem; width: calc(100% - 0.8rem); display: flex; align-items: center; justify-content: center; flex-wrap: wrap;"
+    >
+      <div
+        style="border-radius: var(--rpc-border-radius);"
+      >
+        <div
+          style="position: relative; width: 25px; height: 25px; border-radius: var(--rpc-border-radius); overflow: hidden; box-shadow: inset 0 0 2px 0px rgba(0,0, 0, .2); background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center;"
+        >
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; border-radius: var(--rpc-border-radius);"
+          />
+        </div>
+      </div>
+      <div
+        style="flex-grow: 2; margin-left: 0.4rem;"
+      >
+        <div
+          style="width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, .2); position: relative; border-radius: 4px;"
+        >
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, 0.9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+        <div
+          style="margin: 5px 0px 0px; width: 100%; height: 8px; box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2); position: relative; z-index: 1; border-radius: 4px;"
+        >
+          <div
+            style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; border-radius: 4px;"
+          />
+          <div
+            style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAC9JREFUOBFjZGBgEAFifOANPkkmfJLEyI0awMAw8GHASERU4U0nA++FURdQISEBAFeUATP+HuV8AAAAAElFTkSuQmCC); background-position: left center; z-index: -1; border-radius: calc(var(--rpc-border-radius) / 2);"
+          />
+          <div
+            style="width: calc(100% - 8px); height: 100%; position: relative; margin-left: 8px;"
+          >
+            <div
+              style="width: 8px; border-radius: 8px; height: 8px; box-shadow: 0 0 1px rgba(0, 0, 0, .9); border: 2px solid #fff; position: absolute; transform: translate(-2px, -2px); cursor: pointer;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style="margin: 0px 0.3rem 0.3rem; display: flex; align-items: center; justify-content: space-between;"
+    >
+      <label
+        style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+      >
+        <div
+          style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+        >
+          <span
+            style="padding-left: 5px; font-size: 10px;"
+          >
+            #
+          </span>
+          <input
+            autocomplete="off"
+            maxlength="6"
+            name="hex"
+            spellcheck="false"
+            style="width: 45px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+            type="text"
+            value="000000"
+          />
+        </div>
+        <span>
+          Hex
+        </span>
+      </label>
+      <div
+        style="display: flex;"
+      >
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="red"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            R
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="green"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            G
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="255"
+              min="0"
+              name="blue"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="0"
+            />
+          </div>
+          <span>
+            B
+          </span>
+        </label>
+        <label
+          style="display: flex; flex-direction: column; align-items: center; font-family: sans-serif; font-size: 10px;"
+        >
+          <div
+            style="display: flex; align-items: center; border-radius: var(--rpc-border-radius); margin: 0.1rem;"
+          >
+            <input
+              autocomplete="off"
+              max="100"
+              min="0"
+              name="alpha"
+              spellcheck="false"
+              step="1"
+              style="width: 33px; background: none; border-radius: var(--rpc-border-radius); padding: 5px; font-size: 10px; margin: 0px; text-transform: uppercase;"
+              type="number"
+              value="100"
+            />
+          </div>
+          <span>
+            Alpha
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
