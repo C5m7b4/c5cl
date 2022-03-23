@@ -1,0 +1,69 @@
+.color-picker-fade-in {
+  animation: color-picker-fade-in ease 1s;
+  -webkit-animation: color-picker-fade-in ease 1s;
+  -moz-animation: color-picker-fade-in ease 1s;
+  -o-animation: color-picker-fade-in ease 1s;
+  -ms-animation: color-picker-fade-in ease 1s;
+}
+
+.color-picer-fade-out {
+  animation: color-picker-fade-out ease 1s;
+  -webkit-animation: color-picker-fade-out ease 1s;
+  -moz-animation: color-picker-fade-out ease 1s;
+  -o-animation: color-picker-fade-out ease 1s;
+  -ms-animation: color-picker-fade-out ease 1s;
+}
+
+@keyframes color-picker-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes color-picker-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes color-picker-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes color-picker-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes color-picker-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-webkit-keyframes color-picker-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

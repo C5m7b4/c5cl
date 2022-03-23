@@ -75,3 +75,36 @@ export interface NotValidatedToastProps extends Partial<ToastProps> {
   toastBodyStyle: React.CSSProperties;
   bodyStyle: React.CSSProperties;
 }
+
+export type HslColor = { h: number; s: number; l: number; a: number };
+export type HsvColor = { h: number; s: number; v: number; a: number };
+export type RgbColor = { r: number; g: number; b: number; a: number };
+export type Alpha = { a: number };
+
+export type Color = string | HslColor | HsvColor | RgbColor;
+
+export type ColorObject = {
+  hex: string;
+  rgb: RgbColor;
+  hsl: HslColor;
+  hsv: HsvColor;
+  alpha: number;
+};
+
+export type ColorCombination =
+  | 'analogous'
+  | 'monochromatic'
+  | 'splitcomplement'
+  | 'triad'
+  | 'tetrad'
+  | 'complement';
+
+export type ColorTheme = {
+  background?: string;
+  inputBackground?: string;
+  color?: string;
+  borderColor?: string;
+  borderRadius?: string;
+  boxShadow?: string;
+  width?: string;
+};
