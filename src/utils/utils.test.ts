@@ -25,7 +25,6 @@ describe('addDays', () => {
 describe('enrypt', () => {
   test('should encrypt a string', () => {
     const encryptedString = encrypt('my majic string', _encrypt);
-    console.log('encryptedString', encryptedString);
     expect(encryptedString.toString()).toEqual('VHzZA/hHvw4jumaLxzZKyg==');
   });
 });

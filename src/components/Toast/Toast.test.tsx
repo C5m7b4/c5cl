@@ -99,4 +99,18 @@ describe('Toast', () => {
     const div = getByRole('main');
     fireEvent.click(div);
   });
+  test('should handle setTimeout', () => {
+    jest.useFakeTimers();
+    const { container, getByRole } = render(
+      <Toast
+        content="toast"
+        toastId="123"
+        type="warning"
+        position="top-right"
+      />
+    );
+    const div = getByRole('main');
+    fireEvent.click(div);
+    jest.advanceTimersByTime(1200);
+  });
 });
