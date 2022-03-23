@@ -64,7 +64,7 @@ function RippleButton(props: RippleButtonProps) {
       btn.current.addEventListener('click', click);
     }
 
-    return () => {
+    return function cleanup() {
       if (btn.current) {
         btn.current.removeEventListener('mouseenter', mouseEnter);
         btn.current.removeEventListener('mouseleave', mouseLeave);

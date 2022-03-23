@@ -1,8 +1,16 @@
 import React from 'react';
-import { render, screen, getByText } from '@testing-library/react';
+import { render, screen, cleanup } from '@testing-library/react';
 import fireEvent from '@testing-library/user-event';
 
 import RippleButton from './RippleButton';
+
+// afterEach(cleanup);
+
+// beforeAll(() =>
+//   jest.spyOn(React, 'useEffect').mockImplementation(React.useLayoutEffect)
+// );
+// // @ts-ignore
+// afterAll(() => React.useEffect.mockRestore());
 
 describe('RippleButton', () => {
   test('should render correctly', () => {
@@ -12,6 +20,7 @@ describe('RippleButton', () => {
     expect(frag).toMatchSnapshot();
   });
   test('should handle click event', () => {
+    jest.useFakeTimers('modern');
     const testFn = jest.fn();
     render(<RippleButton text="Click Me" onClick={testFn} />);
 
@@ -25,10 +34,13 @@ describe('RippleButton', () => {
     fireEvent.unhover(screen.getByText('Click Me'));
   });
   test('should unmount', () => {
+    jest.useFakeTimers();
     const testFn = jest.fn();
-    const { container, unmount } = render(
+    const { container, unmount, rerender } = render(
       <RippleButton text="Click Me" onClick={testFn} />
     );
+    rerender(<RippleButton text="Click Me again" onClick={testFn} />);
     unmount();
+    jest.advanceTimersByTime(500);
   });
 });
