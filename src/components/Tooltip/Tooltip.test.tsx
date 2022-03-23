@@ -40,11 +40,15 @@ describe('Tooltip', () => {
   });
   test('should run useEffect cleanup return function', () => {
     jest.spyOn(React, 'useEffect').mockImplementation((f) => f());
-    const { unmount } = render(
+    const { unmount, rerender } = render(
+      <Tooltip position="top" message="tooltip" theme="dark">
+        <div>Hello</div>
+      </Tooltip>
+    );
+    rerender(
       <Tooltip position="top" message="tooltip">
         <div>Hello</div>
       </Tooltip>
     );
-    unmount();
   });
 });

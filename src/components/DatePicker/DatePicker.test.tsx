@@ -35,4 +35,25 @@ describe('DatePicker', () => {
     const btn2 = container.querySelector('#c5-dp-1-nm') as HTMLDivElement;
     fireEvent.click(btn2);
   });
+  test('should handle the year changing', () => {
+    const testFn = jest.fn();
+    const { container, getByRole } = render(
+      <DatePicker onChange={testFn} date={new Date('12/31/2021')} id="1" />
+    );
+    const div = container.querySelector('#c5-dp-1') as HTMLDivElement;
+    fireEvent.click(div);
+    const btn2 = container.querySelector('#c5-dp-1-nm') as HTMLDivElement;
+    fireEvent.click(btn2);
+  });
+  test('should handle a new date click', () => {
+    const testFn = jest.fn();
+    const { container, getByText } = render(
+      <DatePicker onChange={testFn} date={new Date('12/31/2021')} id="1" />
+    );
+    const div = container.querySelector('#c5-dp-1') as HTMLDivElement;
+    fireEvent.click(div);
+
+    const day = getByText('17');
+    fireEvent.click(day);
+  });
 });

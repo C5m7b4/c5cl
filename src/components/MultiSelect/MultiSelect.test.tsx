@@ -131,4 +131,37 @@ describe('MultiSelect', () => {
     );
     expect(input.value).toEqual('');
   });
+  test('should handle setTimeout', () => {
+    jest.useFakeTimers();
+    const div = document.createElement('div');
+    div.id = 'ms-portal-container';
+    document.body.appendChild(div);
+    const setCheckedItems = jest.fn();
+    const { rerender, getByRole } = render(
+      <MultiSelect
+        data={data}
+        defaultOption="select a department"
+        keyDescriptor="keyDescriptor"
+        optionValue="id"
+        optionText="value"
+        checkedItems={[]}
+        setCheckedItems={setCheckedItems}
+      />
+    );
+
+    const option = getByRole('option', { name: /select a department/ });
+    fireEvent.click(option);
+    rerender(
+      <MultiSelect
+        data={data}
+        defaultOption="select a department"
+        keyDescriptor="keyDescriptor"
+        optionValue="id"
+        optionText="value"
+        checkedItems={[]}
+        setCheckedItems={setCheckedItems}
+      />
+    );
+    jest.advanceTimersByTime(500);
+  });
 });
