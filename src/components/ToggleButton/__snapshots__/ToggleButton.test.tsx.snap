@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToggleButton should render correctly 1`] = `
+<div>
+  <div
+    class="toggle-button"
+  >
+    <ul
+      class="nav"
+    >
+      <li
+        class="toggle-button-active-tab"
+      >
+        Tab1
+      </li>
+      <li
+        class=""
+      >
+        tab2
+      </li>
+    </ul>
+    <div
+      class="outlet"
+    >
+      <div
+        class="tab-content"
+      >
+        <p>
+          Here is some content
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

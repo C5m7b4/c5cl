@@ -22,5 +22,6 @@ export { default as Tree1 } from './Tree1';
 export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as TypeAheadDropdown } from './TypeAheadDropdown';
 export { default as TimePicker } from './TimePicker';
+export { default as ToggleButton } from './ToggleButton';
 export * from './ColorPicker';
 export * from './Icons';
