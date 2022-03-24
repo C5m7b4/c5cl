@@ -5,7 +5,7 @@ import { Story, Meta } from '@storybook/react';
 import ConfirmDemo from './ConfirmDemo';
 
 export default {
-  title: 'Confirm',
+  title: 'Widgets/Confirm',
   component: ConfirmDemo,
 } as Meta;
 

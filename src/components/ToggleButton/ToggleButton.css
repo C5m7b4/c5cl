@@ -1,7 +1,6 @@
 .toggle-button {
   width: 80%;
   height: auto;
-  background: #053742;
   color: #e8f0f2;
   border-radius: 2rem;
   transition: height 500ms ease-in;
@@ -9,17 +8,19 @@
 
 .toggle-button .outlet {
   padding: 10px;
+  color: black;
 }
 
 .toggle-button ul.nav {
   width: 60%;
-  margin: 0 auto 2rem;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: 1px solid #39a2db;
   border-radius: 2rem;
   padding-left: 0px;
+  background: #053742;
 }
 
 .toggle-button ul.nav li {

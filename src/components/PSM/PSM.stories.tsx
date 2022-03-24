@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import PSM, { PSMProps } from './PSM';
 
 export default {
-  title: 'PSM',
+  title: 'Widgets/PSM',
   component: PSM,
 } as Meta;
 

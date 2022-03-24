@@ -5,19 +5,15 @@ exports[`Tab should be active tab 1`] = `
   <li
     class="tab-list-item tab-list-active"
     id="tab1"
-  >
-    tab1
-  </li>
+  />
 </div>
 `;
 
 exports[`Tab should render correctly 1`] = `
 <div>
   <li
-    class="tab-list-item"
+    class="tab-list-item tab-list-active"
     id="tab1"
-  >
-    Tab1
-  </li>
+  />
 </div>
 `;

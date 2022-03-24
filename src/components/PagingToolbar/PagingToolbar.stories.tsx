@@ -4,11 +4,8 @@ import { Story, Meta } from '@storybook/react';
 import PagingToolbar, { PagingToolbarProps } from './PagingToolbar';
 
 export default {
-  title: 'Paging Toolbar',
+  title: 'Widgets/Paging Toolbar',
   component: PagingToolbar,
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 const data = [

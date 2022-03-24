@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import Tab, { TabProps } from './Tab';
 
 export default {
-  title: 'Tab',
+  title: 'Tabs/Tab',
   component: Tab,
 } as Meta;
 

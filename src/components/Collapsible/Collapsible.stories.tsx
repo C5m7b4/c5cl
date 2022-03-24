@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import Collapsible, { CollapsibleProps } from './Collapsible';
 
 export default {
-  title: 'Collapsible',
+  title: 'Collapse/Collapsible',
   component: Collapsible,
 } as Meta;
 

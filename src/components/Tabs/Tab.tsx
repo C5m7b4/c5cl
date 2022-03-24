@@ -3,7 +3,7 @@ import React from 'react';
 export interface TabProps {
   className: string;
   onClick: (e: string) => void;
-  label: string;
+  title: string;
   activeTab: string;
   disabled: boolean;
   id: string;
@@ -11,17 +11,17 @@ export interface TabProps {
 
 const Tab = (props: TabProps) => {
   let className = 'tab-list-item';
-  if (props.label === props.activeTab) {
+  if (props.id === props.activeTab) {
     className += ' tab-list-active';
   }
 
   return (
     <li
-      onClick={() => props.onClick(props.label)}
+      onClick={() => props.onClick(props.id)}
       className={className}
       id={props.id}
     >
-      {props.label}
+      {props.title}
     </li>
   );
 };
