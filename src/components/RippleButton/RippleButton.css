@@ -1,4 +1,4 @@
-.ripple-button {
+.c5-ripple-button {
   position: relative;
   border: none;
   border-radius: 15px;
@@ -13,11 +13,11 @@
   cursor: pointer;
 }
 
-.ripple-button:hover {
+.c5-ripple-button:hover {
   background-color: #2546bd;
 }
 
-.ripple-button:active {
+.c5-ripple-button:active {
   transform: scale(0.98);
 }
 

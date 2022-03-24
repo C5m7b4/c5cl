@@ -43,4 +43,46 @@ describe('RippleButton', () => {
     unmount();
     jest.advanceTimersByTime(500);
   });
+  test('should handle green type', () => {
+    const testFn = jest.fn();
+    const { container, unmount, rerender } = render(
+      <RippleButton text="Click Me" onClick={testFn} type="green" />
+    );
+    expect(container).toMatchSnapshot();
+  });
+  test('should handle purple type', () => {
+    const testFn = jest.fn();
+    const { container, unmount, rerender } = render(
+      <RippleButton text="Click Me" onClick={testFn} type="purple" />
+    );
+    expect(container).toMatchSnapshot();
+  });
+  test('should handle danger type', () => {
+    const testFn = jest.fn();
+    const { container, unmount, rerender } = render(
+      <RippleButton text="Click Me" onClick={testFn} type="danger" />
+    );
+    expect(container).toMatchSnapshot();
+  });
+  test('should handle info type', () => {
+    const testFn = jest.fn();
+    const { container, unmount, rerender } = render(
+      <RippleButton text="Click Me" onClick={testFn} type="info" />
+    );
+    expect(container).toMatchSnapshot();
+  });
+  test('should handle success type', () => {
+    const testFn = jest.fn();
+    const { container, unmount, rerender } = render(
+      <RippleButton text="Click Me" onClick={testFn} type="success" />
+    );
+    expect(container).toMatchSnapshot();
+  });
+  test('should handle error type', () => {
+    const testFn = jest.fn();
+    const { container, unmount, rerender } = render(
+      <RippleButton text="Click Me" onClick={testFn} type="error" />
+    );
+    expect(container).toMatchSnapshot();
+  });
 });
