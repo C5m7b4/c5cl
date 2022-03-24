@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Tab from './Tab';
+import Contents from './Contents';
 
 import './Tabs.css';
 
@@ -9,6 +10,10 @@ export interface TabsProps {
 
 const Tabs = (props: TabsProps) => {
   const [activeTab, setActiveTab] = useState<string>('');
+
+  useEffect(() => {
+    setActiveTab('tab-0');
+  }, []);
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
@@ -24,10 +29,10 @@ const Tabs = (props: TabsProps) => {
                 <Tab
                   activeTab={activeTab}
                   key={`tabs-li-${index}`}
-                  label={child.props.label}
+                  title={child.props.title}
                   disabled={child.props.disabled}
                   onClick={handleTabClick}
-                  id={child.props.id}
+                  id={`tab-${index}`}
                   className={child.props.className}
                 />
               );
@@ -36,10 +41,15 @@ const Tabs = (props: TabsProps) => {
       </ol>
       <div className="tab-content">
         {props.children &&
-          props.children.map((child) => {
-            if (child.props.label !== activeTab) return undefined;
-            return child.props.children;
-          })}
+          props.children.map((child, idx) => (
+            <Contents
+              key={`tbc-${idx}`}
+              id={`tab-${idx}`}
+              activeTab={activeTab}
+            >
+              {child.props.children}
+            </Contents>
+          ))}
       </div>
     </div>
   );

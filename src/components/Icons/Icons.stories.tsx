@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import IconsDemo from './IconsDemo';
 
 export default {
-  title: 'Icons',
+  title: 'Icons/Icons',
   component: IconsDemo,
 } as Meta;
 

@@ -111,7 +111,7 @@ const headers = [
 ];
 
 export default {
-  title: 'Grid',
+  title: 'Grid/Grid',
   component: DataGrid,
 } as Meta;
 

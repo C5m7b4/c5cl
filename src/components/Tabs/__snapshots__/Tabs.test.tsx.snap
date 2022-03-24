@@ -9,19 +9,23 @@ exports[`Tabs should render correctly 1`] = `
       class="tab-list"
     >
       <li
-        class="tab-list-item"
-      >
-        Tab1
-      </li>
+        class="tab-list-item tab-list-active"
+        id="tab-0"
+      />
       <li
         class="tab-list-item"
-      >
-        tab2
-      </li>
+        id="tab-1"
+      />
     </ol>
     <div
       class="tab-content"
-    />
+    >
+      <div>
+        <h2>
+          Tab1
+        </h2>
+      </div>
+    </div>
   </div>
 </div>
 `;

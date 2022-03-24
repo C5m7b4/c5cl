@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import TooltipDemo, { TooltipDemoProps } from './TooltipDemo';
 
 export default {
-  title: 'Tooltip',
+  title: 'Widgets/Tooltip',
   component: TooltipDemo,
   parameters: {
     layout: 'centered',

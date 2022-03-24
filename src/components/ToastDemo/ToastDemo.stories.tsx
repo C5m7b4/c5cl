@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import ToastDemo, { ToastDemoProps } from './ToastDemo';
 
 export default {
-  title: 'Toast Demo',
+  title: 'Toast/Toast Demo',
   component: ToastDemo,
 } as Meta;
 

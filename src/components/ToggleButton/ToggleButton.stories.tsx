@@ -4,7 +4,7 @@ import { Story, Meta } from '@storybook/react';
 import ToggleButton from './ToggleButton';
 
 export default {
-  title: 'Forms/Toggle Button',
+  title: 'Tabs/Toggle Button',
   component: ToggleButton,
 } as Meta;
 

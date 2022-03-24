@@ -4,7 +4,7 @@ import { Meta, Story } from '@storybook/react';
 import Collapse, { CollapseProps } from './Collapse';
 
 export default {
-  title: 'Collapse',
+  title: 'Collapse/Collapse',
   component: Collapse,
 } as Meta;
 

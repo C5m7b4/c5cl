@@ -1,8 +1,12 @@
 .paging-toolbar-wrapper {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   padding-left: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  min-height: 34px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
 .paging-toolbar-current-page {
@@ -19,6 +23,8 @@
   padding: 0.5rem 0.7rem;
   color: rgba(255, 255, 255, 0.8);
   background-color: transparent;
+  color: black;
+  text-align: center;
 }
 
 .paging-toolbar-current-page:focus {
@@ -39,6 +45,7 @@
   text-align: right;
   margin-right: 10px;
   margin-top: 5px;
+  margin-left: 20px;
 }
 
 .paging-records-per-page {
@@ -55,6 +62,8 @@
   padding: 0.5rem 0.7rem;
   color: rgba(255, 255, 255, 0.8);
   background-color: transparent;
+  color: black;
+  text-align: center;
 }
 
 .paging-records-per-page:focus {
