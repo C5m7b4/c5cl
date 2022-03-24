@@ -31,6 +31,7 @@ const DatePicker = (props: DatePickerProps) => {
   }, [defaultDate]);
 
   const setInput = () => {
+    /* istanbul ignore else */
     if (dateRef.current) {
       const dateString = convertToDateFormat(new Date(defaultDate).toString());
       dateRef.current.value = dateString;
@@ -128,6 +129,7 @@ const DatePicker = (props: DatePickerProps) => {
   const onDateClick = (day: any) => {
     const newDate = new Date(day.timestamp);
     setDefaultDate(newDate);
+    /* istanbul ignore else */
     if (props.onChange) {
       props.onChange(newDate);
     }

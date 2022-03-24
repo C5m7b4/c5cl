@@ -20,7 +20,6 @@ export interface OutlineButtonProps {
 
 const OutlineButton = (props: OutlineButtonProps) => {
   const { type, text, disabled = false, onClick, style } = props;
-  console.log('type', type);
 
   return (
     <button

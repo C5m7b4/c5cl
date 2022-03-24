@@ -12,10 +12,12 @@ export interface TooltipProps {
   message: string;
   style?: React.CSSProperties;
   theme?: TooltipTheme;
+  messageStyle?: React.CSSProperties;
 }
 
 const Tooltip = (props: TooltipProps) => {
-  const [displayTooltip, setDisplayTooltip] = useState(false);
+  const [displayTooltip, setDisplayTooltip] = useState(true);
+  const { position = 'top' } = props;
 
   let internalStyle = {
     backgroundColor: '#fff',
@@ -35,25 +37,10 @@ const Tooltip = (props: TooltipProps) => {
   const triggerRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    /* istanbul ignore else */
     if (props.style) {
       internalStyle = props.style;
     }
-
-    if (tooltipRef.current) {
-      tooltipRef.current.addEventListener('mouseleave', hideTooltip);
-    }
-    if (triggerRef.current) {
-      triggerRef.current.addEventListener('mouseover', showTooltip);
-    }
-
-    return () => {
-      if (tooltipRef.current) {
-        tooltipRef.current.removeEventListener('mouseleave', hideTooltip);
-      }
-      if (triggerRef.current) {
-        triggerRef.current.removeEventListener('mouseover', showTooltip);
-      }
-    };
   }, []);
 
   const showTooltip = () => {
@@ -65,14 +52,22 @@ const Tooltip = (props: TooltipProps) => {
   };
 
   return (
-    <span className="mcl-tooltip-wrapper" ref={tooltipRef}>
+    <span
+      className="mcl-tooltip-wrapper"
+      ref={tooltipRef}
+      onMouseEnter={showTooltip}
+      onMouseLeave={hideTooltip}
+    >
       {displayTooltip ? (
         <div
-          className={`mcl-tooltip-bubble mcl-tooltip-${props.position} ${
+          className={`mcl-tooltip-bubble mcl-tooltip-${position} ${
             props.theme === 'dark' ? 'dark' : ''
           }`}
         >
-          <div className="mcl-tooltip-message" style={internalStyle}>
+          <div
+            className="mcl-tooltip-message"
+            style={{ ...internalStyle, ...props.messageStyle }}
+          >
             {props.message}
           </div>
         </div>
