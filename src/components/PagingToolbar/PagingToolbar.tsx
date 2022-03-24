@@ -7,20 +7,16 @@ import './PagingToolbar.css';
 
 export interface PagingToolbarProps<T> {
   data: T[];
-  currentPage: number;
   totalRecords: number;
-  handlePageChange: (n: number) => void;
-  recordsPerPage: number;
-  handleRecordsPerPageChange: () => void;
-  start: number;
-  end: number;
+  recordsPerPage?: number;
+  onChange?: (start: number, end: number) => void;
+  onRecordsPerPageChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const initialPagingToolbarState = {
   data: [],
   recordsPerPage: 50,
   totalPages: 0,
-  currentPage: 1,
   totalRecords: 0,
   start: 0,
   end: 0,
@@ -30,17 +26,9 @@ const style = { width: '32px', height: '32px' };
 
 function PagingToolbar<T>(props: PagingToolbarProps<T>) {
   const [state, setState] = useState(initialPagingToolbarState);
+  const [currentPage, setCurrentPage] = useState(0);
 
-  const {
-    data,
-    currentPage,
-    totalRecords,
-    recordsPerPage,
-    handlePageChange,
-    handleRecordsPerPageChange,
-    start,
-    end,
-  } = props;
+  const { data, totalRecords, recordsPerPage = state.recordsPerPage } = props;
 
   const {
     previous: Previous,
@@ -59,35 +47,121 @@ function PagingToolbar<T>(props: PagingToolbarProps<T>) {
       ...state,
       totalPages,
       recordsPerPage,
-      currentPage: currentPage + 1,
-      end: totalRecords < recordsPerPage ? totalRecords : end,
+      end: state.end === 0 ? recordsPerPage : state.end,
     });
-  }, [data, totalRecords]);
+  }, [data, totalRecords, props.recordsPerPage]);
 
   const handleNext = () => {
-    handlePageChange(state.currentPage);
+    /* istanbul ignore else */
+    if (props.onChange) {
+      let start = state.start + recordsPerPage;
+      let end = state.end + recordsPerPage;
+      if (end > totalRecords) {
+        props.onChange(start, totalRecords);
+      } else {
+        props.onChange(start, end);
+      }
+
+      setState({
+        ...state,
+        start,
+        end,
+      });
+    }
+
+    setCurrentPage(currentPage + 1);
   };
 
   const handlePrev = () => {
-    handlePageChange(state.currentPage - 2);
+    /* istanbul ignore else */
+    if (props.onChange) {
+      let start = state.start - recordsPerPage;
+      let end = state.end - recordsPerPage;
+      props.onChange(start, end);
+      setState({
+        ...state,
+        start,
+        end,
+      });
+    }
+    setCurrentPage(currentPage - 1);
   };
 
   const handleFirst = () => {
-    handlePageChange(0);
+    /* istanbul ignore else */
+    if (props.onChange) {
+      props.onChange(0, recordsPerPage);
+    }
+    setCurrentPage(0);
+    setState({
+      ...state,
+      start: 0,
+      end: recordsPerPage,
+    });
   };
 
   const handleLast = () => {
-    handlePageChange(state.totalPages - 1);
+    /* istanbul ignore else */
+    if (props.onChange) {
+      props.onChange(totalRecords - recordsPerPage, totalRecords);
+    }
+    const lastPage = Math.ceil(totalRecords / recordsPerPage) - 1;
+    setCurrentPage(lastPage);
+    setState({
+      ...state,
+      start: totalRecords - recordsPerPage,
+      end: totalRecords,
+    });
+  };
+
+  const calculateRemainingRecords = () => {
+    return totalRecords;
+  };
+
+  const handleRecordsPerPageChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    /* istanbul ignore else */
+    if (props.onRecordsPerPageChange) {
+      props.onRecordsPerPageChange(e);
+    }
+  };
+
+  const handleCurrentPageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const cp = +e.target.value - 1;
+    setCurrentPage(cp);
+    let start = recordsPerPage * cp;
+    let end = start + recordsPerPage;
+    /* istanbul ignore else */
+    if (props.onChange) {
+      props.onChange(start, end);
+    }
+    setState({
+      ...state,
+      start,
+      end,
+    });
   };
 
   return (
     <div className="paging-toolbar-wrapper">
       <div style={{ width: '100%', display: 'flex' }}>
         <div style={{ margin: '0 auto' }}>
-          {state.currentPage === 1 ? (
+          {currentPage === 0 ? (
             <React.Fragment>
               <span>
-                <Backward theme="dark" type="dark" style={style} />
+                <Previous
+                  theme="dark"
+                  type="dark"
+                  style={{ ...style, opacity: '0.2' }}
+                />
+              </span>
+              <span>
+                <Backward
+                  theme="dark"
+                  type="dark"
+                  style={{ ...style, opacity: '0.2' }}
+                />
               </span>
               <span
                 style={{
@@ -125,9 +199,11 @@ function PagingToolbar<T>(props: PagingToolbarProps<T>) {
             <input
               type="number"
               className="paging-toolbar-current-page"
-              value={state.currentPage}
-              onChange={() => console.log('change')}
+              value={currentPage + 1}
+              onChange={(e) => handleCurrentPageChange(e)}
               data-testid="current-page-input"
+              min="0"
+              max={Math.ceil(totalRecords / recordsPerPage)}
             />
             <span> of {state.totalPages}</span>
           </span>
@@ -135,10 +211,18 @@ function PagingToolbar<T>(props: PagingToolbarProps<T>) {
           {currentPage == state.totalPages - 1 ? (
             <React.Fragment>
               <span style={{ marginLeft: '10px', marginRight: '10px' }}>
-                <Next theme="dark" type="dark" style={style} />
+                <Next
+                  theme="dark"
+                  type="dark"
+                  style={{ ...style, opacity: '0.2' }}
+                />
               </span>
               <span>
-                <Forward theme="dark" type="dark" style={style} />
+                <Forward
+                  theme="dark"
+                  type="dark"
+                  style={{ ...style, opacity: '0.2' }}
+                />
               </span>
             </React.Fragment>
           ) : (
@@ -173,11 +257,14 @@ function PagingToolbar<T>(props: PagingToolbarProps<T>) {
             type="number"
             className="paging-records-per-page"
             value={recordsPerPage}
-            onChange={handleRecordsPerPageChange}
+            data-testid="rpp-input"
+            onChange={(e) => handleRecordsPerPageChange(e)}
           />
           <span>Records per Page</span>
           <span className="paging-summary">
-            <span>{`Displaying ${start} - ${state.end} of ${totalRecords}`}</span>
+            <span>{`Displaying ${state.start} - ${
+              state.end > totalRecords ? calculateRemainingRecords() : state.end
+            } of ${totalRecords}`}</span>
           </span>
         </div>
       </div>
