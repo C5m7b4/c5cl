@@ -1,17 +1,100 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button should handle danger type 1`] = `
+<div>
+  <button
+    class="c5-normal-button c5-normal-button-small"
+    style="background-color: rgb(201, 167, 52); color: rgb(255, 255, 255); transition: background-color .3s ease, color .3s ease;"
+  >
+    clickme
+  </button>
+</div>
+`;
+
+exports[`Button should handle error type 1`] = `
+<div>
+  <button
+    class="c5-normal-button c5-normal-button-small"
+    style="background-color: rgb(191, 36, 36); color: rgb(255, 255, 255); transition: background-color .3s ease, color .3s ease;"
+  >
+    clickme
+  </button>
+</div>
+`;
+
+exports[`Button should handle green type 1`] = `
+<div>
+  <button
+    class="c5-normal-button c5-normal-button-small"
+    style="background-color: rgb(46, 166, 46); color: rgb(255, 255, 255); transition: background-color .3s ease, color .3s ease;"
+  >
+    clickme
+  </button>
+</div>
+`;
+
+exports[`Button should handle info type 1`] = `
+<div>
+  <button
+    class="c5-normal-button c5-normal-button-small"
+    style="background-color: rgb(86, 128, 168); color: rgb(255, 255, 255); transition: background-color .3s ease, color .3s ease;"
+  >
+    clickme
+  </button>
+</div>
+`;
+
+exports[`Button should handle normal type 1`] = `
+<div>
+  <button
+    class="c5-normal-button c5-normal-button-small"
+    style="color: rgb(255, 255, 255); transition: background-color .3s ease, color .3s ease; background-color: rgb(135, 123, 135);"
+  >
+    clickme
+  </button>
+</div>
+`;
+
+exports[`Button should handle purple type 1`] = `
+<div>
+  <button
+    class="c5-normal-button c5-normal-button-small"
+    style="background-color: rgb(156, 34, 156); color: rgb(255, 255, 255); transition: background-color .3s ease, color .3s ease;"
+  >
+    clickme
+  </button>
+</div>
+`;
+
+exports[`Button should handle success type 1`] = `
+<div>
+  <button
+    class="c5-normal-button c5-normal-button-small"
+    style="background-color: rgb(27, 204, 74); color: rgb(255, 255, 255); transition: background-color .3s ease, color .3s ease;"
+  >
+    clickme
+  </button>
+</div>
+`;
+
 exports[`Button should render without crashing 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <button>
+      <button
+        class="c5-normal-button c5-normal-button-small"
+        style="transition: background-color .3s ease, color .3s ease;"
+      >
         clickme
       </button>
     </div>
   </body>,
   "container": <div>
-    <button>
+    <button
+      class="c5-normal-button c5-normal-button-small"
+      style="transition: background-color .3s ease, color .3s ease;"
+    >
       clickme
     </button>
   </div>,
