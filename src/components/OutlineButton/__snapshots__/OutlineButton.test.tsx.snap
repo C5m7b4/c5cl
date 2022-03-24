@@ -3,7 +3,7 @@
 exports[`OutlineButton should render correctly 1`] = `
 <div>
   <button
-    class="btn default"
+    class="c5-btn default"
   >
     Hello
   </button>

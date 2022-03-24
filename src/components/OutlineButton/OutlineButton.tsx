@@ -25,7 +25,7 @@ const OutlineButton = (props: OutlineButtonProps) => {
   return (
     <button
       style={style}
-      className={`btn ${type}`}
+      className={`c5-btn ${type}`}
       disabled={disabled}
       onClick={onClick}
     >

@@ -1,5 +1,6 @@
-.btn {
+.c5-btn {
   border: 2px solid black;
+  border-radius: 10px;
   background-color: white;
   color: black;
   padding: 14px 28px;
@@ -9,118 +10,118 @@
 }
 
 /* green */
-.success {
+.c5-btn.success {
   border-color: #04aa6d;
   color: green;
 }
 
-.success:hover {
+.c5-btn.success:hover {
   background-color: #04aa6d;
   color: white;
 }
 
-.success:disabled {
+.c5-btn.success:disabled {
   background-color: gray;
   color: green;
 }
 
-.success:active {
+.c5-btn.success:active {
   transform: scale(0.96);
 }
 
 /* blue */
-.info {
+.c5-btn.info {
   border-color: #2196f3;
   color: dodgerblue;
 }
 
-.info:hover {
+.c5-btn.info:hover {
   background: #2196f3;
   color: white;
 }
 
-.info:disabled {
+.c5-btn.info:disabled {
   background-color: gray;
   color: dodgerblue;
 }
 
-.info:active {
+.c5-btn.info:active {
   transform: scale(0.96);
 }
 
 /* Orange */
-.warning {
+.c5-btn.warning {
   border-color: #ff9800;
   color: orange;
 }
 
-.warning:hover {
+.c5-btn.warning:hover {
   background: #ff9800;
   color: white;
 }
 
-.warning:disabled {
+.c5-btn.warning:disabled {
   background-color: gray;
   color: orange;
 }
 
-.warning:active {
+.c5-btn.warning:active {
   transform: scale(0.96);
 }
 
 /* red */
-.danger {
+.c5-btn.danger {
   border-color: #f44336;
   color: red;
 }
 
-.danger:hover {
+.c5-btn.danger:hover {
   background-color: #f44336;
   color: white;
 }
 
-.danger:disabled {
+.c5-btn.danger:disabled {
   background-color: gray;
   color: red;
 }
 
-.danger:active {
+.c5-btn.danger:active {
   transform: scale(0.96);
 }
 
-.default {
+.c5-btn.default {
   border-color: #e7e7e7;
   color: black;
 }
 
-.default:hover {
+.c5-btn.default:hover {
   background-color: #e7e7e7;
 }
 
-.default:disabled {
+.c5-btn.default:disabled {
   background-color: gray;
   color: white;
 }
 
-.default:active {
+.c5-btn.default:active {
   transform: scale(0.96);
 }
 
-.dark {
+.c5-btn.dark {
   border-color: #000;
   color: black;
 }
 
-.dark:hover {
+.c5-btn.dark:hover {
   background-color: #000;
   color: white;
 }
 
-.dark:disabled {
+.c5-btn.dark:disabled {
   background-color: gray;
   color: rgb(192, 181, 181);
 }
 
-.dark:active {
+.c5-btn.dark:active {
   transform: scale(0.96);
 }

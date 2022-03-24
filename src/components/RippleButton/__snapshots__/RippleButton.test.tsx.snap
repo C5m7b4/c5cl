@@ -1,12 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`RippleButton should handle danger type 1`] = `
+<div>
+  <button
+    class="c5-ripple-button"
+    style="background-color: rgb(232, 187, 37);"
+  >
+    Click Me
+    <span
+      class="ripple-button-circle"
+    />
+  </button>
+</div>
+`;
+
+exports[`RippleButton should handle error type 1`] = `
+<div>
+  <button
+    class="c5-ripple-button"
+    style="background-color: red; color: rgb(255, 255, 255);"
+  >
+    Click Me
+    <span
+      class="ripple-button-circle"
+    />
+  </button>
+</div>
+`;
+
+exports[`RippleButton should handle green type 1`] = `
+<div>
+  <button
+    class="c5-ripple-button"
+    style="background-color: limegreen; color: rgb(255, 255, 255);"
+  >
+    Click Me
+    <span
+      class="ripple-button-circle"
+    />
+  </button>
+</div>
+`;
+
+exports[`RippleButton should handle info type 1`] = `
+<div>
+  <button
+    class="c5-ripple-button"
+    style="background-color: rgb(90, 149, 205); color: rgb(255, 255, 255);"
+  >
+    Click Me
+    <span
+      class="ripple-button-circle"
+    />
+  </button>
+</div>
+`;
+
+exports[`RippleButton should handle purple type 1`] = `
+<div>
+  <button
+    class="c5-ripple-button"
+    style="background-color: rgb(186, 30, 186); color: rgb(255, 255, 255);"
+  >
+    Click Me
+    <span
+      class="ripple-button-circle"
+    />
+  </button>
+</div>
+`;
+
+exports[`RippleButton should handle success type 1`] = `
+<div>
+  <button
+    class="c5-ripple-button"
+    style="background-color: rgb(27, 204, 74); color: rgb(255, 255, 255);"
+  >
+    Click Me
+    <span
+      class="ripple-button-circle"
+    />
+  </button>
+</div>
+`;
+
 exports[`RippleButton should render correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <button
-        class="ripple-button"
+        class="c5-ripple-button"
         style="background-color: rgb(41, 82, 227); color: rgb(255, 255, 255);"
       >
         Click Me
@@ -18,7 +102,7 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="ripple-button"
+      class="c5-ripple-button"
       style="background-color: rgb(41, 82, 227); color: rgb(255, 255, 255);"
     >
       Click Me
