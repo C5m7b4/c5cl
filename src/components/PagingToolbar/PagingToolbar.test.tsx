@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import PagingToolbar from './PagingToolbar';
+import { testdata1 } from './pagingData';
 
 const testData = [
   {
@@ -23,13 +24,9 @@ describe('Paging Toolbar', () => {
     const { container } = render(
       <PagingToolbar
         data={testData}
-        currentPage={1}
         totalRecords={100}
-        handlePageChange={testFn}
+        onChange={testFn}
         recordsPerPage={20}
-        handleRecordsPerPageChange={testFn1}
-        start={0}
-        end={25}
       />
     );
     expect(container).toMatchSnapshot();
@@ -38,13 +35,9 @@ describe('Paging Toolbar', () => {
     const { container } = render(
       <PagingToolbar
         data={[]}
-        currentPage={1}
         totalRecords={0}
-        handlePageChange={testFn}
+        onChange={testFn}
         recordsPerPage={20}
-        handleRecordsPerPageChange={testFn1}
-        start={0}
-        end={25}
       />
     );
     expect(container).toMatchSnapshot();
@@ -53,13 +46,9 @@ describe('Paging Toolbar', () => {
     const { container } = render(
       <PagingToolbar
         data={testData}
-        currentPage={1}
         totalRecords={100}
-        handlePageChange={testFn}
+        onChange={testFn}
         recordsPerPage={20}
-        handleRecordsPerPageChange={testFn1}
-        start={0}
-        end={25}
       />
     );
     const btn = screen.getByTestId('handle-next');
@@ -70,13 +59,9 @@ describe('Paging Toolbar', () => {
     const { container } = render(
       <PagingToolbar
         data={testData}
-        currentPage={1}
         totalRecords={100}
-        handlePageChange={testFn}
+        onChange={testFn}
         recordsPerPage={20}
-        handleRecordsPerPageChange={testFn1}
-        start={0}
-        end={25}
       />
     );
     const btn = screen.getByTestId('handle-last');
@@ -87,15 +72,13 @@ describe('Paging Toolbar', () => {
     const { container } = render(
       <PagingToolbar
         data={testData}
-        currentPage={1}
         totalRecords={100}
-        handlePageChange={testFn}
+        onChange={testFn}
         recordsPerPage={20}
-        handleRecordsPerPageChange={testFn1}
-        start={0}
-        end={25}
       />
     );
+    const next = screen.getByTestId('handle-next');
+    fireEvent.click(next);
     const btn = screen.getByTestId('handle-first');
     fireEvent.click(btn);
     expect(container).toMatchSnapshot();
@@ -104,15 +87,13 @@ describe('Paging Toolbar', () => {
     const { container } = render(
       <PagingToolbar
         data={testData}
-        currentPage={1}
         totalRecords={100}
-        handlePageChange={testFn}
+        onChange={testFn}
         recordsPerPage={20}
-        handleRecordsPerPageChange={testFn1}
-        start={0}
-        end={25}
       />
     );
+    const next = screen.getByTestId('handle-next');
+    fireEvent.click(next);
     const btn = screen.getByTestId('handle-prev');
     fireEvent.click(btn);
     expect(container).toMatchSnapshot();
@@ -121,13 +102,9 @@ describe('Paging Toolbar', () => {
     const { container } = render(
       <PagingToolbar
         data={testData}
-        currentPage={4}
         totalRecords={100}
-        handlePageChange={testFn}
+        onChange={testFn}
         recordsPerPage={20}
-        handleRecordsPerPageChange={testFn1}
-        start={25}
-        end={50}
       />
     );
     expect(container).toMatchSnapshot();
@@ -136,15 +113,67 @@ describe('Paging Toolbar', () => {
     const { container } = render(
       <PagingToolbar
         data={testData}
-        currentPage={1}
         totalRecords={100}
-        handlePageChange={testFn}
+        onChange={testFn}
         recordsPerPage={20}
-        handleRecordsPerPageChange={testFn1}
-        start={0}
-        end={25}
       />
     );
     userEvent.type(screen.getByTestId('current-page-input'), '2');
+  });
+  test('should handle no records per page', () => {
+    const { container } = render(
+      <PagingToolbar data={testData} totalRecords={100} onChange={testFn} />
+    );
+    expect(container).toMatchSnapshot();
+  });
+  test('should handle rendering the last page', () => {
+    const { container, rerender, unmount } = render(
+      <PagingToolbar
+        data={testdata1}
+        totalRecords={testdata1.length - 1}
+        onChange={testFn}
+        recordsPerPage={10}
+      />
+    );
+    const next = screen.getByTestId('handle-next');
+    fireEvent.click(next);
+    fireEvent.click(next);
+    fireEvent.click(next);
+    unmount();
+    rerender(
+      <PagingToolbar
+        data={testdata1}
+        totalRecords={testdata1.length - 1}
+        onChange={testFn}
+        recordsPerPage={10}
+      />
+    );
+  });
+  test('should handle previous back to the main page', () => {
+    const { container, rerender, unmount } = render(
+      <PagingToolbar
+        data={testdata1}
+        totalRecords={testdata1.length - 1}
+        onChange={testFn}
+        recordsPerPage={10}
+        onRecordsPerPageChange={testFn}
+      />
+    );
+    const next = screen.getByTestId('handle-next');
+    fireEvent.click(next);
+    const prev = screen.getByTestId('handle-prev');
+    fireEvent.click(prev);
+  });
+  test('should handle records per page change', () => {
+    const { container, rerender, unmount } = render(
+      <PagingToolbar
+        data={testdata1}
+        totalRecords={testdata1.length - 1}
+        onChange={testFn}
+        recordsPerPage={10}
+        onRecordsPerPageChange={testFn}
+      />
+    );
+    userEvent.type(screen.getByTestId('rpp-input'), '2');
   });
 });

@@ -3,6 +3,7 @@
 exports[`DataGrid should render correctly 1`] = `
 <div>
   <div
+    class="mikto-table"
     style="width: 100%;"
   >
     <table
