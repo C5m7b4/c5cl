@@ -17,6 +17,10 @@ export const TooltipDemoExampleTop = Template.bind({});
 TooltipDemoExampleTop.args = {
   position: 'top',
   message: 'Top Tooltip',
+  theme: 'light',
+  messageStyle: {
+    padding: '20px',
+  },
 };
 
 export const TooltipDemoExampleBottom = Template.bind({});

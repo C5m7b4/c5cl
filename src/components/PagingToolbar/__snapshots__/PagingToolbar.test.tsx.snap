@@ -62,6 +62,16 @@ exports[`Paging Toolbar should handle first button click 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Next Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -87,6 +97,16 @@ exports[`Paging Toolbar should handle first button click 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Last Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -155,6 +175,16 @@ exports[`Paging Toolbar should handle last button click 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              First Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -179,6 +209,16 @@ exports[`Paging Toolbar should handle last button click 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Previous Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -343,6 +383,16 @@ exports[`Paging Toolbar should handle last page 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Next Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -368,6 +418,16 @@ exports[`Paging Toolbar should handle last page 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Last Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -436,6 +496,16 @@ exports[`Paging Toolbar should handle next button click 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              First Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -460,6 +530,16 @@ exports[`Paging Toolbar should handle next button click 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Previous Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -504,6 +584,16 @@ exports[`Paging Toolbar should handle next button click 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Next Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -529,6 +619,16 @@ exports[`Paging Toolbar should handle next button click 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Last Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -645,6 +745,16 @@ exports[`Paging Toolbar should handle no records per page 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Next Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -670,6 +780,16 @@ exports[`Paging Toolbar should handle no records per page 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Last Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -786,6 +906,16 @@ exports[`Paging Toolbar should handle prev button click 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Next Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -811,6 +941,16 @@ exports[`Paging Toolbar should handle prev button click 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Last Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -1047,6 +1187,16 @@ exports[`Paging Toolbar should render properly 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Next Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >
@@ -1072,6 +1222,16 @@ exports[`Paging Toolbar should render properly 1`] = `
         <span
           class="mcl-tooltip-wrapper"
         >
+          <div
+            class="mcl-tooltip-bubble mcl-tooltip-bottom dark"
+          >
+            <div
+              class="mcl-tooltip-message"
+              style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); padding: 3px;"
+            >
+              Last Page
+            </div>
+          </div>
           <span
             class="mcl-tooltip-trigger"
           >

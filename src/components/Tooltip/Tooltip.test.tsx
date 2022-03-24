@@ -39,7 +39,7 @@ describe('Tooltip', () => {
     fireEvent.mouseOut(header);
   });
   test('should run useEffect cleanup return function', () => {
-    jest.spyOn(React, 'useEffect').mockImplementation((f) => f());
+    //jest.spyOn(React, 'useEffect').mockImplementation((f) => f());
     const { unmount, rerender } = render(
       <Tooltip position="top" message="tooltip" theme="dark">
         <div>Hello</div>
@@ -47,6 +47,14 @@ describe('Tooltip', () => {
     );
     rerender(
       <Tooltip position="top" message="tooltip">
+        <div>Hello</div>
+      </Tooltip>
+    );
+  });
+  test('should render without a position', () => {
+    const { container } = render(
+      // @ts-ignore
+      <Tooltip message="tooltip">
         <div>Hello</div>
       </Tooltip>
     );

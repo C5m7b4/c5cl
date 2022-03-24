@@ -48,7 +48,7 @@
 .mcl-tooltip-top.dark::after {
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
-  border-top: 9px solid #fff;
+  border-top: 9px solid #000;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -110,7 +110,7 @@
 }
 
 .mcl-tooltip-left.dark::after {
-  border-left: 9px solid #fff;
+  border-left: 9px solid #000;
   border-top: 9px solid transparent;
   border-bottom: 9px solid transparent;
   top: 50%;
@@ -142,7 +142,7 @@
 }
 
 .mcl-tooltip-right.dark::after {
-  border-right: 9px solid #fff;
+  border-right: 9px solid #000;
   border-top: 9px solid transparent;
   border-bottom: 9px solid transparent;
   top: 50%;

@@ -75,6 +75,7 @@ export const toastManager: ToastManager = {
   publish(event: Event, args: EventEmitType) {
     this.list.has(event) &&
       this.list.get(event)!.forEach((callback: Callback) => {
+        /* istanbul ignore else */
         if (event == Event.Show) {
           const {
             content,

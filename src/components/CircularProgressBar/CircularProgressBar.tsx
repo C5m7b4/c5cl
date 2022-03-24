@@ -27,12 +27,14 @@ const CircularProgressBar = (props: CircularProgressProps) => {
     setProgressText(progress.toString());
     setOffset(progressOffset);
 
+    /* istanbul ignore else */
     if (circleRef.current) {
       // @ts-ignore
       circleRef.current.style =
         'transition: stroke-dashoffset 850ms ease-in-out, stroke 500ms linear';
     }
 
+    /* istanbul ignore else */
     if (progress >= 75) {
       setProgressColor('#47e61c');
     } else if (progress < 25) {
