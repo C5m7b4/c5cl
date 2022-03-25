@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Star Rating should render properly 1`] = `
+<div>
+  <div
+    class="star-rating"
+  >
+    <button
+      class="star-rating-button on"
+      data-testid="star-0"
+      type="button"
+    >
+      <span
+        class="star"
+      >
+        ★
+      </span>
+    </button>
+    <button
+      class="star-rating-button off"
+      data-testid="star-1"
+      type="button"
+    >
+      <span
+        class="star"
+      >
+        ★
+      </span>
+    </button>
+    <button
+      class="star-rating-button off"
+      data-testid="star-2"
+      type="button"
+    >
+      <span
+        class="star"
+      >
+        ★
+      </span>
+    </button>
+    <button
+      class="star-rating-button off"
+      data-testid="star-3"
+      type="button"
+    >
+      <span
+        class="star"
+      >
+        ★
+      </span>
+    </button>
+    <button
+      class="star-rating-button off"
+      data-testid="star-4"
+      type="button"
+    >
+      <span
+        class="star"
+      >
+        ★
+      </span>
+    </button>
+  </div>
+</div>
+`;

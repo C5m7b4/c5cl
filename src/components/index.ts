@@ -23,5 +23,8 @@ export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as TypeAheadDropdown } from './TypeAheadDropdown';
 export { default as TimePicker } from './TimePicker';
 export { default as ToggleButton } from './ToggleButton';
+export { default as RangeSlider } from './RangeSlider';
+export { default as PagingToolbar } from './PagingToolbar';
+export { default as StarRating } from './StarRating';
 export * from './ColorPicker';
 export * from './Icons';

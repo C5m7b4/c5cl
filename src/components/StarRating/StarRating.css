@@ -1,0 +1,14 @@
+.star-rating-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.star-rating-button.on {
+  color: rgb(229, 233, 17);
+}
+
+.star-rating-button.off {
+  color: #ccc;
+}
