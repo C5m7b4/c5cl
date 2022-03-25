@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import MultiSelect from './MultiSelect';
 import { data } from './data';
+
+const Sandbox = () => {
+  const [checkedItems, setCheckedItems] = useState<string[]>([]);
+
+  const handleCheck = (s: string[]) => {
+    setCheckedItems(s);
+  };
+  return (
+    <div>
+      <MultiSelect
+        data={data}
+        defaultOption="select a department"
+        keyDescriptor="keyDescriptor"
+        optionValue="id"
+        optionText="value"
+        checkedItems={[]}
+        setCheckedItems={handleCheck}
+        id="id"
+        selectBoxId="selectBoxId"
+        backgroundColor="red"
+        selectId="selectId"
+        inputId="inputId"
+      />
+      <div className="other">Here is some other content</div>
+    </div>
+  );
+};
 
 describe('MultiSelect', () => {
   test('should render correctly', () => {
@@ -58,15 +85,16 @@ describe('MultiSelect', () => {
     document.body.appendChild(portal);
     const setCheckedItems = jest.fn();
     const { container, getByRole } = render(
-      <MultiSelect
-        data={data}
-        defaultOption="select a department"
-        keyDescriptor="keyDescriptor"
-        optionValue="id"
-        optionText="value"
-        checkedItems={[]}
-        setCheckedItems={setCheckedItems}
-      />
+      <Sandbox />
+      // <MultiSelect
+      //   data={data}
+      //   defaultOption="select a department"
+      //   keyDescriptor="keyDescriptor"
+      //   optionValue="id"
+      //   optionText="value"
+      //   checkedItems={[]}
+      //   setCheckedItems={setCheckedItems}
+      // />
     );
 
     const option = getByRole('option', { name: /select a department/ });
@@ -76,6 +104,9 @@ describe('MultiSelect', () => {
     if (outside) {
       fireEvent.click(outside);
     }
+
+    const other = container.querySelector('.other') as HTMLDivElement;
+    fireEvent.click(other);
   });
   test('should handle check', () => {
     const div = document.createElement('div');

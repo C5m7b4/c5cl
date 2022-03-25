@@ -94,6 +94,7 @@ function RippleButton(props: RippleButtonProps) {
   };
 
   useEffect(() => {
+    /* istanbul ignore else */
     if (btn.current) {
       btn.current.style.backgroundColor = color;
       btn.current.style.color = textColor;

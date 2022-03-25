@@ -4,14 +4,6 @@ import fireEvent from '@testing-library/user-event';
 
 import RippleButton from './RippleButton';
 
-// afterEach(cleanup);
-
-// beforeAll(() =>
-//   jest.spyOn(React, 'useEffect').mockImplementation(React.useLayoutEffect)
-// );
-// // @ts-ignore
-// afterAll(() => React.useEffect.mockRestore());
-
 describe('RippleButton', () => {
   test('should render correctly', () => {
     const testFn = jest.fn();
