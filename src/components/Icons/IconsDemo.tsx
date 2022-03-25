@@ -24,6 +24,7 @@ const IconDemo = () => {
     file: File,
     minusBox: MinusBox,
     plusBox: PlusBox,
+    search: Search,
   } = Icons;
   return (
     <div>
@@ -99,6 +100,10 @@ const IconDemo = () => {
           <div className="icon-div">
             <label>Plus Box</label>
             <PlusBox theme="dark" type="dark" style={style} />
+          </div>
+          <div className="icon-div">
+            <label>Search</label>
+            <Search theme="dark" type="dark" style={style} />
           </div>
         </div>
       </div>
