@@ -10,7 +10,7 @@ describe('Tab', () => {
       <Tab
         id="tab1"
         disabled={false}
-        label="Tab1"
+        title="Tab1"
         className="tab1"
         onClick={testFn}
         activeTab="tab1"
@@ -24,7 +24,7 @@ describe('Tab', () => {
       <Tab
         id="tab1"
         disabled={false}
-        label="tab1"
+        title="tab1"
         className="tb1"
         onClick={testFn}
         activeTab="tab1"
@@ -38,7 +38,7 @@ describe('Tab', () => {
       <Tab
         id="tab1"
         disabled={false}
-        label="tab1"
+        title="tab1"
         className="tb1"
         onClick={testFn}
         activeTab="tab1"
