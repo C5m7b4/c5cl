@@ -1,0 +1,37 @@
+.searchbox-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 35px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding-left: 3px;
+}
+
+.searchbox {
+  border: 0;
+  outline: none;
+  width: 100%;
+  padding: 3px 6px;
+}
+
+.searchbox:focus {
+  border: 0;
+  outline: none;
+}
+
+.searchbox-span {
+  background-color: #1c66a3;
+  text-align: center;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.searchbox-span:hover {
+  background-color: #367fbb;
+}
+
+.searchbox-icon {
+  margin-top: 5px;
+  fill: white;
+}

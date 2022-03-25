@@ -81,4 +81,29 @@ describe('Icons', () => {
     const { container } = render(<PlusBox theme="dark" type="dark" />);
     expect(container).toMatchSnapshot();
   });
+  test('should render search', () => {
+    const { search: Search } = Icons;
+    const { container } = render(<Search theme="dark" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render search colored', () => {
+    const { search: Search } = Icons;
+    const { container } = render(<Search theme="colored" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render folder open', () => {
+    const { folderOpen: FolderOpen } = Icons;
+    const { container } = render(<FolderOpen theme="dark" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render file', () => {
+    const { file: File } = Icons;
+    const { container } = render(<File theme="dark" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
+  test('should render folder', () => {
+    const { folder: Folder } = Icons;
+    const { container } = render(<Folder theme="dark" type="dark" />);
+    expect(container).toMatchSnapshot();
+  });
 });
