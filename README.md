@@ -4,6 +4,7 @@
 [![CircleCI](https://circleci.com/gh/C5m7b4/c5cl/tree/master.svg?style=svg)](https://circleci.com/gh/C5m7b4/c5cl/tree/master)
 [![codecov](https://codecov.io/gh/C5m7b4/c5cl/branch/master/graph/badge.svg?token=4CPGf4PdJ9)](https://codecov.io/gh/C5m7b4/c5cl)
 [![GitHub version](https://badge.fury.io/gh/C5m7b4%2Fc5cl.svg)](https://badge.fury.io/gh/C5m7b4%2Fc5cl)
+[![npm version](https://badge.fury.io/js/c5cl.svg)](https://badge.fury.io/js/c5cl)
 
 Installation:
 
