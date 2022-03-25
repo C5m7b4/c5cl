@@ -26,5 +26,6 @@ export { default as ToggleButton } from './ToggleButton';
 export { default as RangeSlider } from './RangeSlider';
 export { default as PagingToolbar } from './PagingToolbar';
 export { default as StarRating } from './StarRating';
+export { default as Menu } from './Menu';
 export * from './ColorPicker';
 export * from './Icons';

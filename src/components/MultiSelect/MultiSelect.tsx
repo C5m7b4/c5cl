@@ -54,6 +54,7 @@ function MultiSelect<T>(props: MultiSelectProps<T>) {
     const portal = document.getElementById(id);
     if (portal) {
       const rect = portal.getBoundingClientRect();
+      /* istanbul ignore else */
       if (e.clientX < rect.left || e.clientX > rect.right) {
         setShow(false);
         // const actualSelect = document.getElementById(selectId);
@@ -62,6 +63,7 @@ function MultiSelect<T>(props: MultiSelectProps<T>) {
         window.removeEventListener('click', tapOutside);
         return;
       }
+      /* istanbul ignore else */
       if (e.clientY < rect.top || e.clientY > rect.bottom) {
         setShow(false);
         // const actualSelect = document.getElementById(selectId);
@@ -85,15 +87,18 @@ function MultiSelect<T>(props: MultiSelectProps<T>) {
 
     const actualSelect = document.getElementById(selectId) as HTMLSelectElement;
     const firstChild = actualSelect.childNodes[0] as HTMLDivElement;
+    /* istanbul ignore else */
     if (firstChild) {
       firstChild.style.display = 'none';
     }
+    /* istanbul ignore else */
     if (actualSelect) {
       //actualSelect.options.remove(0);
 
       setTimeout(() => {
         const select = document.getElementById(selectBoxId);
         const portal = document.getElementById(id);
+        /* istanbul ignore else */
         if (select && portal) {
           const portalRect = portal.getBoundingClientRect();
           const selectRect = select.getBoundingClientRect();
@@ -102,6 +107,7 @@ function MultiSelect<T>(props: MultiSelectProps<T>) {
           portal.style.backgroundColor = backgroundColor;
           window.addEventListener('click', tapOutside);
           const input = document.getElementById(inputId);
+          /* istanbul ignore else */
           if (input) {
             input.focus();
           }
@@ -112,7 +118,9 @@ function MultiSelect<T>(props: MultiSelectProps<T>) {
 
   const handleCheck = (e: React.ChangeEvent<HTMLInputElement>, i: T) => {
     const columnValue = i[optionValue] as unknown as string;
+
     if (e.target.checked) {
+      /* istanbul ignore else */
       if (!locallyCheckedItems.includes(columnValue)) {
         setCheckedItems([...checkedItems, columnValue]);
         setLocallyCheckedItems([...locallyCheckedItems, columnValue]);
@@ -131,6 +139,7 @@ function MultiSelect<T>(props: MultiSelectProps<T>) {
     } else {
       const filtered = props.data.filter((s) => {
         const recordValue = s[optionText] as unknown as string;
+        /* istanbul ignore else */
         if (
           recordValue.toLowerCase().startsWith(e.target.value.toLowerCase())
         ) {
