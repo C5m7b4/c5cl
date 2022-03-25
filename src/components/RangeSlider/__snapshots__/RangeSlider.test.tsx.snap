@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RangeSlider should handle theme 1`] = `
+<div>
+  <div>
+    <div
+      class="slider-container"
+    >
+      <input
+        class="range-slider"
+        data-testid="slider"
+        max="100"
+        min="0"
+        step="1"
+        style="--slider-thumb-color: #4aa1f3;"
+        type="range"
+        value="50"
+      />
+      <span
+        class="range-slider-value"
+      >
+        50
+      </span>
+      <div
+        class="range-min-max-values"
+      >
+        <span
+          style="color: rgb(0, 0, 0);"
+        >
+          0
+        </span>
+        <span
+          style="color: rgb(0, 0, 0);"
+        >
+          100
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`RangeSlider should render correctly 1`] = `
+<div>
+  <div>
+    <div
+      class="slider-container"
+    >
+      <input
+        class="range-slider"
+        data-testid="slider"
+        max="100"
+        min="0"
+        step="1"
+        style="--slider-thumb-color: #4aa1f3;"
+        type="range"
+        value="50"
+      />
+      <span
+        class="range-slider-value"
+      >
+        50
+      </span>
+      <div
+        class="range-min-max-values"
+      >
+        <span
+          style="color: rgb(255, 255, 255);"
+        >
+          0
+        </span>
+        <span
+          style="color: rgb(255, 255, 255);"
+        >
+          100
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
