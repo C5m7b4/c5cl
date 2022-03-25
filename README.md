@@ -12,6 +12,51 @@ Installation:
 npm install c5cl
 ```
 
+## Components
+
+- Button
+- CircularProgressBar
+- Collapse
+- Collapsible
+- Confirm
+- DatePicker
+- ErrorBoundary
+- Grid
+- Icons
+- Menu
+- MultiSelect
+- OutlineButton
+- PagingToolbar
+- Progressbar
+- Password Meter
+- RangeSlider
+- RippleButton
+- Searchbox
+- SelectField
+- SizableToggle
+- Spinner
+- StarRating
+- Tabs
+- TestInput
+- TimePicker
+- Toast
+- ToastContainer
+- ToggleButton
+- ToggleSwitch
+- Tooltip
+- Tree
+- TypeAheadDropdown
+
+## Utility functions
+
+- isValid
+- addDays
+- encrypt
+- throttle
+- pad
+- formatMoney
+- formatDate
+
 Usage:
 
 ```js
