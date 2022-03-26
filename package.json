@@ -71,6 +71,7 @@
   },
   "dependencies": {
     "crypto-js": "^4.0.0",
+    "prettier": "^2.6.1",
     "tinycolor2": "^1.4.2"
   }
 }
