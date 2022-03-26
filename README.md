@@ -47,6 +47,7 @@ npm install c5cl
 - Tree
 - TypeAheadDropdown
 - Calendar
+- CodeDiplay
 
 ## Utility functions
 

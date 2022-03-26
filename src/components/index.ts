@@ -29,5 +29,6 @@ export { default as StarRating } from './StarRating';
 export { default as Menu } from './Menu';
 export { default as Searchbox } from './Searchbox';
 export { default as Calendar } from './Calendar';
+export { default as CodeDisplay } from './CodeDisplay';
 export * from './ColorPicker';
 export * from './Icons';
