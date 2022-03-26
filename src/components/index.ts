@@ -28,5 +28,6 @@ export { default as PagingToolbar } from './PagingToolbar';
 export { default as StarRating } from './StarRating';
 export { default as Menu } from './Menu';
 export { default as Searchbox } from './Searchbox';
+export { default as Calendar } from './Calendar';
 export * from './ColorPicker';
 export * from './Icons';
