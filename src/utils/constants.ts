@@ -15,3 +15,7 @@ export const TYPE: { [key in KeyOfType]: TypeOptions } = {
   DEFAULT: 'default',
   DARK: 'dark',
 };
+
+export const enum EditorDefault {
+  CSS_NAMESPACE = 'c5-editor',
+}

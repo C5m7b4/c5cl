@@ -9,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c && npm run scss && npm run minify",
+    "build": "rollup -c && npm run scss && npm run minify && npm run editorScss && npm run minifyEditor",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -18,7 +18,9 @@
     "build-storybook": "build-storybook",
     "codecov": "npm test && codecov",
     "scss": "sass scss/main.scss dist/css/c5-toastify.css",
-    "minify": "postcss dist/css/c5-toastify.css > dist/css/c5-toastify.min.css"
+    "minify": "postcss dist/css/c5-toastify.css > dist/css/c5-toastify.min.css",
+    "editorScss": "sass src/components/CodeDisplay/scss/main.scss dist/css/c5-editor.css",
+    "minifyEditor": "postcss dist/css/c5-editor.css > dist/css/c5-editor.min.css"
   },
   "author": "C5m7b4",
   "license": "MIT",
@@ -69,6 +71,7 @@
   },
   "dependencies": {
     "crypto-js": "^4.0.0",
+    "prettier": "^2.6.1",
     "tinycolor2": "^1.4.2"
   }
 }

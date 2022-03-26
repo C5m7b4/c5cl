@@ -6,3 +6,5 @@ export * from './pad';
 export * from './utils';
 export * from './throttle';
 export * from './date';
+export * from './reserved';
+export * from './colors';
