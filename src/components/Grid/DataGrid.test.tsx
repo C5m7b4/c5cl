@@ -1,6 +1,5 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { within } from '@testing-library/dom';
 
 import DataGrid from './DataGrid';
 
@@ -353,87 +352,6 @@ describe('DataGrid', () => {
         expect(check.checked).toBeFalsy();
       }
     }
-  });
-  test('should run dragStart', () => {
-    const component = (
-      <DataGrid
-        mode="light"
-        data={testData}
-        identifier={'grid1'}
-        headers={[
-          {
-            columnName: 'id',
-            title: 'ID',
-            visible: true,
-            style: {
-              textAlign: 'center',
-            },
-          },
-          {
-            columnName: 'storeName',
-            title: 'Name',
-            style: {
-              textAlign: 'left',
-            },
-          },
-          {
-            columnName: 'storeNumber',
-            title: '#',
-            style: {
-              textAlign: 'center',
-            },
-          },
-        ]}
-      />
-    );
-    const mountNode = document.createElement('div');
-    document.body.appendChild(mountNode);
-
-    const getTableCells = () => {
-      Array.from(mountNode.querySelectorAll('tr td:nth-of-type(1'));
-    };
-
-    const createBubbledEvent = (type: string, props = {}) => {
-      const event = new Event(type, { bubbles: true });
-      Object.assign(event, props);
-      return event;
-    };
-
-    const { getByText } = render(component);
-    const div = document.getElementById('table-header-grid1-0');
-
-    const dragStartEvt = new CustomEvent('dragstart');
-
-    // @ts-ignore
-    const setData = jest.fn();
-    // @ts-ignore
-    dragStartEvt.pageX = '150';
-
-    Object.assign(dragStartEvt, {
-      dataTransfer: { setData: setData, effectAllowed: 'move' },
-    });
-    if (div) {
-      div.dispatchEvent(dragStartEvt);
-    }
-    // const columnHeader = screen.getByRole('columnheader', { name: /name/i });
-    // const cell = within(columnHeader).getByText(/name/i);
-    // div.dispatchEvent(
-    //   createBubbledEvent('dragstart', { clientX: 10, clientY: 0 })
-    // );
-    // const tableCells0 = getTableCells();
-    // // @ts-ignore
-    // if (tableCells0) {
-    //   const startingNode0 = tableCells0[0];
-    //   const endingNode0 = tableCells0[0];
-    //   // @ts-ignore
-    //   startingNode0.dispatchEvent(
-    //     createBubbledEvent('dragstart', { clientX: 225, clientY: 0 })
-    //   );
-    //   // @ts-ignore
-    //   endingNode0.dispatchEvent(
-    //     createBubbledEvent('drop', { clientX: 225, clientY: 0 })
-    //   );
-    // }
   });
   test('should sort by column with equal data', () => {
     const renderers = {
