@@ -46,6 +46,7 @@ npm install c5cl
 - Tooltip
 - Tree
 - TypeAheadDropdown
+- Calendar
 
 ## Utility functions
 
@@ -56,6 +57,12 @@ npm install c5cl
 - pad
 - formatMoney
 - formatDate
+- getDaysInMonth
+- isSameMonth
+- isSameDay
+- getDateDetails
+- getDayOfDate
+- getMonthName
 
 Usage:
 
