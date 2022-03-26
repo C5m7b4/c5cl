@@ -1,4 +1,11 @@
-import { getDateDetails, daysInMonth, isSameMonth, isSameDay } from './date';
+import {
+  getDateDetails,
+  daysInMonth,
+  isSameMonth,
+  isSameDay,
+  getDayOfDate,
+  getMonthName,
+} from './date';
 
 describe('getDateDetails', () => {
   test('should return 1 for day, 1 for month, 2022 for year', () => {
@@ -46,5 +53,34 @@ describe('isSameDay', () => {
     expect(isSameDay(goodDate, testDate)).toBeTruthy();
     expect(isSameDay(badDate1, testDate)).toBeFalsy();
     expect(isSameDay(badDate2, testDate)).toBeFalsy();
+  });
+});
+
+describe('getDayOfDate', () => {
+  test('should return the day of the week', () => {
+    expect(getDayOfDate(new Date(2022, 2, 27))).toEqual('Sunday');
+    expect(getDayOfDate(new Date(2022, 2, 26))).toEqual('Saturday');
+    expect(getDayOfDate(new Date(2022, 2, 25))).toEqual('Friday');
+    expect(getDayOfDate(new Date(2022, 2, 24))).toEqual('Thursday');
+    expect(getDayOfDate(new Date(2022, 2, 23))).toEqual('Wednesday');
+    expect(getDayOfDate(new Date(2022, 2, 22))).toEqual('Tuesday');
+    expect(getDayOfDate(new Date(2022, 2, 21))).toEqual('Monday');
+  });
+});
+
+describe('getMonthName', () => {
+  test('should return the name of the month', () => {
+    expect(getMonthName(new Date(2022, 0, 1))).toEqual('January');
+    expect(getMonthName(new Date(2022, 1, 1))).toEqual('February');
+    expect(getMonthName(new Date(2022, 2, 1))).toEqual('March');
+    expect(getMonthName(new Date(2022, 3, 1))).toEqual('April');
+    expect(getMonthName(new Date(2022, 4, 1))).toEqual('May');
+    expect(getMonthName(new Date(2022, 5, 1))).toEqual('June');
+    expect(getMonthName(new Date(2022, 6, 1))).toEqual('July');
+    expect(getMonthName(new Date(2022, 7, 1))).toEqual('August');
+    expect(getMonthName(new Date(2022, 8, 1))).toEqual('September');
+    expect(getMonthName(new Date(2022, 9, 1))).toEqual('October');
+    expect(getMonthName(new Date(2022, 10, 1))).toEqual('November');
+    expect(getMonthName(new Date(2022, 11, 1))).toEqual('December');
   });
 });

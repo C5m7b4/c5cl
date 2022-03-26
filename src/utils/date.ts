@@ -1,3 +1,28 @@
+const daysOfWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
 const getDateDetails = (d: Date) => {
   const month = d.getMonth();
   const day = d.getDate();
@@ -28,4 +53,21 @@ const isSameDay = (d1: Date, d2: Date) => {
   );
 };
 
-export { getDateDetails, daysInMonth, isSameMonth, isSameDay };
+const getDayOfDate = (d: Date) => {
+  const day = d.getDay();
+  return daysOfWeek[day];
+};
+
+const getMonthName = (d: Date) => {
+  const month = d.getMonth();
+  return months[month];
+};
+
+export {
+  getDateDetails,
+  daysInMonth,
+  isSameMonth,
+  isSameDay,
+  getDayOfDate,
+  getMonthName,
+};
