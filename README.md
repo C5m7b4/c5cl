@@ -6,6 +6,13 @@
 [![npm version](https://badge.fury.io/js/c5cl.svg)](https://badge.fury.io/js/c5cl)
 [![codecov](https://codecov.io/gh/C5m7b4/c5cl/branch/master/graph/badge.svg?token=4CPGf4PdJ9)](https://codecov.io/gh/C5m7b4/c5cl)
 
+![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=C5m7b4&show_icons=true)
+
+![Your Repository's Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=C5m7b4&theme=blue-green)
+
+## Contributors
+![GitHub Contributors Image](https://contrib.rocks/image?repo=C5m7b4/c5cl)
+
 Installation:
 
 ```js
@@ -342,12 +349,8 @@ GENERATE_SOURCEMAP=false
 - [✔] fix filter widget vertical placement
 - [ ] fix custom renderers
 
-## Some ideas for extra components
 
-- Toasts
-- Data Picker
-- Tooltips
-- [✔] Slider
-- any other thoughts
-- TreeViewer
-- Carousel
+
+![Profile View Counter](https://komarev.com/ghpvc/?username=C5m7b4)
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FC5m7b4%2Fc5cl&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
