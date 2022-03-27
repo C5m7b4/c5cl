@@ -147,6 +147,7 @@
   top: 0.75em;
   right: 0.75em;
   font-weight: 700;
+  z-index: 5;
 }
 
 .c5-calendar .body .disabled {
@@ -165,6 +166,7 @@
   right: -0.05em;
   transition: 0.25s ease-out;
   letter-spacing: -0.07em;
+  z-index: 3;
 }
 
 .c5-calendar .body .cell:hover .bg,
@@ -177,4 +179,61 @@
   flex-grow: 0;
   flex-basis: calc(100% / 7);
   width: calc(100% / 7);
+}
+
+.c5-calendar .body .cell .event-one {
+  width: 70%;
+  background: linear-gradient(45deg, #1a8fff 0%, #53cbf1 40%);
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 3px;
+  position: relative;
+  color: #fff;
+  display: block;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5px;
+  text-overflow: ellipsis;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.c5-calendar .body .cell .event-two {
+  width: 70%;
+  background: linear-gradient(45deg, #c79f1b 0%, #dbc478 40%);
+  padding: 8px;
+  border-radius: 5px;
+  margin-top: 3px;
+  position: relative;
+  color: #fff;
+  display: block;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5px;
+  text-overflow: ellipsis;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.c5-calendar .body .cell .event-list {
+  width: 70%;
+  background: linear-gradient(45deg, #9b0275 0%, #d65db8 40%);
+  padding: 9px;
+  border-radius: 5px;
+  margin-top: 3px;
+  position: relative;
+  color: #fff;
+  display: block;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5px;
+  text-overflow: ellipsis;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.modal-placeholder {
+  z-index: 50;
 }
