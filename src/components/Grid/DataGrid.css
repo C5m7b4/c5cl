@@ -84,3 +84,11 @@
   border-right: 5spx solid limegreen;
   background-color: limegreen;
 }
+
+.mikto-table-row-editing {
+  border: 2px solid black;
+  padding: 3px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+  background: #918a8a;
+  border-radius: 5px;
+}

@@ -1,4 +1,4 @@
-const testDate = new Date();
+const testDate = new Date(2022, 2, 26);
 const month = testDate.getMonth();
 const year = testDate.getFullYear();
 const day = testDate.getDate();
