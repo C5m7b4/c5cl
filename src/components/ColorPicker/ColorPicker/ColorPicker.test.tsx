@@ -119,6 +119,8 @@ describe('ColorPicker', () => {
     const hex = screen.getByRole('textbox', {
       name: '# Hex',
     }) as HTMLInputElement;
+    userEvent.tab();
+
     expect(hex.value).toEqual('ffffff');
   });
 });
