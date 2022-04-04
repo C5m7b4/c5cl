@@ -171,6 +171,9 @@ exports[`DataGrid should render correctly 1`] = `
     <div
       id="mikto-filter-grid1"
     />
+    <div
+      id="mikto-confirm=grid1"
+    />
   </div>
 </div>
 `;

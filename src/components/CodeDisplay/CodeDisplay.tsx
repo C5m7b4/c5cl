@@ -9,8 +9,8 @@ import {
   operators,
   copyTextToClipboard,
 } from '../../utils';
-import prettier from 'prettier';
-import parser from 'prettier/parser-babel';
+// import prettier from 'prettier';
+// import parser from 'prettier/parser-babel';
 import { Parsers } from '../../types';
 import { clipboard } from '../Icons';
 
@@ -105,7 +105,7 @@ const CodeDisplay: React.FC<CodeDisplayProps> = ({
     if (raw) {
       /* istanbul ignore else */
       if (format) {
-        code = formatCode(code);
+        //code = formatCode(code);
       }
       code = htmlEncode(code.slice(0, -1));
     }
@@ -116,21 +116,21 @@ const CodeDisplay: React.FC<CodeDisplayProps> = ({
     }
   }, [code, format, parserType]);
 
-  const formatCode = (code: string): string => {
-    try {
-      const formatted = prettier.format(code, {
-        parser: parserType,
-        plugins: [parser],
-        useTabs: false,
-        semi: true,
-        singleQuote: true,
-      });
-      return formatted;
-    } catch (error) {
-      console.error('Could not parse your code using the babel parser');
-      return code;
-    }
-  };
+  // const formatCode = (code: string): string => {
+  //   try {
+  //     const formatted = prettier.format(code, {
+  //       parser: parserType,
+  //       plugins: [parser],
+  //       useTabs: false,
+  //       semi: true,
+  //       singleQuote: true,
+  //     });
+  //     return formatted;
+  //   } catch (error) {
+  //     console.error('Could not parse your code using the babel parser');
+  //     return code;
+  //   }
+  // };
 
   const copy = (
     t: string,

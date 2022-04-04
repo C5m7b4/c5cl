@@ -27,7 +27,10 @@ const codeSnippet = {
     })
 
     return json;
-  }`,
+  }
+  
+  
+  `,
 };
 
 const Template: Story<CodeDisplayProps> = (args) => <CodeDisplay {...args} />;

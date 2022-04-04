@@ -8,3 +8,4 @@ export * from './throttle';
 export * from './date';
 export * from './reserved';
 export * from './colors';
+export * from './debounce';

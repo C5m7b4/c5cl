@@ -70,6 +70,7 @@ const headers = [
       textAlign: 'center',
     },
     sortable: 'desc',
+    editor: 'number',
   },
   {
     columnName: 'storeName',

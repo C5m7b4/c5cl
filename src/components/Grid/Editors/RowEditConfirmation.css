@@ -1,0 +1,76 @@
+.row-edit-confirmation {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.8;
+  padding-bottom: 8px;
+}
+
+.row-edit-confirmation .contents {
+  position: relative;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #f5eded;
+}
+
+.row-edit-confirmation .contents:before,
+.row-edit-confirmation .contents:after {
+  content: '';
+  position: absolute;
+  height: 10px;
+  width: 20px;
+  top: 0;
+  background-color: #f5eded;
+}
+
+.row-edit-confirmation .contents:after {
+  right: -18px;
+  border-radius: 0 0 10px 0;
+}
+
+.row-edit-confirmation .contents:before {
+  left: -18px;
+  border-radius: 0 0 0 10px;
+}
+
+.row-edit-confirmation .contents .cancel {
+  padding: 5px 8px;
+  border-radius: 10px;
+  border-color: #ff9800;
+  color: orange;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  border-width: 1px;
+  transition: all 0.3s ease-in;
+}
+
+.row-edit-confirmation .contents .cancel:hover {
+  background: #ff9800;
+  color: white;
+}
+
+.row-edit-confirmation .contents .cancel {
+  transform: scale(0.96);
+}
+
+.row-edit-confirmation .contents .ok {
+  margin-left: 10px;
+  border-color: #2196f3;
+  color: dodgerblue;
+  padding: 5px 8px;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  border-width: 1px;
+  transition: all 0.3s ease-in;
+}
+
+.row-edit-confirmation .contents .ok:hover {
+  background: #2196f3;
+  color: white;
+}
+
+.row-edit-confirmation .contents .ok:active {
+  transform: scale(0.96);
+}

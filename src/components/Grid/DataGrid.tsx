@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Columns } from './Columns/Columns';
 import { Filter } from './Filter/Filter';
+import GridTextEditor from './Editors/GridTextEditor';
+import RowEditConfirmation from './Editors/RowEditConfirmation';
 import './DataGrid.css';
 
 export type CustomRenderers<T> = Partial<
@@ -18,6 +20,8 @@ export function isPrimitive(value: unknown): value is PrimitiveType {
   );
 }
 
+export type TableHeaderEditor = 'text' | 'number' | 'date' | 'time' | 'color';
+
 export type TableHeader<T> = {
   columnName: keyof T;
   title: string;
@@ -26,6 +30,7 @@ export type TableHeader<T> = {
   style?: React.CSSProperties;
   width?: number;
   filterable?: boolean;
+  editor?: TableHeaderEditor;
 };
 
 export type Mode = 'light' | 'dark';
@@ -41,6 +46,7 @@ export interface TableProps<T> {
   tableClassName?: string;
   mode?: Mode;
   handleRowClick?: (record: T) => void;
+  handleRowEdit?: (record: T, header: TableHeader<T>, newValue: any) => void;
 }
 
 // export function objectKeys<T extends {}>(obj: T) {
@@ -62,6 +68,11 @@ function DataGrid<T>(props: TableProps<T>) {
   });
   const [checkedFilters, setCheckedFilters] = useState<string[]>([]);
   const [headerString, setHeaderString] = useState('');
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingRecord, setEditingRecord] = useState<T>();
+  const [confirmStyle, setConfirmStyle] = useState<React.CSSProperties>({
+    position: 'absolute',
+  });
 
   // check to see if the rowclick exists or not
 
@@ -69,11 +80,12 @@ function DataGrid<T>(props: TableProps<T>) {
 
   const table = useRef<HTMLTableElement>(null);
   let draggedId = '';
+  let uniqueId = 0;
 
   useEffect(() => {
     setFilteredData(props.data);
 
-    const stylesheet = document.styleSheets[0];
+    // const stylesheet = document.styleSheets[0];
     try {
       /* istanbul ignore else */
       if (mode === 'dark') {
@@ -89,6 +101,11 @@ function DataGrid<T>(props: TableProps<T>) {
       }
     } catch {}
   }, [mode, props.data]);
+
+  const getUniqueId = () => {
+    uniqueId++;
+    return uniqueId;
+  };
 
   const sortByProperty = (prop: keyof T, asc = 0) => {
     if (!asc) {
@@ -303,10 +320,43 @@ function DataGrid<T>(props: TableProps<T>) {
     } catch (error) {}
   };
 
-  const rowClick = (record: T) => {
-    if (props.handleRowClick) {
-      props.handleRowClick(record);
+  const rowClick = (e: React.MouseEvent, record: T) => {
+    switch (e.detail) {
+      case 1:
+        if (props.handleRowClick) {
+          props.handleRowClick(record);
+        }
+        break;
+      case 2:
+        setEditingRecord(record);
+        const rect = e.currentTarget.getBoundingClientRect();
+        const style = { top: `${rect.bottom.toFixed(0)}px` };
+        setConfirmStyle({ ...confirmStyle, ...style });
+        setIsEditing(true);
+        break;
+      default:
+        if (props.handleRowClick) {
+          props.handleRowClick(record);
+        }
+        break;
     }
+  };
+
+  const handleEditConfirm = () => {
+    // here we need to find a way to gather all the state that was edited
+    setIsEditing(false);
+  };
+
+  const handleEditChange = (e: any, header: TableHeader<T>, record: T) => {
+    try {
+      // @ts-ignore
+      const editRecord = props.data.filter((r) => r.id === record.id)[0];
+      if (editRecord) {
+        // @ts-ignore
+        editRecord[header.columnName] = e;
+        setEditingRecord(editRecord);
+      }
+    } catch (error) {}
   };
 
   function renderHeader(header: TableHeader<T>, id: number) {
@@ -348,6 +398,17 @@ function DataGrid<T>(props: TableProps<T>) {
     }
   }
 
+  function renderEditor(item: T, id: number, header: TableHeader<T>) {
+    return (
+      <GridTextEditor
+        record={item}
+        id={getUniqueId()}
+        header={header}
+        onChange={handleEditChange}
+      />
+    );
+  }
+
   function renderRow(item: T, id: number) {
     let rowStyle = 'mikto-table-row-light';
     /* istanbul ignore else */
@@ -359,11 +420,14 @@ function DataGrid<T>(props: TableProps<T>) {
     /* istanbul ignore else */
     if (item) {
       record = item;
+      if (item === editingRecord) {
+        rowStyle = 'mikto-table-row-editing';
+      }
     }
     return (
       <tr
         // @ts-ignore
-        onClick={() => rowClick(record)}
+        onClick={(e) => rowClick(e, record)}
         key={`table-row-${id}`}
         className={`${rowStyle}`}
       >
@@ -374,7 +438,6 @@ function DataGrid<T>(props: TableProps<T>) {
             const data = item[header.columnName];
 
             const customRenderer = props.customRenderers?.[header.columnName];
-
             /* istanbul ignore else */
             if (customRenderer) {
               return (
@@ -383,13 +446,19 @@ function DataGrid<T>(props: TableProps<T>) {
                 </td>
               );
             }
-            return (
-              <td style={header.style} key={`table-td-${i}`}>
-                {isPrimitive(item[header.columnName])
-                  ? item[header.columnName]
-                  : ''}
-              </td>
-            );
+
+            if (isEditing && editingRecord === record) {
+              // display the editing equivalent of this field
+              return renderEditor(record, i, header);
+            } else {
+              return (
+                <td style={header.style} key={`table-td-${i}`}>
+                  {isPrimitive(item[header.columnName])
+                    ? item[header.columnName]
+                    : ''}
+                </td>
+              );
+            }
           }
         })}
       </tr>
@@ -452,6 +521,7 @@ function DataGrid<T>(props: TableProps<T>) {
       </table>
       <div id={`mikto-columns-${props.identifier}`}></div>
       <div id={`mikto-filter-${props.identifier}`}></div>
+      <div id={`mikto-confirm=${props.identifier}`}></div>
       <Columns
         open={showColumnsModal}
         divId={`mikto-columns-${props.identifier}`}
@@ -470,6 +540,13 @@ function DataGrid<T>(props: TableProps<T>) {
         style={filterStyle}
         availableFilters={checkedFilters}
         filterItemClicked={handleFilterItemClick}
+      />
+      <RowEditConfirmation
+        show={isEditing}
+        hide={() => setIsEditing(false)}
+        style={confirmStyle}
+        confirm={handleEditConfirm}
+        identifier={props.identifier}
       />
     </div>
   );

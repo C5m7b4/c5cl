@@ -5,6 +5,7 @@ import DataGrid from '../Grid';
 
 import { serverData } from './pagingData';
 import { formatDate } from '../../utils';
+import { TableHeader } from '../Grid/DataGrid';
 
 interface serverDataProps {
   id: number;
@@ -48,6 +49,16 @@ const PagingDemo = () => {
     setRecordsPerPage(+e.target.value);
   };
 
+  const handleRowEdit = (
+    record: any,
+    header: TableHeader<serverDataProps>,
+    newValue: any
+  ) => {
+    const editRecord = serverData.filter((r) => r.id == record.id)[0];
+    // @ts-ignore
+    editRecord[header.columnName] = newValue;
+  };
+
   return (
     <div>
       <h2>Paging Demo</h2>
@@ -55,6 +66,7 @@ const PagingDemo = () => {
         data={data}
         identifier={'grid1'}
         customRenderers={renderers}
+        handleRowEdit={handleRowEdit}
         headers={[
           {
             columnName: 'id',
