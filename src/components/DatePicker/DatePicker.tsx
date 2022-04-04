@@ -43,7 +43,11 @@ const DatePicker = (props: DatePickerProps) => {
   };
 
   const handleDateClick = (event: React.MouseEvent<HTMLDivElement>): void => {
-    setTop(event.clientY - window.innerHeight / 2);
+    /* istanbul ignore else */
+    if (dateRef.current) {
+      const rect = dateRef.current.getBoundingClientRect();
+      setTop(event.clientY - window.innerHeight / 2 + rect.height);
+    }
     setLeft(event.clientX - window.innerWidth / 2 - 150);
     setShowDatePicker(true);
   };
