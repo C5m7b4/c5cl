@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import TimePicker from './TimePicker';
 
@@ -85,7 +85,7 @@ describe('TimePicker', () => {
   });
   test('should handle minute change', () => {
     const testFn = jest.fn();
-    const { container, getByRole } = render(
+    const { container } = render(
       <TimePicker time={new Date('3/20/2022 4:00 AM')} onChange={testFn} />
     );
 
@@ -96,8 +96,11 @@ describe('TimePicker', () => {
     const hour = container.querySelector('.position-2') as HTMLDivElement;
     fireEvent.click(hour);
 
-    const minute = container.querySelector('.position-9') as HTMLDivElement;
+    const minute = container.querySelector('.position-5') as HTMLDivElement;
     fireEvent.click(minute);
+
+    const minute2 = container.querySelector('.position-6') as HTMLDivElement;
+    fireEvent.click(minute2);
   });
   test('should handle close', () => {
     const testFn = jest.fn();
@@ -109,9 +112,7 @@ describe('TimePicker', () => {
     const div = container.querySelector('.c5-tp-input') as HTMLDivElement;
     fireEvent.click(div);
 
-    const close = container.querySelector(
-      '.c5-time-picker > div.clock > div.close > button'
-    ) as HTMLButtonElement;
+    const close = screen.getByRole('button', { name: 'Close' });
     fireEvent.click(close);
   });
   test('should handle return short time', () => {
@@ -128,9 +129,7 @@ describe('TimePicker', () => {
     const div = container.querySelector('.c5-tp-input') as HTMLDivElement;
     fireEvent.click(div);
 
-    const close = container.querySelector(
-      '.c5-time-picker > div.clock > div.close > button'
-    ) as HTMLButtonElement;
+    const close = screen.getByRole('button', { name: 'Close' });
     fireEvent.click(close);
   });
   test('should handle return short time with an hour greater than 12', () => {
@@ -147,9 +146,7 @@ describe('TimePicker', () => {
     const div = container.querySelector('.c5-tp-input') as HTMLDivElement;
     fireEvent.click(div);
 
-    const close = container.querySelector(
-      '.c5-time-picker > div.clock > div.close > button'
-    ) as HTMLButtonElement;
+    const close = screen.getByRole('button', { name: 'Close' });
     fireEvent.click(close);
   });
 });

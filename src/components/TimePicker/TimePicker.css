@@ -251,6 +251,7 @@ div.c5-time-picker div.clock div.am-pm-info div.pm {
   border-radius: 3px;
   background: white;
   cursor: pointer;
+  transition: all .3s ease;
 }
 div.c5-time-picker div.clock div.am-pm-info div.am:hover,
 div.c5-time-picker div.clock div.am-pm-info div.pm:hover {
@@ -289,4 +290,18 @@ div.c5-time-picker div.clock div.close button {
   width: 100%;
   background-color: #026aa7;
   color: white;
+  border-radius: 10px;
+  border: 0;
+  outline: none;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+div.c5-time-picker div.clock div.close button:hover{
+  background-color: #3589ba;
+}
+
+div.c5-time-picker div.clock div.close button:active{
+  transform: scale(0.96);
 }
