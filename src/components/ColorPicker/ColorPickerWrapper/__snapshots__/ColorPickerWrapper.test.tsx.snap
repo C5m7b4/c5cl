@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorPickerWrapper should render correctly 1`] = `
+<div>
+  <div>
+    <button
+      class="mpw-swatch"
+      style="height: 40px; width: 120px; border-radius: 10px; border-width: 5px; border-color: #333; border-style: solid; cursor: pointer; background-color: rgb(255, 255, 255);"
+    />
+  </div>
+</div>
+`;
