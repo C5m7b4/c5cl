@@ -1,5 +1,8 @@
 .c5-date-picker {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .c5-date-picker * {
@@ -13,8 +16,10 @@
 
 .c5-dp-input {
   width: 150px;
-  height: 35px;
+  /* height: 20px; */
   overflow: hidden;
+  /* border-radius: 20px; */
+  user-select: none;
   border-radius: 20px;
 }
 
@@ -27,7 +32,7 @@
   background: #f5f5f5;
   border: 0;
   outline: none;
-  height: 35px;
+  /* height: 20px; */
   text-align: center;
   cursor: pointer;
   user-select: none;

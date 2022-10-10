@@ -13,6 +13,7 @@ const testData = [
     termCount: 3,
     active: true,
     sym1: sym1,
+    date: new Date(2022, 2, 2),
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const testData = [
     termCount: 3,
     active: false,
     sym1: sym1,
+    date: new Date(2022, 2, 2),
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const testData = [
     termCount: 3,
     active: true,
     sym1: sym1,
+    date: new Date(2022, 2, 2),
   },
 ];
 
@@ -69,6 +72,11 @@ const { container, getByTestId } = render(
       {
         columnName: 'sym1',
         title: 'Sum1',
+      },
+      {
+        columnName: 'date',
+        title: 'date',
+        editor: 'date',
       },
     ]}
   />
@@ -404,5 +412,119 @@ describe('DataGrid', () => {
       fireEvent.click(div);
       fireEvent.click(div);
     }
+  });
+  test('should handle single row click', () => {
+    const renderers = {
+      active: (i: any) => {
+        return <input type="checkbox" checked={i.active} />;
+      },
+    };
+    const testfn = jest.fn();
+    const { container, getByRole } = render(
+      <DataGrid
+        data={testData}
+        identifier={'grid1'}
+        customRenderers={renderers}
+        handleRowClick={testfn}
+        headers={[
+          {
+            columnName: 'id',
+            title: 'ID',
+            visible: true,
+            style: {
+              textAlign: 'center',
+            },
+            sortable: 'desc',
+          },
+          {
+            columnName: 'storeName',
+            title: 'Name',
+            style: {
+              textAlign: 'left',
+            },
+            sortable: 'desc',
+          },
+          {
+            columnName: 'storeNumber',
+            title: '#',
+            style: {
+              textAlign: 'center',
+            },
+            sortable: 'desc',
+          },
+          {
+            columnName: 'termCount',
+            title: 'Terms',
+          },
+        ]}
+      />
+    );
+
+    // now click on any row
+    const table = screen.getByRole('table', { name: '' });
+    const row = table.querySelector('tr:nth-child(2)') as HTMLTableRowElement;
+    expect(row).toBeVisible();
+    fireEvent.click(row);
+    fireEvent.click(row, { detail: 1 });
+  });
+  test('should handle double click', () => {
+    jest.useFakeTimers();
+    const renderers = {
+      active: (i: any) => {
+        return <input type="checkbox" checked={i.active} />;
+      },
+    };
+    const testfn = jest.fn();
+    const { container, getByRole } = render(
+      <DataGrid
+        data={testData}
+        identifier={'grid1'}
+        customRenderers={renderers}
+        handleRowClick={testfn}
+        headers={[
+          {
+            columnName: 'id',
+            title: 'ID',
+            visible: true,
+            style: {
+              textAlign: 'center',
+            },
+            sortable: 'desc',
+          },
+          {
+            columnName: 'storeName',
+            title: 'Name',
+            style: {
+              textAlign: 'left',
+            },
+            sortable: 'desc',
+          },
+          {
+            columnName: 'storeNumber',
+            title: '#',
+            style: {
+              textAlign: 'center',
+            },
+            sortable: 'desc',
+          },
+          {
+            columnName: 'termCount',
+            title: 'Terms',
+          },
+        ]}
+      />
+    );
+
+    // now double click on any row
+    const table = screen.getByRole('table', { name: '' });
+    const row = table.querySelector('tr:nth-child(2)') as HTMLTableRowElement;
+    fireEvent.click(row, { detail: 2 });
+
+    const cancel = screen.getByTestId('grid-editing-cancel');
+    fireEvent.click(cancel);
+
+    fireEvent.click(row, { detail: 2 });
+    const confirm = screen.getByTestId('grid-editing-confirm');
+    fireEvent.click(confirm);
   });
 });

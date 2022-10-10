@@ -18,10 +18,20 @@ const RowEditConfirmation = (props: RowEditConfirmationProps) => {
       <div className="row-edit-confirmation" style={props.style}>
         <div className="contents">
           <div className="buttons">
-            <button type="button" className="cancel" onClick={props.hide}>
+            <button
+              data-testid="grid-editing-cancel"
+              type="button"
+              className="cancel"
+              onClick={props.hide}
+            >
               Cancel
             </button>
-            <button type="button" className="ok" onClick={props.confirm}>
+            <button
+              data-testid="grid-editing-confirm"
+              type="button"
+              className="ok"
+              onClick={props.confirm}
+            >
               Confirm
             </button>
           </div>

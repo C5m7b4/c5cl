@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
+import OutlineButton from '../OutlineButton';
 import './Confirm.css';
 
 export interface ConfirmProps {
@@ -90,18 +91,16 @@ const Confirm = (props: ConfirmProps) => {
                           <div className="confirm-delete-error">{error}</div>
                         )}
                         <div className="confirm-delete-buttons">
-                          <button
-                            className="confirm-delete-cancel-button"
+                          <OutlineButton
                             onClick={hide}
-                          >
-                            Cancel
-                          </button>
-                          <button
-                            className="confirm-delete-confirm-button"
+                            text="Cancel"
+                            type="warning"
+                          />
+                          <OutlineButton
                             onClick={compareDeleteText}
-                          >
-                            Confirm
-                          </button>
+                            text="Confirm"
+                            type="success"
+                          />
                         </div>
                       </div>
                     </div>

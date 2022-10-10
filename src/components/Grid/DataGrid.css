@@ -12,12 +12,12 @@
 }
 
 .mikto-header-sort-dark {
-  background-color: #000;
-  color: slateblue;
+  background-color: #898a8c;
+  color: rgb(65, 53, 143);
 }
 
 .mikto-header-sort-light {
-  color: slateblue;
+  color: rgb(65, 53, 143);
 }
 
 .mikto-table thead th {
@@ -35,7 +35,7 @@
 }
 
 .mikto-table tr {
-  line-height: 25px;
+  /* line-height: 25px; */
 }
 
 .mikto-table tr td {
@@ -44,12 +44,12 @@
 
 .mikto-table-row-light:nth-child(odd) {
   background-color: #aaa;
-  color: slateblue;
+  color: rgb(65, 53, 143);
 }
 
 .mikto-table-row-light:nth-child(even) {
   background-color: #fff;
-  color: slateblue;
+  color: rgb(65, 53, 143);
 }
 
 .mikto-table-row-dark:nth-child(odd) {
