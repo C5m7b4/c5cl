@@ -11,6 +11,20 @@ const testData = [
     date: '2/26/2022',
     time: '1:00 PM',
   },
+  {
+    id: 2,
+    name: 'Test1',
+    color: '#ff0000',
+    date: '2/26/2022',
+    time: '1:00 PM',
+  },
+  {
+    id: 3,
+    name: 'Test1',
+    color: '#00ff00',
+    date: '2/26/2022',
+    time: '1:00 PM',
+  },
 ];
 
 const headers = [
@@ -35,6 +49,18 @@ const headers = [
   },
 ];
 
+const headersColor = [
+  {
+    columnName: 'id',
+    title: 'ID',
+  },
+  {
+    columnName: 'color',
+    title: 'color',
+    editor: 'color',
+  },
+];
+
 export default {
   title: 'Grid/EditableGrid',
   component: DataGrid,
@@ -54,4 +80,12 @@ GridEditExample.args = {
   headers: headers,
   style: { color: 'slateblue' },
   // customRenderers: renderers,
+};
+
+export const GridExampleColor = Template<object>().bind({});
+GridExampleColor.args = {
+  data: testData,
+  identifier: 'grid-color',
+  // @ts-ignore
+  headers: headersColor,
 };
