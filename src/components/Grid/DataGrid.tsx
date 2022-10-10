@@ -47,6 +47,7 @@ export interface TableProps<T> {
   mode?: Mode;
   handleRowClick?: (record: T) => void;
   handleRowEdit?: (record: T, header: TableHeader<T>, newValue: any) => void;
+  handleEditConfirm?: (record: T) => void;
 }
 
 // export function objectKeys<T extends {}>(obj: T) {
@@ -323,18 +324,20 @@ function DataGrid<T>(props: TableProps<T>) {
   const rowClick = (e: React.MouseEvent, record: T) => {
     switch (e.detail) {
       case 1:
+        /* istanbul ignore else */
         if (props.handleRowClick) {
           props.handleRowClick(record);
         }
         break;
       case 2:
         setEditingRecord(record);
+        setIsEditing(true);
         const rect = e.currentTarget.getBoundingClientRect();
         const style = { top: `${rect.bottom.toFixed(0)}px` };
         setConfirmStyle({ ...confirmStyle, ...style });
-        setIsEditing(true);
         break;
       default:
+        /* istanbul ignore else */
         if (props.handleRowClick) {
           props.handleRowClick(record);
         }
@@ -345,12 +348,16 @@ function DataGrid<T>(props: TableProps<T>) {
   const handleEditConfirm = () => {
     // here we need to find a way to gather all the state that was edited
     setIsEditing(false);
+    if (props.handleEditConfirm && editingRecord) {
+      props.handleEditConfirm(editingRecord);
+    }
   };
 
   const handleEditChange = (e: any, header: TableHeader<T>, record: T) => {
     try {
       // @ts-ignore
-      const editRecord = props.data.filter((r) => r.id === record.id)[0];
+      const editRecord = filteredData.filter((r) => r.id === record.id)[0];
+      /* istanbul ignore else */
       if (editRecord) {
         // @ts-ignore
         editRecord[header.columnName] = e;
@@ -399,12 +406,15 @@ function DataGrid<T>(props: TableProps<T>) {
   }
 
   function renderEditor(item: T, id: number, header: TableHeader<T>) {
+    uniqueId++;
+    const unique = uniqueId;
     return (
       <GridTextEditor
         record={item}
         id={getUniqueId()}
         header={header}
         onChange={handleEditChange}
+        key={`ge-${id}-${unique}`}
       />
     );
   }
@@ -415,6 +425,8 @@ function DataGrid<T>(props: TableProps<T>) {
     if (mode === 'dark') {
       rowStyle = 'mikto-table-row-dark';
     }
+    uniqueId++;
+    let unique = uniqueId;
 
     let record: T;
     /* istanbul ignore else */
@@ -428,7 +440,7 @@ function DataGrid<T>(props: TableProps<T>) {
       <tr
         // @ts-ignore
         onClick={(e) => rowClick(e, record)}
-        key={`table-row-${id}`}
+        key={`table-row-${id}-${unique}`}
         className={`${rowStyle}`}
       >
         {props.headers.map((header, i) => {
@@ -441,7 +453,7 @@ function DataGrid<T>(props: TableProps<T>) {
             /* istanbul ignore else */
             if (customRenderer) {
               return (
-                <td style={header.style} key={`table-td-${i}`}>
+                <td style={header.style} key={`table-td-${i}-${id}-${unique}`}>
                   {customRenderer(item)}
                 </td>
               );
@@ -452,7 +464,7 @@ function DataGrid<T>(props: TableProps<T>) {
               return renderEditor(record, i, header);
             } else {
               return (
-                <td style={header.style} key={`table-td-${i}`}>
+                <td style={header.style} key={`table-td-${i}-${id}-${unique}`}>
                   {isPrimitive(item[header.columnName])
                     ? item[header.columnName]
                     : ''}
