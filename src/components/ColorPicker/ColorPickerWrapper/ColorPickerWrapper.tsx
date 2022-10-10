@@ -18,7 +18,7 @@ export type ColorPickerWrapperProps = {
 const ColorPickerWrapper: React.FC<ColorPickerWrapperProps> = ({
   color,
   onChange,
-  height = 40,
+  height = 20,
   width = 120,
   borderRadius = 10,
   borderWidth = 5,
