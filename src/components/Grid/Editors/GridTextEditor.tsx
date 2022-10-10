@@ -6,6 +6,8 @@ import TimePicker from '../../TimePicker';
 // import TimePickerReturnValue from '../../TimePicker';
 import { formatDate } from '../../../utils';
 
+import './GridTextEditor.css';
+
 export interface GridTextEditorProps<T> {
   record: T;
   id: number;
@@ -44,9 +46,10 @@ const GridTextEditor = <T,>(props: GridTextEditorProps<T>) => {
   };
 
   const myStyle = {
-    borderRadius: '5px',
+    borderRadius: '10px',
     border: 0,
     outline: 'none',
+    padding: '3px 12px',
   };
   const { record, id, header } = props;
   if (header.editor) {
@@ -68,7 +71,6 @@ const GridTextEditor = <T,>(props: GridTextEditorProps<T>) => {
             <DatePicker date={new Date()} onChange={handleDateChange} />
           </td>
         );
-        break;
       case 'time':
         return (
           <td style={header.style} key={`table-td-${id}`}>
@@ -79,14 +81,12 @@ const GridTextEditor = <T,>(props: GridTextEditorProps<T>) => {
             />
           </td>
         );
-        break;
       case 'color':
         return (
           <td style={header.style} key={`table-td-${id}`}>
             <ColorPicker color={'#000'} onChange={handleColorChange} />
           </td>
         );
-        break;
       default:
         // we are defaulting to text
         return (
