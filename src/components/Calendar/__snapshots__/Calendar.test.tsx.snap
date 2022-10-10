@@ -2421,7 +2421,7 @@ exports[`Calendar should render next month 1`] = `
           <span />
         </div>
         <div
-          class="col cell selected"
+          class="col cell "
         >
           <span
             class="number"
