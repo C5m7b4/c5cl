@@ -1,5 +1,6 @@
 export { formatMoney, formatDate } from './format';
 export { isValid } from './valid';
+import Box from './Box';
 export * from './fns';
 export * from './constants';
 export * from './pad';
@@ -9,3 +10,4 @@ export * from './date';
 export * from './reserved';
 export * from './colors';
 export * from './debounce';
+export { Box };
